@@ -1,0 +1,115 @@
+@import "slick-variables";
+
+$slick-dot-width: 30px;
+$slick-dot-height: 10px;
+
+// RESET
+$slick-dot-color:color_main('theme-blue-1');
+
+.theme-dot-rectangle-rounded{
+
+    .slick-dots {
+
+        li {
+                width: 30px;
+                // height: 20px;
+                button{
+                    width: 100%;
+                    // height: 10px;
+                    &:before{
+                        // width: 26px;
+                        width: 30px;
+                        height: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: $slick-dot-color;
+                
+                    }
+                }
+    
+            &.slick-active button:before {                
+                color: transparent;
+                background: $slick-dot-color;
+                border-radius: 6px;
+                opacity: 1;
+            }
+        }
+    
+     }
+    
+
+}
+
+
+%theme-dot-text, .theme-dot-text{
+    .slick-dots {
+        li {
+            button{
+                font-size: 15px;
+                color: $slick-dot-color;
+                &:before{
+                    content: none;
+                }
+
+
+            }
+
+        }
+        
+    }
+
+}
+
+
+@mixin  theme-dot-text($fontSize,$slick-dot-color) {
+
+    .slick-dots {
+        li {
+            button{
+                font-size: $fontSize;
+                color: $slick-dot-color;
+                &:before{
+                    content: none;
+                }
+
+
+            }
+        }
+
+        
+    }
+
+    
+}
+
+
+.theme-dot-rectangle-rounded{
+
+}
+
+
+
+
+
+
+.KVSlider{
+    .slick-dots{
+        // bottom: 25px;
+    }
+}
+
+
+.content_APP{
+
+    @extend %theme-dot-text;
+    
+    // .slick-dots{
+
+    //     bottom: 5px;
+        
+
+
+
+    // }
+}

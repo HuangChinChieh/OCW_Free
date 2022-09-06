@@ -1,0 +1,32 @@
+@import "base/base";
+@import "iconfonts/iconfonts";
+@import "iconfonts/ewiniconfonts";
+@import "base/rules";
+//********** LAYOUT ***********/
+@import "layout/header";
+@import "layout/footer";
+@import "layout/content";
+@import "layout/verticalSideBarMenu";
+
+//********** Components ***********/
+@import "components/icon";
+@import "components/breadcrumb";
+@import "components/table";
+@import "components/tab";
+@import "components/collapse";
+@import "components/toast";
+
+
+@import "components/button";
+
+@import "components/custom-forms-m"; //Bootstrap 4.5 increasement
+
+@import "components/forms";
+@import "components/popup";
+@import "components/flowstep";
+@import "pages/wallet";
+
+
+
+
+// @import "components/elements";

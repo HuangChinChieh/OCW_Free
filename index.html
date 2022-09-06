@@ -1,0 +1,547 @@
+<!doctype html>
+<html id="myHTML" lang="zh-Hant-TW" class="mainHtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <title>マハラジャ - 一番人気なオンラインカジノアミューズメント</title>
+    <meta name='keywords' content="カジノ、スロット、アミューズメント、ゲーム、ギャンブル" />
+    <meta name='description' content="知名なオンラインゲームブランドを提携し、信頼価値もあるし、それにすぐ遊べることができます。お金の無駄遣いをせずに、今すぐサイトを登録して、ゲーム開始！" />
+    <meta property="og:site_name" content="マハラジャ" />
+    <meta property="og:title" content="一番人気なオンラインカジノアミューズメント - マハラジャ" />
+    <meta property="og:Keyword" content="カジノ、スロット、アミューズメント、ゲーム、ギャンブル" />
+    <meta property="og:description" content="知名なオンラインゲームブランドを提携し、信頼価値もあるし、それにすぐ遊べることができます。お金の無駄遣いをせずに、今すぐサイトを登録して、ゲーム開始！" />
+    <meta property="og:url" content="https://casino-maharaja.com/" />
+    <!--日文圖片-->
+    <meta property="og:image" content="https://casino-maharaja.com/images/share_pic.png" />
+    <meta property="og:type" content="website" />
+    <!-- Share image -->
+    <!--日文圖片-->
+    <link rel="image_src" href="https://casino-maharaja.com/images/share_pic.png">
+    <link rel="shortcut icon" href="images/share_pic.png">
+    <link rel="stylesheet" href="css/basic.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/lobby.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="Prefetch" as="style" onload="this.rel = 'stylesheet'" />
+
+    <link rel="alternate" hreflang="ja" href="https://casino-maharaja.com/index.aspx?Lang=JPN">
+    <link rel="alternate" hreflang="ja-jp" href="https://casino-maharaja.com/index.aspx?Lang=JPN">
+    <link rel="alternate" hreflang="zh-cn" href="https://casino-maharaja.com/index.aspx?Lang=CHT">
+    <link rel="alternate" hreflang="zh-tw" href="https://casino-maharaja.com/index.aspx?Lang=CHT">
+    <link rel="alternate" hreflang="zh" href="https://casino-maharaja.com/index.aspx?Lang=CHT">
+    <link rel="alternate" hreflang="zh-hk" href="https://casino-maharaja.com/index.aspx?Lang=CHT">
+    
+</head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRNSR38PQ7"></script>
+
+<script 
+  src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="/Scripts/PaymentAPI.js?<%:Version%>"></script>
+<script type="text/javascript" src="Scripts/popper.min.js"></script>
+<script type="text/javascript" src="/Scripts/LobbyAPI.js?<%:Version%>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/Scripts/Common.js"></script>
+<script type="text/javascript" src="/Scripts/UIControl.js"></script>
+<script type="text/javascript" src="/Scripts/MultiLanguage.js"></script>
+<script type="text/javascript" src="/Scripts/Math.uuid.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.1/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/9.0.2/bignumber.min.js"></script>
+<script type="text/javascript" src="/Scripts/GameCodeBridge.js?1"></script>
+<script type="text/javascript" src="/Scripts/NoSleep.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js"></script>
+
+<body class="mainBody vertical-menu">
+    <div class="loader-container" style="display: none;">
+        <div class="loader-box">
+            <div class="loader-spinner">
+                <div class="sk-fading-circle">
+                    <div class="loader-logo"></div>
+                    <div class="sk-circle1 sk-circle"></div>
+                    <div class="sk-circle2 sk-circle"></div>
+                    <div class="sk-circle3 sk-circle"></div>
+                    <div class="sk-circle4 sk-circle"></div>
+                    <div class="sk-circle5 sk-circle"></div>
+                    <div class="sk-circle6 sk-circle"></div>
+                    <div class="sk-circle7 sk-circle"></div>
+                    <div class="sk-circle8 sk-circle"></div>
+                    <div class="sk-circle9 sk-circle"></div>
+                    <div class="sk-circle10 sk-circle"></div>
+                    <div class="sk-circle11 sk-circle"></div>
+                    <div class="sk-circle12 sk-circle"></div>
+                </div>
+                <%--<div class="loader-text language_replace">正在加載...</div>--%>
+            </div>
+        </div>
+        <div class="loader-backdrop is-show"></div>
+    </div>
+    <header class="header_area" id="">
+        <div class="header_menu ">
+            <!-- class="navbar-expand-xl" trigger hidden -->
+            <nav class="navbar">
+                <!-- TOP Search-->
+                <div class="search-full" id="header_SearchFull">
+                    <div class="container-fluid">
+                        <form class="search__wrapper">
+                            <div class="form-group-search search-plusbutton">
+                                <input id="" type="search" class="form-control custom-search" name="search" language_replace="placeholder" placeholder="輸入帳號">
+                                <label for="search" class="form-label"><span class="language_replace">輸入帳號</span></label>
+                                <div class="btn btnSearch"><span class="language_replace">搜尋</span></div>
+                                <button type="reset" class="btn btnReset"><i class="icon icon-ewin-input-reset"></i></button>
+                            </div>
+                            <span class="btn btn__closefullsearch" onclick="SearchControll.closeFullSearch(this)"><i class="icon icon-ewin-input-compress"></i></span>
+                        </form>
+                    </div>
+                </div>
+                <div class="container-fluid navbar__content">
+                    <!--MENU BUTTON -->                    
+                    <button id="navbar_toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                         <!-- 通知小紅點-手機版時加入 -->
+                        <div class="notify-dot mobile-notify-dot" style="display:none;"></div>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Sidebar Menu 側邊選單-->
+                    <div class="navbarMenu collapse navbar-menu navbar-collapse offset" id="navbarMenu">
+
+                        <div class="search-bar mobile" data-toggle="modal" data-target="#alertSearch">
+                            <span class="text language_replace">遊戲搜尋</span>
+                            <span class="btn btn-search">
+                                <i class="icon icon-mask icon-search"></i>
+                            </span>
+                        </div>
+
+                        <ul class="nav navbar-nav menu_nav no-gutters">
+                            <li class="nav-item navbarMenu__catagory">
+                                <ul class="catagory">
+                                    <li class="nav-item submenu dropdown"
+                                        onclick="API_LoadPage('Casino', 'Casino.aspx', false)">
+                                        <a class="nav-link">
+                                            <i class="icon icon-mask icon-all"></i>
+                                            <span class="title language_replace">遊戲大廳</span></a>
+                                    </li>
+                                    <li class="nav-item submenu dropdown"
+                                        onclick="openGame('YS', 'Sumo', '')">
+                                        <a class="nav-link">
+                                            <i class="icon icon-mask icon-sumo"></i>
+                                            <span class="title language_replace">相撲</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item navbarMenu__catagory">
+                                <ul class="catagory">
+                                    <li class="nav-item submenu dropdown">
+                                        <a class="nav-link" onclick="API_LoadPage('MemberCenter', 'MemberCenter.aspx', true)">
+                                            <i class="icon icon-mask icon-people"></i>
+                                            <span class="title language_replace">會員中心</span></a>
+                                    </li>
+                                    <li class="nav-item submenu dropdown">
+                                        <a class="nav-link" onclick="API_LoadPage('','ActivityCenter.aspx')">
+                                            <i class="icon icon-mask icon-loudspeaker"></i>
+                                            <span class="title language_replace">活動中心</span></a>
+                                    </li>
+                                    <li class="nav-item submenu dropdown">
+
+                                        <a class="nav-link" onclick="API_LoadPage('','Prize.aspx', true)">
+                                            <!-- 通知小紅點 -->
+                                            <span class="notify-dot PC-notify-dot" style="display:none;"></span>
+                                            <i class="icon icon-mask icon-prize"></i>
+                                            <span class="title language_replace">領獎中心</span></a>
+                                    </li>
+                                    <li class="nav-item submenu dropdown">
+                                        <a class="nav-link" onclick="API_LoadPage('record','record.aspx', true)">
+                                            <i class="icon icon-mask icon-calendar"></i>
+                                            <span class="title language_replace">履歷記錄</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item navbarMenu__catagory">
+                                <ul class="catagory">
+                                    <li class="nav-item submenu dropdown"
+                                        onclick="API_LoadPage('QA','/Article/guide_Q&A_jp.html')">
+                                        <a class="nav-link">
+                                            <i class="icon icon-mask icon-QA"></i>
+                                            <span class="title language_replace">Q&A</span></a>
+                                    </li>
+                                    <li class="nav-item submenu dropdown"
+                                        onclick="window.open('https://lin.ee/KD05l9X')">
+                                        <a class="nav-link">
+                                            <i class="icon icon-mask icon-line"></i>
+                                            <span class="title language_replace">Line</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item navbarMenu__catagory">
+                                <ul class="catagory">
+                                    <li class="nav-item submenu dropdown"
+                                        onclick="API_LoadPage('Deposit','Deposit.aspx', true)">
+                                        <a class="nav-link">
+                                            <i class="icon icon-mask icon-deposit"></i>
+                                            <span class="title language_replace">存款</span></a>
+                                    </li>
+                                    <li class="nav-item submenu dropdown" onclick="API_LoadPage('Withdrawal','Withdrawal.aspx', true)">
+                                        <a class="nav-link">
+                                            <i class="icon icon-mask icon-withdarw"></i>
+                                            <span class="title language_replace">出款</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown" id="idLogoutItem">
+                                <a class="nav-link" onclick="API_Logout(true)">
+                                    <!-- <i class="icon icon2020-ico-login"></i> -->
+                                    <i class="icon icon-mask icon-logout"></i>
+                                    <span class="language_replace" langkey="登出">登出</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                   
+                    <!-- 頂部 NavBar -->
+                    <div class="header_topNavBar">
+                        <!-- 左上角 -->
+                        <div class="header_leftWrapper navbar-nav" onclick="">
+                            <div class="navbar-brand">
+                                <div class="logo"><a></a></div>
+                            </div>
+                        </div>
+                        <div id="headerGameDetailContent" style="display: none;">
+                            <!-- Search -->
+                            <ul class="nav header_setting_content">
+                                <li class="headerGameDetail navbar-search nav-item">
+                                    <button id="closeGameBtn" type="button" onclick="CloseGameFrame()" data-toggle="tooltip" data-placement="bottom" class="btn btn-search" style="background: white;">
+                                        <i class="icon">X</i>
+                                    </button>
+                                    <span class="headerGameName"></span>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 右上角 -->
+                        <div class="header_rightWrapper">
+
+                            <div class="header_setting">
+                                <ul class="nav header_setting_content">
+                                    <!-- Search -->
+                                    <li class="navbar-search nav-item is-hide">
+
+                                        <span class="search-bar desktop" data-toggle="modal" data-target="#alertSearch">
+                                            <span class="btn btn-search">
+                                                <i class="icon icon-mask icon-search"></i>
+                                            </span>
+                                            <span class="text language_replace">遊戲搜尋</span>
+                                        </span>
+                                        <!-- <button type="button" class="btn btn-search" data-toggle="modal" data-target="#alertSearch">
+                                            <i class="icon icon-mask icon-search"></i>
+                                        </button> -->
+                                    </li>
+                                    <!-- ==== 登入前 ====-->
+                                    <li class="nav-item unLogIn_wrapper " id="idLoginBtn">
+                                        <ul class="horiz-list">
+                                            <li class="login">
+                                                <button class="btn-login btn" type="button" onclick="onBtnLoginShow()">
+                                                    <span class="avater">
+                                                        <img src="images/avatar/avater-2.png" alt=""></span>
+                                                    <span class="language_replace">登入</span></button>
+                                            </li>
+                                            <li class="register">
+                                                <button class="btn-register btn " type="button" onclick="API_LoadPage('Register', 'Register.aspx')"><span class="language_replace">註冊</span></button>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!--  ==== 登入後 ====-->
+                                    <li class="nav-item logIned_wrapper is-hide" id="idMenuLogin">
+                                        <ul class="horiz-list">
+                                            <li class="nav-item " onclick="API_LoadPage('Deposit','Deposit.aspx', true)">
+                                                <span class="balance-container">
+                                                    <span class="balance-inner">
+                                                        <span class="game-coin">
+                                                            <!-- 未完成存款訂單-通知小紅點 -->
+                                                            <%--<span class="notify-dot"></span>--%>
+                                                            <img src="images/ico/coin-Ocoin.png" alt="">
+                                                        </span>
+                                                        <span class="balance-info">
+                                                            <span class="amount">0</span>
+                                                        </span>
+                                                        <button class="btn btn-deposit btn-full-stress" onclick="">
+                                                            <span class="icon icon-add"></span>
+                                                        </button>
+                                                    </span>
+                                                </span>
+                                            </li>
+                                            <!-- User -->
+                                            <li class="nav-item submenu dropdown avater_wrapper">
+                                                <a onclick="API_LoadPage('MemberCenter', 'MemberCenter.aspx', true)" class="btn nav-link btnDropDown " role="button">
+                                                    <span class="avater">
+                                                        <span class="avater-img">
+                                                            <img src="images/avatar/avater-2.png" alt="">
+                                                        </span>
+                                                        <span class="avater-name"></span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <!-- 語系 -->
+                                    <li class="nav-item lang_wrapper submenu dropdown is-hide" style="display:none">
+                                        <button type="button" class="btn nav-link btn-langExchange" data-toggle="modal" data-target="#ModalLanguage" id="btn_switchlang">
+                                            <!-- 語系 轉換 ICON -->
+                                            <%--<i class="icon icon-mask icon-flag-JP"></i>
+                                            <i class="icon icon-mask icon-flag-EN"></i>
+                                            <i class="icon icon-mask icon-flag-ZH"></i>--%>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="mask_overlay" class="mask_overlay"></div>
+    </header>
+    <div class="main_area">
+         <!-- 各分類-單一遊戲推薦區 -->
+        <section class="section-category-dailypush">
+            <div class="container">                
+                <!-- hot -->
+                <div class="category-dailypush-wrapper hot">
+                    <div class="category-dailypush-inner">
+                        <div class="category-dailypush-img" style="background-color: #121a16;">
+                            <div class="img-box mobile">
+                                <div class="img-wrap">
+                                    <img src="/images/lobby/dailypush-hot-M-001.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="img-box pad">
+                                <div class="img-wrap">
+                                    <img src="/images/lobby/dailypush-hot-MD-001.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="img-box desktop">
+                                <div class="img-wrap">
+                                    <img src="/images/lobby/dailypush-hot-001.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category-dailypush-cotentBox">
+                            <div class="category-dailypush-cotent">
+                                <h2 class="title language_replace">本日優選推薦</h2>
+                                <div class="info">
+                                    <h3 class="gamename language_replace">叢林之王-集鴻運</h3>
+                                    <div class="detail">
+                                        <span class="gamebrand">BNG</span>
+                                        <span class="gamecategory">老虎機</span>
+                                    </div>
+                                </div>
+                                <div class="intro language_replace is-hide">
+                                    遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹
+                                </div>
+                                <div class="action">
+                                    <button class="btn btn-play" onclick="window.parent.openGame('BNG', '242','叢林之王-集鴻運')"><span class="language_replace">進入遊戲</span></button>
+                                    <!-- 加入最愛 class=>added-->
+                                    <button type="button" class="btn-like desktop gameCode_BNG.242 btn btn-round" onclick="favBtnClcik('BNG.242')">
+                                        <i class="icon icon-m-favorite"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                          
+            </div>
+        </section>
+
+        
+    </div>
+    <!-- 滿版遊戲介面 -->
+    <div id="divGameFrame" class="divGameFrameBody">
+        <div class="divGameFrameWrapper">
+            <div class="btn-wrapper">
+                <div class="btn btn-game-close" onclick="CloseGameFrame()"><i class="icon icon-mask icon-error"></i></div>
+            </div>
+            <iframe id="GameIFramePage" class="divGameFrame" name="mainiframe" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-pointer-lock"></iframe>
+        </div>
+    </div>
+    <!-- 滿版遊戲介面 end-->
+    <!-- footer -->
+    <div id="footer">
+        <footer class="footer-container">
+            <div class="footer-inner">
+                <div class="container">
+                    <ul class="company-info row">
+                        <li class="info-item col">
+                            <a id="Footer_About" onclick="window.parent.API_LoadPage('About','About.html')"><span class="language_replace">關於我們</span></a>
+                        </li>
+                       
+                        <!-- <li class="info-item col">
+                            <a onclick="window.parent.API_ShowContactUs()">
+                                <span class="language_replace">聯絡客服</span>
+                            </a>
+                        </li> -->
+                       
+                        <li class="info-item col">
+                            <a id="Footer_ResponsibleGaming" onclick="window.parent.API_ShowPartialHtml('', 'ResponsibleGaming', true, null)">
+                                <span class="language_replace">負責任的賭博</span>
+                            </a>
+                        </li>
+                        <li class="info-item col">
+                            <a id="Footer_Rules" onclick="window.parent.API_ShowPartialHtml('', 'Rules', true, null)">
+                                <span class="language_replace">利用規約</span>
+                            </a>
+                        </li>
+                        <li class="info-item col">
+                            <a id="Footer_PrivacyPolicy" onclick="window.parent.API_ShowPartialHtml('', 'PrivacyPolicy', true, null)">
+                                <span class="language_replace">隱私權政策</span>
+                            </a>
+                        </li>
+                        <!-- <li class="info-item col" id="li_HotArticle">
+                            <a onclick="openHotArticle()">
+                                <span class="language_replace">熱門文章</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                    <div class="partner">
+                        <div class="logo">
+                            <div class="row">
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-eWIN.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-microgaming.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-kgs.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-bbin.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-gmw.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-cq9.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-red-tiger.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-evo.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-bco.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-cg.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-playngo.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-pg.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-netent.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-kx.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-evops.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-bti.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-zeus.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-biggaming.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-play.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-h.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-va.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-pagcor.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="logo-item">
+                                    <div class="img-crop">
+                                        <img src="/images/logo/footer/logo-mishuha.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="company-detail">
+                        <div class="company-license">
+                            <iframe src="https://licensing.gaming-curacao.com/validator/?lh=73f82515ca83aaf2883e78a6c118bea3&template=tseal" width="150" height="50" style="border: none;"></iframe>
+                        </div>
+                        <div class="company-address">
+                            <p class="address language_replace">MAHARAJA由(Online Chip World Co. N.V) 所有並營運。（註冊地址：Zuikertuintjeweg Z/N (Zuikertuin Tower), Willemstad, Curacao）取得庫拉索政府核發的執照 註冊號碼：#365 / JAZ 認可，並以此據為標準。</p>
+                        </div>
+                    </div> -->
+                    <div class="footer-copyright">
+                        <p class="language_replace">Copyright © 2022 マハラジャ. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
