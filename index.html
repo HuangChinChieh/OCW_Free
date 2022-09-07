@@ -21,6 +21,7 @@
     <link rel="image_src" href="https://casino-maharaja.com/images/share_pic.png">
     <link rel="shortcut icon" href="images/share_pic.png">
     <link rel="stylesheet" href="css/basic.min.css">
+    <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/lobby.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="Prefetch" as="style" onload="this.rel = 'stylesheet'" />
@@ -46,12 +47,11 @@
 <script type="text/javascript" src="/Scripts/LobbyAPI.js?<%:Version%>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="/Scripts/Common.js"></script>
 <script type="text/javascript" src="/Scripts/UIControl.js"></script>
 <script type="text/javascript" src="/Scripts/MultiLanguage.js"></script>
 <script type="text/javascript" src="/Scripts/Math.uuid.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.1/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.1/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/9.0.2/bignumber.min.js"></script>
 <script type="text/javascript" src="/Scripts/GameCodeBridge.js?1"></script>
 <script type="text/javascript" src="/Scripts/NoSleep.js"></script>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="container-fluid navbar__content">
                     <!--MENU BUTTON -->                    
-                    <button id="navbar_toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <button id="navbar_toggler" class="navbar-toggler is-hide" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
                          <!-- 通知小紅點-手機版時加入 -->
                         <div class="notify-dot mobile-notify-dot" style="display:none;"></div>
                         <span class="icon-bar"></span>
@@ -109,7 +109,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!-- Sidebar Menu 側邊選單-->
-                    <div class="navbarMenu collapse navbar-menu navbar-collapse offset" id="navbarMenu">
+                    <div class="navbarMenu collapse navbar-menu navbar-collapse offset is-hide" id="navbarMenu">
 
                         <div class="search-bar mobile" data-toggle="modal" data-target="#alertSearch">
                             <span class="text language_replace">遊戲搜尋</span>
@@ -195,7 +195,6 @@
                             </li>
                             <li class="nav-item submenu dropdown" id="idLogoutItem">
                                 <a class="nav-link" onclick="API_Logout(true)">
-                                    <!-- <i class="icon icon2020-ico-login"></i> -->
                                     <i class="icon icon-mask icon-logout"></i>
                                     <span class="language_replace" langkey="登出">登出</span></a>
                             </li>
@@ -227,24 +226,12 @@
 
                             <div class="header_setting">
                                 <ul class="nav header_setting_content">
-                                    <!-- Search -->
-                                    <li class="navbar-search nav-item is-hide">
-
-                                        <span class="search-bar desktop" data-toggle="modal" data-target="#alertSearch">
-                                            <span class="btn btn-search">
-                                                <i class="icon icon-mask icon-search"></i>
-                                            </span>
-                                            <span class="text language_replace">遊戲搜尋</span>
-                                        </span>
-                                        <!-- <button type="button" class="btn btn-search" data-toggle="modal" data-target="#alertSearch">
-                                            <i class="icon icon-mask icon-search"></i>
-                                        </button> -->
-                                    </li>
+                                    
                                     <!-- ==== 登入前 ====-->
                                     <li class="nav-item unLogIn_wrapper " id="idLoginBtn">
                                         <ul class="horiz-list">
                                             <li class="login">
-                                                <button class="btn-login btn" type="button" onclick="onBtnLoginShow()">
+                                                <button class="btn-login btn" type="button" onclick="" data-toggle="modal" data-target="#ModalUserLogIn">
                                                     <span class="avater">
                                                         <img src="images/avatar/avater-2.png" alt=""></span>
                                                     <span class="language_replace">登入</span></button>
@@ -307,7 +294,7 @@
         <div id="mask_overlay" class="mask_overlay"></div>
     </header>
     <div class="main_area">
-         <!-- 各分類-單一遊戲推薦區 -->
+        <!-- 各分類-單一遊戲推薦區 -->
         <section class="section-category-dailypush">
             <div class="container">                
                 <!-- hot -->
@@ -358,18 +345,150 @@
             </div>
         </section>
 
-        
-    </div>
-    <!-- 滿版遊戲介面 -->
-    <div id="divGameFrame" class="divGameFrameBody">
-        <div class="divGameFrameWrapper">
-            <div class="btn-wrapper">
-                <div class="btn btn-game-close" onclick="CloseGameFrame()"><i class="icon icon-mask icon-error"></i></div>
+         <!-- 遊戲推薦區 -->
+         <section class="section-gamesArea">
+            <div class="container">
+                <div class="game-list">
+                    <div class="game-item">
+                        <div class="game-item-inner">
+                            <div class="game-item-link" onclick="" onmouseover="">
+                                <div class="game-item-img">
+                                    <div class="img-wrap">
+                                        <img class="gameimg lozad"
+                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/BNG/PC/CHT/242.png">
+                                    </div>
+                                </div>
+                                <div class="game-item-info">
+                                    <div class="game-item-info-inner">
+                                        <h3 class="game-item-name">火樹贏花</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <div class="game-item-inner">
+                            <div class="game-item-link" onclick="" onmouseover="">
+                                <div class="game-item-img">
+                                    <div class="img-wrap">
+                                        <img class="gameimg lozad"
+                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/BNG/PC/CHT/242.png">
+                                    </div>
+                                </div>
+                                <div class="game-item-info">
+                                    <div class="game-item-info-inner">
+                                        <h3 class="game-item-name">火樹贏花</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <div class="game-item-inner">
+                            <div class="game-item-link" onclick="" onmouseover="">
+                                <div class="game-item-img">
+                                    <div class="img-wrap">
+                                        <img class="gameimg lozad"
+                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/BNG/PC/CHT/242.png">
+                                    </div>
+                                </div>
+                                <div class="game-item-info">
+                                    <div class="game-item-info-inner">
+                                        <h3 class="game-item-name">火樹贏花</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <div class="game-item-inner">
+                            <div class="game-item-link" onclick="" onmouseover="">
+                                <div class="game-item-img">
+                                    <div class="img-wrap">
+                                        <img class="gameimg lozad"
+                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/BNG/PC/CHT/242.png">
+                                    </div>
+                                </div>
+                                <div class="game-item-info">
+                                    <div class="game-item-info-inner">
+                                        <h3 class="game-item-name">火樹贏花</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <div class="game-item-inner">
+                            <div class="game-item-link" onclick="" onmouseover="">
+                                <div class="game-item-img">
+                                    <div class="img-wrap">
+                                        <img class="gameimg lozad"
+                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/BNG/PC/CHT/242.png">
+                                    </div>
+                                </div>
+                                <div class="game-item-info">
+                                    <div class="game-item-info-inner">
+                                        <h3 class="game-item-name">火樹贏花</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <div class="game-item-inner">
+                            <div class="game-item-link" onclick="" onmouseover="">
+                                <div class="game-item-img">
+                                    <div class="img-wrap">
+                                        <img class="gameimg lozad"
+                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/BNG/PC/CHT/242.png">
+                                    </div>
+                                </div>
+                                <div class="game-item-info">
+                                    <div class="game-item-info-inner">
+                                        <h3 class="game-item-name">火樹贏花</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <div class="game-item-inner">
+                            <div class="game-item-link" onclick="" onmouseover="">
+                                <div class="game-item-img">
+                                    <div class="img-wrap">
+                                        <img class="gameimg lozad"
+                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/BNG/PC/CHT/242.png">
+                                    </div>
+                                </div>
+                                <div class="game-item-info">
+                                    <div class="game-item-info-inner">
+                                        <h3 class="game-item-name">火樹贏花</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <div class="game-item-inner">
+                            <div class="game-item-link" onclick="" onmouseover="">
+                                <div class="game-item-img">
+                                    <div class="img-wrap">
+                                        <img class="gameimg lozad"
+                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/BNG/PC/CHT/242.png">
+                                    </div>
+                                </div>
+                                <div class="game-item-info">
+                                    <div class="game-item-info-inner">
+                                        <h3 class="game-item-name">火樹贏花</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <iframe id="GameIFramePage" class="divGameFrame" name="mainiframe" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-pointer-lock"></iframe>
-        </div>
+         </section>
     </div>
-    <!-- 滿版遊戲介面 end-->
     <!-- footer -->
     <div id="footer">
         <footer class="footer-container">
@@ -542,6 +661,117 @@
                 </div>
             </div>
         </footer>
+    </div>
+      <!-- Modal Language -->
+      <div class="modal fade show customHeader" id="ModalUserLogIn" tabindex="-1" aria-hidden="true" style="display: ;">
+        <div class="modal-dialog modal-dialog-scrollable" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btn_PupLangClose">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- 登入 TAB-->
+                    <input type="radio" name="tabType" value="0" class="tabTypeInput userLogin" id="userLogin" checked="">
+                    <label for="userLogin" class="tabTypeLabel userLogin">登入</label>
+                    <!-- 註冊 TAB-->
+                    <input type="radio" name="tabType" value="1" class="tabTypeInput userRegister" id="userRegister">
+                    <label for="userRegister" class="tabTypeLabel userRegister">註冊</label>
+                    <div class="tracking-bar"></div>
+
+                    <div class="content wrapper-full">
+                         <!-- 登入 -->
+                        <div class="register-wrapper ">
+                            <div class="form-group">
+                                <label class="form-title language_replace">電子信箱</label>
+                                <div class="input-group">
+                                    <input id="" type="text" class="form-control" language_replace="placeholder" placeholder="電子信箱" onkeyup="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-title language_replace">密碼</label>
+                                <div class="input-group">
+                                    <input id="" type="password" class="form-control" language_replace="placeholder" placeholder="密碼" onkeyup="">
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="">
+                                        <i class="icon-moon icon-eye-off"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-title language_replace">驗證碼</label>
+                                <div class="input-group">
+                                    <input id="" type="text" class="form-control" language_replace="placeholder" placeholder="驗證碼" onkeyup="">
+                                </div>
+                            </div>
+                        
+                            <div class="wrapper_center">
+                                <button class="btn btn-full-main btn-roundcorner btn-popup-login" type="button" onclick="">
+                                    <span class="language_replace">登入</span>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- 註冊 -->
+                        <div class="login-wrapper">
+                            <div class="form-group">
+                                <label class="form-title language_replace">電子信箱</label>
+                                <div class="input-group">
+                                    <input id="" type="text" class="form-control" language_replace="placeholder" placeholder="電子信箱" onkeyup="">
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-icon btn-full-main btn-sendCode" type="button" onclick=""><span class="language_replace">發送驗證碼</span></button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-title language_replace">驗證碼</label>
+                                <div class="input-group">
+                                    <input id="" type="text" class="form-control" language_replace="placeholder" placeholder="驗證碼" onkeyup="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-title language_replace">密碼</label>
+                                <div class="input-group">
+                                    <input id="" type="password" class="form-control" language_replace="placeholder" placeholder="密碼" onkeyup="">
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="">
+                                        <i class="icon-moon icon-eye-off"></i>
+                                    </button>
+                                </div>
+                            
+                            </div>
+                            <div class="must-mark">
+                                <div class="custom-control custom-checkboxValue text-sm">
+                                    <label class="custom-label">
+                                        <input type="checkbox" name="chkCurrencyType" class="custom-control-input-hidden" onclick="" value="" >
+                                        <div class="custom-input checkbox"><span class="language_replace">我已年滿18歲，並且已閱讀並同意 <span class="">MAHARAJA服務條款</span> 和 <span class="">隱私政策。</span></span></div>
+                                    </label>
+                                </div>
+                                <div class="custom-control custom-checkboxValue text-sm">
+                                    <label class="custom-label">
+                                        <input type="checkbox" name="chkCurrencyType" class="custom-control-input-hidden" onclick="" value="" >
+                                        <div class="custom-input checkbox"><span class="language_replace">我同意通過我註冊的電子郵件地址接收來自第三方的活動信息和信息</span></div>
+                                    </label>
+                                </div>
+                            </div>  
+                            <div class="wrapper_center">
+                                <button class="btn btn-full-main btn-roundcorner btn-popup-register" type="button" onclick="">
+                                    <span class="language_replace">註冊</span>
+                                </button>
+                            </div>
+
+                        </div> 
+                    </div>        
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">確定</button>
+                </div> -->
+            </div>
+        </div>
     </div>
 </body>
 </html>

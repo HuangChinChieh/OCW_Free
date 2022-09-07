@@ -70,7 +70,8 @@ select:-webkit-autofill:focus {
     }
 
     &::placeholder {
-        color: transparent;
+        // color: transparent;
+        color: rgba(#000, 0.25);
     }
 
     ~ .form-label {
@@ -214,6 +215,21 @@ select:-webkit-autofill:focus {
      }
 
 }
+
+.form-title{
+    position: absolute;
+    top: -0.75em;
+    left: 0.9em;
+    z-index: 10;
+    margin: 0;
+    padding: 0 0.4em;
+    font-size: 0.8125em;
+    // color: #2C2D3A;
+    background-color: #fff;
+}
+
+
+
 
 .search__wrapper{
     display: flex;

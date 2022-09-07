@@ -237,8 +237,10 @@ $container-max-widths: (
   // xl: 1300px,  
   xl: 1440px - $innerBody-desc-navbarMenu-max-width,
 
-  desc-xml: 1544px - $innerBody-desc-navbarMenu-max-width,
-  xml: 1600px - $innerBody-desc-navbarMenu-max-width,
+  // desc-xml: 1544px - $innerBody-desc-navbarMenu-max-width,
+  // xml: 1600px - $innerBody-desc-navbarMenu-max-width,
+  desc-xml: 1440px,
+  xml: 1440px,
 
   desc-xxl: 1440px,
   xxl: 1440px,
