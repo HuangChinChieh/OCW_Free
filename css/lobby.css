@@ -219,6 +219,9 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   margin-left: -10px;
   margin-right: -10px;
 }
+.game-list .wrapper_center {
+  width: 100%;
+}
 
 .game-item {
   width: 50%;
@@ -308,19 +311,27 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 
 .modal.customHeader .modal-dialog {
   margin-top: 3rem;
-  min-height: 400px;
+  min-height: 470px;
 }
 .modal.customHeader .modal-content {
   border-radius: 30px;
   border: 0;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
+  overflow: visible;
 }
 .modal.customHeader .modal-header {
   position: absolute;
   z-index: 1;
   right: 0;
-  top: -20px;
+  top: -50px;
+  border: 0;
+}
+.modal.customHeader .modal-header .close {
+  font-size: 36px;
+  color: #fff;
+  opacity: 1;
+  font-weight: 300;
 }
 .modal.customHeader .modal-body {
   display: -webkit-box;
@@ -331,9 +342,18 @@ animation:name duration | timing-function | delay | iteration-count | direction 
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   padding: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 .modal.customHeader .content {
-  padding: 1rem;
+  padding: 2rem 1rem 1.5rem;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modal.customHeader .form-control {
+  height: calc(2.75rem + 2px);
 }
 
 .tracking-bar {
@@ -392,6 +412,10 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   display: none;
 }
 
+.login-wrapper .wrapper_center {
+  margin-top: 85px;
+}
+
 .wrapper-full {
   width: 100%;
 }
@@ -437,6 +461,24 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 .wrapper_center .btn {
   max-width: 150px;
+}
+
+.btn-more {
+  border-radius: 20px;
+  border: 1px solid #c0c0c0;
+  padding: 10px 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  margin: 20px auto;
+  max-width: 200px !important;
+}
+.btn-more:hover {
+  background-color: #ddd;
+  border: 1px solid #666;
 }
 
 @media (min-width: 576px) {

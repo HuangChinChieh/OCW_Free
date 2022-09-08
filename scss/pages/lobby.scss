@@ -283,6 +283,10 @@
     flex-flow: row wrap;
     margin-left: -10px;
     margin-right: -10px;
+
+    .wrapper_center{
+        width: 100%;
+    }
 }
 
 //遊戲推薦區
@@ -372,30 +376,49 @@ $game-item-width-xml: $game-item-width-unit/7;
 
     .modal-dialog{
         margin-top: 3rem;
-        min-height: 400px;        
+        min-height: 470px;        
     }
 
     .modal-content{
         border-radius: 30px;
         border: 0;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
+        overflow: visible;
+        // height: calc(100% - 75px);
     }
 
     .modal-header{
         position: absolute;
         z-index: 1;
         right: 0;
-        top: -20px;
+        top: -50px;
+        border: 0;
+
+        .close{
+            font-size: 36px;
+            color: #fff;
+            opacity: 1;
+            font-weight: 300;
+            // background-color: #666;
+            // border-radius: 50%;
+        }
     }
 
     .modal-body{
         display: flex;
         flex-flow: row wrap;
         padding: 0;
+        flex: 0 0 auto;
     }
 
     .content{
-        padding: 1rem;
+        padding: 2rem 1rem 1.5rem;       
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form-control{
+        height: calc(2.75rem + 2px);
     }
 }
 
@@ -472,6 +495,12 @@ $game-item-width-xml: $game-item-width-unit/7;
     display: none;
 }
 
+.login-wrapper{
+    .wrapper_center{
+        margin-top: 85px;
+    }
+}
+
 
 
 .wrapper-full{
@@ -528,7 +557,30 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
 }
 
+.btn-more {
+    border-radius: 20px;
+    border: 1px solid #c0c0c0;
+    padding: 10px 50px;
+    width: fit-content;
+    font-size: 14px;
+    color: #666;
+    
+    cursor: pointer;
+    margin: 20px auto;
+    max-width: 200px !important;
 
+    &:hover{
+        background-color: #ddd;
+        border: 1px solid #666;
+    }
+}
+
+.section-main-banner{
+    .img-wrap{
+        // height: 200px;
+    }
+   
+}
 
 
 @include media-breakpoint-up(sm) {
