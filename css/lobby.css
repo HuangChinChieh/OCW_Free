@@ -481,6 +481,22 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   border: 1px solid #666;
 }
 
+.section-main-banner .img-wrap {
+  position: relative;
+  padding-bottom: 19.2708333333%;
+  overflow: hidden;
+}
+.section-main-banner .img-wrap img {
+  position: absolute;
+  inset: 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 576px) {
   .category-dailypush-img {
     border-radius: 15px;

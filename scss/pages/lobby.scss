@@ -578,6 +578,19 @@ $game-item-width-xml: $game-item-width-unit/7;
 .section-main-banner{
     .img-wrap{
         // height: 200px;
+        position: relative;
+        padding-bottom: calc(100% * ( 370 / 1920));
+        // min-height: 480px;
+        overflow: hidden;
+
+        img{
+            position: absolute;
+            inset: 0px;
+            object-fit: cover;
+            object-position: center top;
+            width: 100%;
+            height: 100%;
+        }
     }
    
 }
