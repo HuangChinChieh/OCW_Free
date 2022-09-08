@@ -1529,8 +1529,8 @@ hr.line {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 100px;
   background: url(../images/logo-mobile.svg) left center no-repeat;
   background-size: contain;
 }
@@ -1957,6 +1957,25 @@ hr.line {
 .logIned_wrapper .avater-name {
   display: none;
 }
+.logIned_wrapper .btn-logout {
+  position: relative;
+  margin-left: 10px;
+  padding-left: 40px;
+  padding-right: 20px;
+  min-width: 4rem;
+  border-radius: 50px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(5.73%, #0057FF), to(#69C7FF));
+  background: linear-gradient(90deg, #0057FF 5.73%, #69C7FF 100%);
+  color: #fff;
+}
+.logIned_wrapper .btn-logout .avater {
+  position: absolute;
+  left: -6px;
+  height: 100%;
+}
+.logIned_wrapper .btn-logout .avater img {
+  height: 100%;
+}
 
 .horiz-list {
   display: -webkit-box;
@@ -2048,13 +2067,13 @@ hr.line {
 
 @media (min-width: 375px) {
   .navbar-brand .logo {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 120px;
   }
 }
 @media (min-width: 768px) {
   .navbar-brand .logo {
-    width: 190px;
+    width: 250px;
     background: url(../images/logo.svg) left center no-repeat;
   }
 
