@@ -359,6 +359,28 @@ $game-item-width-xml: $game-item-width-unit/7;
         width: $game-item-width-xml;
     }
 }
+//免費遊戲
+.game-free{
+    .game-item-img{
+        position: relative;
+        &::before{
+            content: '';
+            display: inline-flex;
+            width: 50%;
+            max-width: 60px;
+            height: 60px;
+           
+            background: url(../images/icon/icon-freegame.svg) left top no-repeat;
+            background-size: contain;
+            position: absolute;
+
+            left: -15px;
+            top: -15px;
+            z-index: 1;
+        }
+    }
+    
+}
 
 .text-sm{
     
