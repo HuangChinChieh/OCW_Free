@@ -224,8 +224,8 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 
 .game-item {
-  width: 50%;
-  padding: 10px;
+  width: 33.3333333333%;
+  padding: 6px;
 }
 .game-item .img-wrap {
   background: url(../images/icon/image.png) center center no-repeat;
@@ -270,7 +270,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 @media (min-width: 576px) {
   .game-item {
-    width: 33.3333333333%;
+    width: 25%;
   }
 }
 @media (min-width: 640px) {
@@ -280,12 +280,18 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 @media (min-width: 768px) {
   .game-item {
-    width: 25%;
+    width: 20%;
+    padding: 10px;
   }
 }
 @media (min-width: 992px) {
   .game-item {
     width: 20%;
+  }
+}
+@media (min-width: 1200px) {
+  .game-item {
+    width: 16.6666666667%;
   }
 }
 @media (min-width: 1440px) {
@@ -497,6 +503,80 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   height: 100%;
 }
 
+.section-Wrapper {
+  margin-bottom: 60px;
+}
+
+.title-indent {
+  text-indent: -0.775rem;
+}
+
+.section-webDesc {
+  background-color: rgb(246, 246, 246);
+  padding: 30px 0;
+}
+.section-webDesc .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sec-webDesc-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #0033B6;
+}
+
+.game-type-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 520px;
+  margin: 3.5rem auto;
+}
+.game-type-item {
+  padding: 10px;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.game-type-item .img-crop {
+  background-color: #fff;
+  border-radius: 15px;
+  width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px;
+  aspect-ratio: 1/1;
+}
+.game-type-item .img-crop img {
+  width: 100%;
+  max-width: 100px;
+}
+.game-type-name {
+  color: #0072FF;
+  font-size: 1.0625rem;
+  margin: 1rem 0;
+}
 @media (min-width: 576px) {
   .category-dailypush-img {
     border-radius: 15px;

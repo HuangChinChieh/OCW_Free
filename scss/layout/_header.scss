@@ -997,7 +997,8 @@
 
 .header_topNavBar {
     // flex: 1;
-    width: calc(100% - 50px);
+    // width: calc(100% - 50px);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     // padding-right: 15px;
