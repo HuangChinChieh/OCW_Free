@@ -513,7 +513,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 
 .section-webDesc {
   background-color: rgb(246, 246, 246);
-  padding: 30px 0;
+  padding: 60px 0;
 }
 .section-webDesc .container {
   max-width: 1200px;
@@ -527,15 +527,22 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   color: #0033B6;
 }
 
+.sec-webDesc-subtitle {
+  color: #9E00FF;
+}
+
 .game-type-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   max-width: 520px;
   margin: 3.5rem auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .game-type-item {
-  padding: 10px;
+  padding: 10px 10px;
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -606,6 +613,10 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   .category-dailypush-img img {
     -o-object-position: 100% 0;
        object-position: 100% 0;
+  }
+
+  .game-type-item {
+    padding: 10px 20px;
   }
 }
 @media (min-width: 936px) {

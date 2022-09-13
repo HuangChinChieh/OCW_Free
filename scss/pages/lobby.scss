@@ -615,7 +615,7 @@ $game-item-width-xml: $game-item-width-unit/7;
 .section-webDesc{
     background-color: rgb(246, 246, 246);
     // text-align: center;
-    padding: 30px 0;
+    padding: 60px 0;
    
     .container{
         max-width: 1200px;
@@ -631,16 +631,20 @@ $game-item-width-xml: $game-item-width-unit/7;
     color: #0033B6;
 }
 
+.sec-webDesc-subtitle{
+    color: #9E00FF;
+}
+
 .game-type{
     &-list{
-        display: flex;
-        
+        display: flex;        
         max-width: 520px;
         margin: 3.5rem auto;
+        justify-content: space-between;
     }
 
     &-item{
-        padding: 10px;
+        padding: 10px 10px;
         width: 50%;
         display: flex;
         flex-flow: column wrap;
@@ -749,6 +753,13 @@ $game-item-width-xml: $game-item-width-unit/7;
         }
 
     }
+
+    .game-type{
+        &-item{
+            padding: 10px 20px;
+        }
+    }
+
 
 }
 
