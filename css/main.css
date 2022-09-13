@@ -553,7 +553,6 @@ textarea:focus, input:focus, button:focus, select:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 640px;
   margin-bottom: 0.6rem;
 }
 .wrapper_center .btn {
@@ -2113,7 +2112,7 @@ hr.line {
   }
 }
 .header_topNavBar {
-  width: calc(100% - 50px);
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
