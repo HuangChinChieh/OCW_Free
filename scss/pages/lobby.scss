@@ -788,6 +788,12 @@ $game-item-width-xml: $game-item-width-unit/7;
 }
 
 @include media-breakpoint-up(md) {
+
+    // 各分類-單一遊戲推薦區
+    .section-category-dailypush{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
     // 各分類-單一遊戲推薦區
     .category-dailypush{
         &-inner{         
@@ -826,7 +832,6 @@ $game-item-width-xml: $game-item-width-unit/7;
                 object-position: 100% 0;
             }
         }
-
     }
 
     .game-type{
@@ -835,19 +840,9 @@ $game-item-width-xml: $game-item-width-unit/7;
         }
     }
 
-    // 遊戲推薦區
-    .section-gamesArea{
-        margin-top: 30px;
-    }
-    
-
-
 }
 
 @include media-breakpoint-up(desc-lg) {
-
-   
-
     // 各分類-單一遊戲推薦區
     .category-dailypush{
         &-inner{
@@ -895,9 +890,13 @@ $game-item-width-xml: $game-item-width-unit/7;
 
 
 
-@include media-breakpoint-up(desc-xl) {
-
-    
+@include media-breakpoint-up(xl) {
+  
+    // 各分類-單一遊戲推薦區
+    .section-category-dailypush{
+        margin-bottom: 4rem;
+        margin-top: 4rem;
+    }
     
 }
 

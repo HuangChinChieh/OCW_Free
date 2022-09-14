@@ -644,6 +644,11 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   }
 }
 @media (min-width: 768px) {
+  .section-category-dailypush {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
   .category-dailypush-inner {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -671,10 +676,6 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   .game-type-item {
     padding: 10px 20px;
   }
-
-  .section-gamesArea {
-    margin-top: 30px;
-  }
 }
 @media (min-width: 936px) {
   .category-dailypush-inner {
@@ -697,6 +698,12 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   }
   .category-dailypush-wrapper[class*=crownLevel-] .title::after {
     width: 90px;
+  }
+}
+@media (min-width: 1440px) {
+  .section-category-dailypush {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
   }
 }
 @media (min-width: 1920px) {
