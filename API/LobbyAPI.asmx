@@ -420,6 +420,14 @@ public class LobbyAPI : System.Web.Services.WebService
         return result;
     }
 
+    [WebMethod]
+    [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+    public EWin.Lobby.APIResult CheckAccountExist(string GUID, string LoginAccount) {
+        EWin.Lobby.LobbyAPI lobbyAPI = new EWin.Lobby.LobbyAPI();
+        return lobbyAPI.CheckAccountExist(GetToken(), GUID, LoginAccount);
+    }
+
+
     public class APIResult
     {
         public enumResult Result { get; set; }

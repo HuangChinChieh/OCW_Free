@@ -64,6 +64,28 @@
         });
     };
 
+    this.CheckAccountExist = function (GUID, LoginAccount, cb) {
+        var url = APIUrl + "/CheckAccountExist";
+        var postData;
+
+        postData = {
+            LoginAccount: LoginAccount,
+            GUID: GUID
+        };
+
+        callService(url, postData, 10000, function (success, text) {
+            if (success == true) {
+                var obj = getJSON(text);
+
+                if (cb)
+                    cb(true, obj);
+            } else {
+                if (cb)
+                    cb(false, text);
+            }
+        });
+    };
+
     this.GetUserInfo = function (WebSID, GUID, cb) {
         var url = APIUrl + "/GetUserInfo";
         var postData;
