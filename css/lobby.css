@@ -372,7 +372,6 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 
 .modal.customHeader .modal-dialog {
   margin-top: 3rem;
-  min-height: 470px;
 }
 .modal.customHeader .modal-content {
   border-radius: 30px;
@@ -384,15 +383,33 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 .modal.customHeader .modal-header {
   position: absolute;
   z-index: 1;
-  right: 0;
-  top: -50px;
+  right: -10px;
+  top: -45px;
   border: 0;
 }
 .modal.customHeader .modal-header .close {
-  font-size: 36px;
+  font-size: 33px;
   color: #fff;
   opacity: 1;
   font-weight: 300;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 43px;
+          flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  padding: 10px;
+  padding-top: 6px;
 }
 .modal.customHeader .modal-body {
   display: -webkit-box;
@@ -406,6 +423,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  min-height: 430px;
 }
 .modal.customHeader .content {
   padding: 2rem 1rem 1.5rem;
@@ -415,6 +433,20 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 .modal.customHeader .form-control {
   height: calc(2.75rem + 2px);
+}
+.modal.customHeader .form-group {
+  margin-bottom: 1.2rem;
+}
+.modal.customHeader .login-wrapper .form-group {
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .modal.customHeader .form-group {
+    margin-bottom: 1.5rem;
+  }
+  .modal.customHeader .login-wrapper .form-group {
+    margin-bottom: 2rem;
+  }
 }
 
 .tracking-bar {

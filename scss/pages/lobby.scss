@@ -444,7 +444,6 @@ $game-item-width-xml: $game-item-width-unit/7;
 
     .modal-dialog{
         margin-top: 3rem;
-        min-height: 470px;        
     }
 
     .modal-content{
@@ -458,17 +457,25 @@ $game-item-width-xml: $game-item-width-unit/7;
     .modal-header{
         position: absolute;
         z-index: 1;
-        right: 0;
-        top: -50px;
+        right: -10px;
+        top: -45px;
         border: 0;
 
         .close{
-            font-size: 36px;
+            font-size: 33px;
             color: #fff;
             opacity: 1;
             font-weight: 300;
-            // background-color: #666;
-            // border-radius: 50%;
+            background-color: rgba(#000, 0.65);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 43px;
+            width: 43px;
+            height: 43px;
+            padding: 10px;
+            padding-top: 6px;
         }
     }
 
@@ -477,6 +484,7 @@ $game-item-width-xml: $game-item-width-unit/7;
         flex-flow: row wrap;
         padding: 0;
         flex: 0 0 auto;
+        min-height: 430px;   
     }
 
     .content{
@@ -484,9 +492,32 @@ $game-item-width-xml: $game-item-width-unit/7;
         max-width: 420px;
         margin-left: auto;
         margin-right: auto;
+        // height: calc(100% - 65px);
     }
     .form-control{
         height: calc(2.75rem + 2px);
+    }
+    .form-group{
+        margin-bottom: 1.2rem;
+    }
+    .login-wrapper{
+        .form-group{
+            margin-bottom: 2rem;
+        }
+    }
+    
+
+    @include media-breakpoint-up(md) {
+
+        .form-group{
+            margin-bottom: 1.5rem;
+        }
+
+        .login-wrapper{
+            .form-group{
+                margin-bottom: 2rem;
+            }
+        }
     }
 }
 
@@ -559,9 +590,12 @@ $game-item-width-xml: $game-item-width-unit/7;
 
 }
 
+
 .register-wrapper, .login-wrapper{
     display: none;
 }
+
+
 
 .login-wrapper{
     .wrapper_center{
