@@ -234,11 +234,17 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 .game-list .wrapper_center {
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .game-list {
     margin-left: -10px;
     margin-right: -10px;
+  }
+  .game-list .wrapper_center {
+    margin-top: 30px;
+    margin-bottom: 50px;
   }
 }
 
@@ -253,8 +259,11 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   position: relative;
   padding-bottom: 100%;
   border-radius: 15px;
-  -webkit-transition: all 0.35s ease-in-out;
-  transition: all 0.35s ease-in-out;
+  -webkit-transition: -webkit-box-shadow 0.35s ease-in-out;
+  transition: -webkit-box-shadow 0.35s ease-in-out;
+  transition: box-shadow 0.35s ease-in-out;
+  transition: box-shadow 0.35s ease-in-out, -webkit-box-shadow 0.35s ease-in-out;
+  z-index: 1;
 }
 .game-item .img-wrap img {
   position: absolute;
@@ -268,8 +277,10 @@ animation:name duration | timing-function | delay | iteration-count | direction 
      object-position: center;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.35s ease-in-out;
-  transition: all 0.35s ease-in-out;
+  -webkit-transition: -webkit-transform 0.35s ease-in-out;
+  transition: -webkit-transform 0.35s ease-in-out;
+  transition: transform 0.35s ease-in-out;
+  transition: transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
 }
 .game-item-info {
   display: -webkit-box;
@@ -283,14 +294,14 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 .game-item-info .game-item-name {
   font-size: 0.9375rem;
 }
-.game-item-link {
+.game-item .game-item-link {
   cursor: pointer;
 }
-.game-item-link:hover .img-wrap {
+.game-item .game-item-link:hover .img-wrap {
   -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.45);
           box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.45);
 }
-.game-item-link:hover img {
+.game-item .game-item-link:hover img {
   -webkit-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
 }
@@ -353,7 +364,13 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   position: absolute;
   left: -10px;
   top: -20px;
-  z-index: 1;
+  z-index: 2;
+}
+@media (max-width: 375px) {
+  .game-free .game-item-img::before {
+    max-width: 56px;
+    height: 56px;
+  }
 }
 
 .text-sm .custom-input::before {

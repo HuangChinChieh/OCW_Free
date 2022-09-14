@@ -306,11 +306,18 @@
 
     .wrapper_center{
         width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     @include media-breakpoint-up(md) {
         margin-left: -10px;
         margin-right: -10px;
+
+        .wrapper_center{            
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
     }
 }
 
@@ -337,11 +344,12 @@ $game-item-width-xml: $game-item-width-unit/7;
         position: relative;
         padding-bottom: 100%;
         border-radius: 15px;
-        transition: all 0.35s ease-in-out;
+        transition: box-shadow 0.35s ease-in-out;
+        z-index: 1; // !!!IMPORTANT 為了HOVER 時，讓 imgae 縮放 時 不要讓圖片超過img-wrap範圍
 
         img {
-            @include img-fit;
-            transition: all 0.35s ease-in-out;
+            @include img-fit;            
+            transition: transform 0.35s ease-in-out;
         }
 
     }
@@ -356,7 +364,7 @@ $game-item-width-xml: $game-item-width-unit/7;
         }
     }
 
-    &-link{
+    .game-item-link{
         cursor: pointer;
 
         &:hover{
@@ -369,7 +377,6 @@ $game-item-width-xml: $game-item-width-unit/7;
             }        
         }
     }
-
    
 
     @include media-breakpoint-up(sm) {
@@ -403,6 +410,7 @@ $game-item-width-xml: $game-item-width-unit/7;
 .game-free{
     .game-item-img{
         position: relative;
+
         &::before{
             content: '';
             display: inline-flex;
@@ -416,7 +424,17 @@ $game-item-width-xml: $game-item-width-unit/7;
 
             left: -10px;
             top: -20px;
-            z-index: 1;
+            z-index: 2;
+        }
+    }
+
+    @media (max-width:breakpoints_BS4(sm)){
+
+        .game-item-img{
+            &::before{
+                max-width: 56px;
+                height: 56px;
+            }
         }
     }
     
@@ -663,6 +681,7 @@ $game-item-width-xml: $game-item-width-unit/7;
 
 .wrapper_center{
     margin-top: 20px;
+    
     .btn{
         max-width: 150px;
         
