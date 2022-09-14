@@ -16,67 +16,25 @@
 </head>
 
 <body>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
-    <script src="Scripts/OutSrc/js/wallet.js"></script>
-    <script type="text/javascript" src="/Scripts/MultiLanguage.js"></script>
-    <script type="text/javascript">
-        if (self != top) {
-            window.parent.API_LoadingStart();
-        }
-
-        var lang;
-        var mlp;
-
-        function init() {
-            if (self == top) {
-                window.parent.location.href = "index.aspx";
-            }
-
-            mlp = new multiLanguage();
-            lang = window.parent.API_GetLang();
-            mlp.loadLanguage(lang, function () {
-                window.parent.API_LoadingEnd();
-            });
-        }
-
-        function EWinEventNotify(eventName, isDisplay, param) {
-            switch (eventName) {
-                case "LoginState":
-                    //updateBaseInfo();
-
-                    break;
-                case "BalanceChange":
-                    break;
-                case "SetLanguage":
-                    lang = param;
-                    mlp.loadLanguage(lang);
-                    break;
-            }
-        }
-
-
-        window.onload = init;
-    </script>
     <div class="page-container">
         <!-- Heading-Top -->
         <div id="heading-top"></div>
 
         <div class="page-content">
             <div class="manual-container">
-                <h2 class="language_replace">關於我們</h2>
+                <h2 class="language_replace">会社情報</h2>
                 <div class="text-wrap">
                     <section class="section-Wrapper">
-                        <p class="language_replace">マハラジャ囊括世界上最知名的遊戲品牌，提供公正、公平的遊戲環境，免安裝的HTML5網頁技術提供了真人直播的經典遊戲，讓您不論用電腦、手機甚至電視，一個帳號多平台通用。更透過專有網路技術，達到最高規格的直播視訊同步速度與畫質，請您務必親自體驗。</p>
-                        <p class="language_replace">而除了真人遊戲外，更提供了多款高水準的老虎機和體育遊戲，結合多元性、樂趣、公正公平於一身的就是，預祝您玩得開心，用的滿意。</p>
-                        <p class="language_replace">我們也很重視您的意見，若有任何建議，還請不吝使用客服信箱告知。</p>
+                        <p class="language_replace"> マハラジャ チームは2012年からマカオ及びフィリピンの様々な大型カジノと提携し、カジノの現場で豊富なベッティングの経験を積んできました。また、現場でのプレイヤーのご意見などを集め、プレイヤーに気持ちよくゲームを楽しんでいただけるよう、使い易いバカラベッティングインターフェースを生み出しました。</p>
+                        <p class="language_replace">ライブゲーム以外は多数のクオリティの高いスロットゲームとスポーツゲームを用意しています。お客様のニーズに合わせて、楽しくフェアな環境を提供し、日々努力しております。</p>
+                        <p class="language_replace">お客様のご意見をとても重視しているため、何かご意見がございましたら、お気軽にカスタマーサービスまでご連絡ください。</p>
                     </section>
               
                         &nbsp;&nbsp;
                         <div class="company-address">
-                            <p class="name language_replace">公司名：Online Chip World Co. N.V.</p>
-                            <p class="address language_replace">地址：Zuikertuintjeweg Z/N , Willemstad, Curacao.</p>
+                            <p class="name language_replace">会社名：Online Chip World Co. N.V.</p>
+                            <p class="address language_replace">住所：Zuikertuintjeweg Z/N , Willemstad, Curacao.</p>
                         </div>
                         <!--&nbsp;&nbsp;
         <div class="company-address">
