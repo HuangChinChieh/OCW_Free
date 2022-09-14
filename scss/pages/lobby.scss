@@ -492,7 +492,7 @@ $game-item-width-xml: $game-item-width-unit/7;
         max-width: 420px;
         margin-left: auto;
         margin-right: auto;
-        // height: calc(100% - 65px);
+        height: calc(100% - 65px);
     }
     .form-control{
         height: calc(2.75rem + 2px);
@@ -599,7 +599,7 @@ $game-item-width-xml: $game-item-width-unit/7;
 
 .login-wrapper{
     .wrapper_center{
-        margin-top: 85px;
+        margin-top: 55px;
     }
 }
 

@@ -430,6 +430,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   max-width: 420px;
   margin-left: auto;
   margin-right: auto;
+  height: calc(100% - 65px);
 }
 .modal.customHeader .form-control {
   height: calc(2.75rem + 2px);
@@ -506,7 +507,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 
 .login-wrapper .wrapper_center {
-  margin-top: 85px;
+  margin-top: 55px;
 }
 
 .wrapper-full {
