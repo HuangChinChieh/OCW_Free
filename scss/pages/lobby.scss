@@ -327,9 +327,11 @@ $game-item-width-xml: $game-item-width-unit/7;
         position: relative;
         padding-bottom: 100%;
         border-radius: 15px;
+        transition: all 0.35s ease-in-out;
 
         img {
             @include img-fit;
+            transition: all 0.35s ease-in-out;
         }
 
     }
@@ -346,7 +348,19 @@ $game-item-width-xml: $game-item-width-unit/7;
 
     &-link{
         cursor: pointer;
+
+        &:hover{
+            .img-wrap{
+                box-shadow: 0 0 10px 2px rgba(#000, 0.45);
+            }
+
+            img{
+                transform: scale(1.2, 1.2);                
+            }        
+        }
     }
+
+   
 
     @include media-breakpoint-up(sm) {
         width: $game-item-width-sm;

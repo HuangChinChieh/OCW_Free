@@ -246,6 +246,8 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   position: relative;
   padding-bottom: 100%;
   border-radius: 15px;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 .game-item .img-wrap img {
   position: absolute;
@@ -259,6 +261,8 @@ animation:name duration | timing-function | delay | iteration-count | direction 
      object-position: center;
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 .game-item-info {
   display: -webkit-box;
@@ -274,6 +278,14 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 .game-item-link {
   cursor: pointer;
+}
+.game-item-link:hover .img-wrap {
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.45);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.45);
+}
+.game-item-link:hover img {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
 }
 @media (min-width: 375px) {
   .game-item {
