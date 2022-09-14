@@ -1103,12 +1103,12 @@
         }
 
         if (!$("input[name='chkCreateAccount1']").prop("checked")) {
-            showMessageOK("", mlp.getLanguageKey("尚未勾選"));
+            showMessageOK("", mlp.getLanguageKey("請勾選所有確認項目"));
             return false;
         }
 
         if (!$("input[name='chkCreateAccount2']").prop("checked")) {
-            showMessageOK("", mlp.getLanguageKey("尚未勾選"));
+            showMessageOK("", mlp.getLanguageKey("請勾選所有確認項目"));
             return false;
         }
 
@@ -1135,7 +1135,7 @@
                             }
                         } else {
                             if (o == "Timeout") {
-                                window.parent.showMessageOK(mlp.getLanguageKey("失敗"), mlp.getLanguageKey("網路異常, 請重新嘗試"), function () {
+                                window.parent.showMessageOK(mlp.getLanguageKey("失敗"), mlp.getLanguageKey("服務器異常, 請稍後再嘗試一次"), function () {
 
                                 });
                             } else {
@@ -1205,13 +1205,23 @@
         $('#ModalUserLogIn').modal('show');
     }
 
-    function openGame(gameBrand, gameName, gameLangName) {
+    function openGame(gameBrand, gameName, gameLangName, needLogin) {
 
         //先關閉Game彈出視窗(如果存在)
         if (gameWindow) {
             gameWindow.close();
         }
         var SID = "";
+
+        if (needLogin) {
+            if (!EWinWebInfo.UserLogined) {
+
+                showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("請先登入"), function () {
+                    showUserLogInModal();
+                }, null);
+                return false;
+            }
+        }
 
         if (!EWinWebInfo.UserLogined) {
             lobbyClient.GetFreeUserAccount(Math.uuid(), function (success, o) {
@@ -1220,7 +1230,7 @@
                         SID = o.Message;
                         openGameStep2(gameBrand, gameName, gameLangName, SID);
                     } else {
-                        showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("測試人數已滿,請稍後再試"));
+                        showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("試玩遊戲人數已滿,請稍後再試"));
                     }
                 }
                 else {
@@ -1361,7 +1371,7 @@
 
             var gameItem = `<div class="game-item ${gamefree}">
                         <div class="game-item-inner">
-                            <div class="game-item-link" onclick="openGame('${data.GameBrand}','${data.GameName}','${gamelangName}')" onmouseover="">
+                            <div class="game-item-link" onclick="openGame('${data.GameBrand}','${data.GameName}','${gamelangName}',${data.NeedLogin})" onmouseover="">
                                 <div class="game-item-img">
                                     <div class="img-wrap">
                                         <img class="gameimg lozad"
@@ -1380,7 +1390,7 @@
   
         }
         $('#gameList').append(`<div class="wrapper_center" id="wrapper_center">
-                        <div class="btn btn-more" onclick="appendGameItem2()">查看更多</div>
+                        <div class="btn btn-more" onclick="appendGameItem2()">${mlp.getLanguageKey("查看更多")}</div>
                     </div>`);
      
     }
@@ -1403,7 +1413,7 @@
 
             var gameItem = `<div class="game-item ${gamefree}">
                         <div class="game-item-inner">
-                            <div class="game-item-link" onclick="openGame('${data.GameBrand}','${data.GameName}','${gamelangName}')" onmouseover="">
+                            <div class="game-item-link" onclick="openGame('${data.GameBrand}','${data.GameName}','${gamelangName}',${data.NeedLogin})" onmouseover="">
                                 <div class="game-item-img">
                                     <div class="img-wrap">
                                         <img class="gameimg lozad"
@@ -2234,7 +2244,7 @@
                 <div class="container">
                     <ul class="company-info row">
                         <li class="info-item col">
-                            <a id="Footer_About" onclick="showPartialHtml('About','About.html')"><span class="language_replace">關於我們</span></a>
+                            <a id="Footer_About" onclick="showPartialHtml('','About', false, null)"><span class="language_replace">關於我們</span></a>
                         </li>
                        
                         <!-- <li class="info-item col">
@@ -2412,10 +2422,10 @@
                 <div class="modal-body">
                     <!-- 登入 TAB-->
                     <input type="radio" name="tabType" value="0" class="tabTypeInput userLogin" id="userLogin">
-                    <label for="userLogin" class="tabTypeLabel userLogin">登入</label>
+                    <label for="userLogin" class="tabTypeLabel userLogin language_replace">登入</label>
                     <!-- 註冊 TAB-->
                     <input type="radio" name="tabType" value="1" class="tabTypeInput userRegister" id="userRegister">
-                    <label for="userRegister" class="tabTypeLabel userRegister">註冊</label>
+                    <label for="userRegister" class="tabTypeLabel userRegister language_replace">註冊</label>
                     <div class="tracking-bar"></div>
 
                     <div class="content wrapper-full">
@@ -2459,7 +2469,7 @@
                                     <input id="createAccount_Mail" type="text" class="form-control" language_replace="placeholder" placeholder="電子信箱" onkeyup="">
                                 </div>
                                 <div class="input-group-append">
-                                    <button onclick="onBtnSendValidateCode()" id="divSendValidateCodeBtn" class="btn btn-icon btn-full-main btn-sendCode" type="button" onclick=""><span class="language_replace">發送驗證碼</span></button>
+                                    <button onclick="onBtnSendValidateCode()" id="divSendValidateCodeBtn" class="btn btn-icon btn-full-main btn-sendCode" type="button"><span class="language_replace">發送驗證碼</span></button>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -2485,7 +2495,7 @@
                                 <div class="custom-control custom-checkboxValue text-sm">
                                     <label class="custom-label">
                                         <input type="checkbox" name="chkCreateAccount1" class="custom-control-input-hidden" onclick="" value="" >
-                                        <div class="custom-input checkbox"><span class="language_replace">我已年滿18歲，並且已閱讀並同意 <span class="">MAHARAJA服務條款</span> 和 <span class="">隱私政策。</span></span></div>
+                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿18歲，並且已閱讀並同意 MAHARAJA服務條款和隱私政策。</span></div>
                                     </label>
                                 </div>
                                 <div class="custom-control custom-checkboxValue text-sm">
