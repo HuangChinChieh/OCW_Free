@@ -94,9 +94,13 @@
         left: 0;
         right: 0;
 
+        border-radius: 15px;
+        overflow: hidden;
+
         .img-box{
             width: 100%;
             height: 100%;
+            border-radius: 15px;
         }
 
         .img-wrap{
@@ -226,7 +230,10 @@
             color: #fff;
             flex: 1;
             &:hover{
-                background-color: darken(#00AFFF, 10%);
+                background-color: lighten(#00AFFF, 20%);
+                // background-color: #fff;
+                // border: solid 1px #00AFFF;
+                // color: #009FE8;
             }
         }
 
@@ -278,17 +285,22 @@
 
 // 遊戲推薦區
 .section-gamesArea{
-
+    // margin-top: 30px;
 }
 
 .game-list{
     display: flex;
     flex-flow: row wrap;
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: -6px;
+    margin-right: -6px;
 
     .wrapper_center{
         width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-left: -10px;
+        margin-right: -10px;
     }
 }
 
@@ -315,9 +327,11 @@ $game-item-width-xml: $game-item-width-unit/7;
         position: relative;
         padding-bottom: 100%;
         border-radius: 15px;
+        transition: all 0.35s ease-in-out;
 
         img {
             @include img-fit;
+            transition: all 0.35s ease-in-out;
         }
 
     }
@@ -328,13 +342,25 @@ $game-item-width-xml: $game-item-width-unit/7;
         margin-top: 0.5rem;
 
         .game-item-name{
-            font-size: 1rem;
+            font-size: font-resize(15px);
         }
     }
 
     &-link{
         cursor: pointer;
+
+        &:hover{
+            .img-wrap{
+                box-shadow: 0 0 10px 2px rgba(#000, 0.45);
+            }
+
+            img{
+                transform: scale(1.2, 1.2);                
+            }        
+        }
     }
+
+   
 
     @include media-breakpoint-up(sm) {
         width: $game-item-width-sm;
@@ -357,6 +383,7 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
     @include media-breakpoint-up(xl) {
         width: $game-item-width-xl;
+        padding-bottom: 30px;
     }
     @include media-breakpoint-up(xml) {
         width: $game-item-width-xml;
@@ -394,11 +421,12 @@ $game-item-width-xml: $game-item-width-unit/7;
 }
 
 .text-link{
-    color: #00AFFF;
+    color: #009FE8;
     cursor: pointer;
     padding: 0 2px;
+    text-decoration: underline;
     &:hover{
-        text-decoration: underline;
+        text-decoration-style:wavy;
     }
 
 }
@@ -416,7 +444,6 @@ $game-item-width-xml: $game-item-width-unit/7;
 
     .modal-dialog{
         margin-top: 3rem;
-        min-height: 470px;        
     }
 
     .modal-content{
@@ -430,17 +457,25 @@ $game-item-width-xml: $game-item-width-unit/7;
     .modal-header{
         position: absolute;
         z-index: 1;
-        right: 0;
-        top: -50px;
+        right: -10px;
+        top: -45px;
         border: 0;
 
         .close{
-            font-size: 36px;
+            font-size: 33px;
             color: #fff;
             opacity: 1;
             font-weight: 300;
-            // background-color: #666;
-            // border-radius: 50%;
+            background-color: rgba(#000, 0.65);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 43px;
+            width: 43px;
+            height: 43px;
+            padding: 10px;
+            padding-top: 6px;
         }
     }
 
@@ -449,6 +484,7 @@ $game-item-width-xml: $game-item-width-unit/7;
         flex-flow: row wrap;
         padding: 0;
         flex: 0 0 auto;
+        min-height: 430px;   
     }
 
     .content{
@@ -456,9 +492,32 @@ $game-item-width-xml: $game-item-width-unit/7;
         max-width: 420px;
         margin-left: auto;
         margin-right: auto;
+        height: calc(100% - 65px);
     }
     .form-control{
         height: calc(2.75rem + 2px);
+    }
+    .form-group{
+        margin-bottom: 1.2rem;
+    }
+    .login-wrapper{
+        .form-group{
+            margin-bottom: 2rem;
+        }
+    }
+    
+
+    @include media-breakpoint-up(md) {
+
+        .form-group{
+            margin-bottom: 1.5rem;
+        }
+
+        .login-wrapper{
+            .form-group{
+                margin-bottom: 2rem;
+            }
+        }
     }
 }
 
@@ -531,13 +590,16 @@ $game-item-width-xml: $game-item-width-unit/7;
 
 }
 
+
 .register-wrapper, .login-wrapper{
     display: none;
 }
 
+
+
 .login-wrapper{
     .wrapper_center{
-        margin-top: 85px;
+        margin-top: 55px;
     }
 }
 
@@ -615,11 +677,12 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
 }
 
+//主banner
 .section-main-banner{
     .img-wrap{
         // height: 200px;
         position: relative;
-        padding-bottom: calc(100% * ( 370 / 1920));
+        // padding-bottom: calc(100% * ( 370 / 1920));
         // min-height: 480px;
         overflow: hidden;
 
@@ -630,6 +693,25 @@ $game-item-width-xml: $game-item-width-unit/7;
             object-position: center top;
             width: 100%;
             height: 100%;
+        }
+    }
+
+    .hero-item{
+       
+    }
+    .mobile{
+        .img-wrap{
+            padding-bottom: calc(100% * ( 330 / 768));
+        }
+        
+    }
+
+    .desktop{
+       
+        display: none;
+        .img-wrap{
+            padding-bottom: calc(100% * ( 370 / 1920));
+            
         }
     }
    
@@ -727,18 +809,24 @@ $game-item-width-xml: $game-item-width-unit/7;
      // 各分類-單一遊戲推薦區
      .category-dailypush{
         &-img{
-            border-radius: 15px;
-            overflow: hidden;
+            // border-radius: 15px;
+            // overflow: hidden;
         }
      }
-
 
 }
 
 @include media-breakpoint-up(smg) {
+     //主banner
+     .section-main-banner{
+        .mobile{
+            display: none;
+        }
 
-
-
+        .desktop{
+            display: inherit;
+        }
+    }
 }
 
 @include media-breakpoint-up(desc-md) {
@@ -748,6 +836,12 @@ $game-item-width-xml: $game-item-width-unit/7;
 }
 
 @include media-breakpoint-up(md) {
+
+    // 各分類-單一遊戲推薦區
+    .section-category-dailypush{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
     // 各分類-單一遊戲推薦區
     .category-dailypush{
         &-inner{         
@@ -786,7 +880,6 @@ $game-item-width-xml: $game-item-width-unit/7;
                 object-position: 100% 0;
             }
         }
-
     }
 
     .game-type{
@@ -795,13 +888,9 @@ $game-item-width-xml: $game-item-width-unit/7;
         }
     }
 
-
 }
 
 @include media-breakpoint-up(desc-lg) {
-
-   
-
     // 各分類-單一遊戲推薦區
     .category-dailypush{
         &-inner{
@@ -849,9 +938,13 @@ $game-item-width-xml: $game-item-width-unit/7;
 
 
 
-@include media-breakpoint-up(desc-xl) {
-
-    
+@include media-breakpoint-up(xl) {
+  
+    // 各分類-單一遊戲推薦區
+    .section-category-dailypush{
+        margin-bottom: 4rem;
+        margin-top: 4rem;
+    }
     
 }
 

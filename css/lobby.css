@@ -61,10 +61,13 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   top: 0;
   left: 0;
   right: 0;
+  border-radius: 15px;
+  overflow: hidden;
 }
 .category-dailypush-img .img-box {
   width: 100%;
   height: 100%;
+  border-radius: 15px;
 }
 .category-dailypush-img .img-wrap {
   position: relative;
@@ -178,7 +181,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
           flex: 1;
 }
 .category-dailypush-cotentBox .btn-play:hover {
-  background-color: #008ccc;
+  background-color: #66cfff;
 }
 .category-dailypush-cotentBox .btn-like {
   background-color: transparent;
@@ -219,11 +222,17 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  margin-left: -10px;
-  margin-right: -10px;
+  margin-left: -6px;
+  margin-right: -6px;
 }
 .game-list .wrapper_center {
   width: 100%;
+}
+@media (min-width: 768px) {
+  .game-list {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 }
 
 .game-item {
@@ -237,6 +246,8 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   position: relative;
   padding-bottom: 100%;
   border-radius: 15px;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 .game-item .img-wrap img {
   position: absolute;
@@ -250,6 +261,8 @@ animation:name duration | timing-function | delay | iteration-count | direction 
      object-position: center;
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 .game-item-info {
   display: -webkit-box;
@@ -261,10 +274,18 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   margin-top: 0.5rem;
 }
 .game-item-info .game-item-name {
-  font-size: 1rem;
+  font-size: 0.9375rem;
 }
 .game-item-link {
   cursor: pointer;
+}
+.game-item-link:hover .img-wrap {
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.45);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.45);
+}
+.game-item-link:hover img {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
 }
 @media (min-width: 375px) {
   .game-item {
@@ -300,6 +321,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 @media (min-width: 1440px) {
   .game-item {
     width: 16.6666666667%;
+    padding-bottom: 30px;
   }
 }
 @media (min-width: 1600px) {
@@ -333,12 +355,14 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 
 .text-link {
-  color: #00AFFF;
+  color: #009FE8;
   cursor: pointer;
   padding: 0 2px;
+  text-decoration: underline;
 }
 .text-link:hover {
-  text-decoration: underline;
+  -webkit-text-decoration-style: wavy;
+          text-decoration-style: wavy;
 }
 
 .must-mark {
@@ -348,7 +372,6 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 
 .modal.customHeader .modal-dialog {
   margin-top: 3rem;
-  min-height: 470px;
 }
 .modal.customHeader .modal-content {
   border-radius: 30px;
@@ -360,15 +383,33 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 .modal.customHeader .modal-header {
   position: absolute;
   z-index: 1;
-  right: 0;
-  top: -50px;
+  right: -10px;
+  top: -45px;
   border: 0;
 }
 .modal.customHeader .modal-header .close {
-  font-size: 36px;
+  font-size: 33px;
   color: #fff;
   opacity: 1;
   font-weight: 300;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 43px;
+          flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  padding: 10px;
+  padding-top: 6px;
 }
 .modal.customHeader .modal-body {
   display: -webkit-box;
@@ -382,15 +423,31 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+  min-height: 430px;
 }
 .modal.customHeader .content {
   padding: 2rem 1rem 1.5rem;
   max-width: 420px;
   margin-left: auto;
   margin-right: auto;
+  height: calc(100% - 65px);
 }
 .modal.customHeader .form-control {
   height: calc(2.75rem + 2px);
+}
+.modal.customHeader .form-group {
+  margin-bottom: 1.2rem;
+}
+.modal.customHeader .login-wrapper .form-group {
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .modal.customHeader .form-group {
+    margin-bottom: 1.5rem;
+  }
+  .modal.customHeader .login-wrapper .form-group {
+    margin-bottom: 2rem;
+  }
 }
 
 .tracking-bar {
@@ -450,7 +507,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 
 .login-wrapper .wrapper_center {
-  margin-top: 85px;
+  margin-top: 55px;
 }
 
 .wrapper-full {
@@ -520,7 +577,6 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 
 .section-main-banner .img-wrap {
   position: relative;
-  padding-bottom: 19.2708333333%;
   overflow: hidden;
 }
 .section-main-banner .img-wrap img {
@@ -532,6 +588,15 @@ animation:name duration | timing-function | delay | iteration-count | direction 
      object-position: center top;
   width: 100%;
   height: 100%;
+}
+.section-main-banner .mobile .img-wrap {
+  padding-bottom: 42.96875%;
+}
+.section-main-banner .desktop {
+  display: none;
+}
+.section-main-banner .desktop .img-wrap {
+  padding-bottom: 19.2708333333%;
 }
 
 .section-Wrapper {
@@ -615,13 +680,20 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   font-size: 1.0625rem;
   margin: 1rem 0;
 }
-@media (min-width: 576px) {
-  .category-dailypush-img {
-    border-radius: 15px;
-    overflow: hidden;
+@media (min-width: 640px) {
+  .section-main-banner .mobile {
+    display: none;
+  }
+  .section-main-banner .desktop {
+    display: inherit;
   }
 }
 @media (min-width: 768px) {
+  .section-category-dailypush {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
   .category-dailypush-inner {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -671,6 +743,12 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   }
   .category-dailypush-wrapper[class*=crownLevel-] .title::after {
     width: 90px;
+  }
+}
+@media (min-width: 1440px) {
+  .section-category-dailypush {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
   }
 }
 @media (min-width: 1920px) {

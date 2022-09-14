@@ -69,7 +69,7 @@
     display: inline-flex;
     align-items: center;
     margin-right: 0;
-    cursor: pointer;
+    // cursor: pointer;
 
     .logo {
         display: inline-flex;
@@ -637,6 +637,19 @@
 
             }
         }
+
+    }
+
+    @media (max-width: breakpoints_BS4(sm)){
+        .unLogIn_wrapper .btn{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .unLogIn_wrapper .btn-login{
+            padding-left: 35px;
+        }
+        
 
     }
 
