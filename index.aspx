@@ -240,7 +240,7 @@
         CT: "<%=CT%>",
         UserLogined: false,
         FirstLoaded: false,
-        Lang: "JPN",
+        Lang: "<%=Lang%>",
         UserInfo: null,
         DeviceType: getOS(),
         IsOpenGame: false
@@ -1600,6 +1600,8 @@
     }
 
     function showPartialHtml(title, pathName, isNeedLang, cbOK) {
+        event.stopPropagation();
+        event.preventDefault();
         var realPath;
         var divMessageBox = document.getElementById("alertPartialHtml");
         var divMessageBoxOKButton = divMessageBox.querySelector(".alertPartialHtml_OK");
@@ -2672,7 +2674,7 @@
                                 <div class="custom-control custom-checkboxValue text-sm">
                                     <label class="custom-label">
                                         <input type="checkbox" name="chkCreateAccount1" class="custom-control-input-hidden" onclick="" value="" >
-                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿20歲，並且已閱讀並同意<span class="text-link">MAHARAJA服務條款</span>和<span class="text-link">隱私政策</span>。</span></div>
+                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿20歲，並且已閱讀並同意 利用規約和隱私政策。</span></div><span>私は20歳以上であり、マハラジャ無料版の<span onclick=\"showPartialHtml('', 'Rules', true, null)\" class='text-link'>利用規約</span>、および<span class='text-link' onclick=\"showPartialHtml('', 'PrivacyPolicy', true, null)\">プライバシーポリシー</span>を確認し、同意します。</span>
                                     </label>
                                 </div>
                                 <div class="custom-control custom-checkboxValue text-sm">
