@@ -61,10 +61,13 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   top: 0;
   left: 0;
   right: 0;
+  border-radius: 15px;
+  overflow: hidden;
 }
 .category-dailypush-img .img-box {
   width: 100%;
   height: 100%;
+  border-radius: 15px;
 }
 .category-dailypush-img .img-wrap {
   position: relative;
@@ -178,7 +181,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
           flex: 1;
 }
 .category-dailypush-cotentBox .btn-play:hover {
-  background-color: #008ccc;
+  background-color: #66cfff;
 }
 .category-dailypush-cotentBox .btn-like {
   background-color: transparent;
@@ -219,11 +222,17 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  margin-left: -10px;
-  margin-right: -10px;
+  margin-left: -6px;
+  margin-right: -6px;
 }
 .game-list .wrapper_center {
   width: 100%;
+}
+@media (min-width: 768px) {
+  .game-list {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 }
 
 .game-item {
@@ -261,7 +270,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   margin-top: 0.5rem;
 }
 .game-item-info .game-item-name {
-  font-size: 1rem;
+  font-size: 0.9375rem;
 }
 .game-item-link {
   cursor: pointer;
@@ -300,6 +309,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 @media (min-width: 1440px) {
   .game-item {
     width: 16.6666666667%;
+    padding-bottom: 30px;
   }
 }
 @media (min-width: 1600px) {
@@ -333,12 +343,14 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 }
 
 .text-link {
-  color: #00AFFF;
+  color: #009FE8;
   cursor: pointer;
   padding: 0 2px;
+  text-decoration: underline;
 }
 .text-link:hover {
-  text-decoration: underline;
+  -webkit-text-decoration-style: wavy;
+          text-decoration-style: wavy;
 }
 
 .must-mark {
@@ -520,7 +532,6 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 
 .section-main-banner .img-wrap {
   position: relative;
-  padding-bottom: 19.2708333333%;
   overflow: hidden;
 }
 .section-main-banner .img-wrap img {
@@ -532,6 +543,15 @@ animation:name duration | timing-function | delay | iteration-count | direction 
      object-position: center top;
   width: 100%;
   height: 100%;
+}
+.section-main-banner .mobile .img-wrap {
+  padding-bottom: 42.96875%;
+}
+.section-main-banner .desktop {
+  display: none;
+}
+.section-main-banner .desktop .img-wrap {
+  padding-bottom: 19.2708333333%;
 }
 
 .section-Wrapper {
@@ -615,10 +635,12 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   font-size: 1.0625rem;
   margin: 1rem 0;
 }
-@media (min-width: 576px) {
-  .category-dailypush-img {
-    border-radius: 15px;
-    overflow: hidden;
+@media (min-width: 640px) {
+  .section-main-banner .mobile {
+    display: none;
+  }
+  .section-main-banner .desktop {
+    display: inherit;
   }
 }
 @media (min-width: 768px) {
@@ -648,6 +670,10 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 
   .game-type-item {
     padding: 10px 20px;
+  }
+
+  .section-gamesArea {
+    margin-top: 30px;
   }
 }
 @media (min-width: 936px) {

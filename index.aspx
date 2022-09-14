@@ -2260,7 +2260,14 @@
     </header>
     <div class="main_area">
         <section class="section-main-banner">
-            <div class="img-wrap"><img src="images/main-banner.jpg" alt=""></div> 
+            <div class="hero-wrapper">
+                <div class="hero-item mobile">
+                    <div class="img-wrap"><img src="images/main-banner-m.jpg" alt=""></div>
+                </div>
+                <div class="hero-item desktop">
+                    <div class="img-wrap"><img src="images/main-banner.jpg" alt=""></div>
+                </div>
+            </div>
         </section>
         <!-- 各分類-單一遊戲推薦區 -->
         <section class="section-category-dailypush">

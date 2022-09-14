@@ -94,9 +94,13 @@
         left: 0;
         right: 0;
 
+        border-radius: 15px;
+        overflow: hidden;
+
         .img-box{
             width: 100%;
             height: 100%;
+            border-radius: 15px;
         }
 
         .img-wrap{
@@ -226,7 +230,10 @@
             color: #fff;
             flex: 1;
             &:hover{
-                background-color: darken(#00AFFF, 10%);
+                background-color: lighten(#00AFFF, 20%);
+                // background-color: #fff;
+                // border: solid 1px #00AFFF;
+                // color: #009FE8;
             }
         }
 
@@ -278,17 +285,22 @@
 
 // 遊戲推薦區
 .section-gamesArea{
-
+    // margin-top: 30px;
 }
 
 .game-list{
     display: flex;
     flex-flow: row wrap;
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: -6px;
+    margin-right: -6px;
 
     .wrapper_center{
         width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-left: -10px;
+        margin-right: -10px;
     }
 }
 
@@ -328,7 +340,7 @@ $game-item-width-xml: $game-item-width-unit/7;
         margin-top: 0.5rem;
 
         .game-item-name{
-            font-size: 1rem;
+            font-size: font-resize(15px);
         }
     }
 
@@ -357,6 +369,7 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
     @include media-breakpoint-up(xl) {
         width: $game-item-width-xl;
+        padding-bottom: 30px;
     }
     @include media-breakpoint-up(xml) {
         width: $game-item-width-xml;
@@ -394,11 +407,12 @@ $game-item-width-xml: $game-item-width-unit/7;
 }
 
 .text-link{
-    color: #00AFFF;
+    color: #009FE8;
     cursor: pointer;
     padding: 0 2px;
+    text-decoration: underline;
     &:hover{
-        text-decoration: underline;
+        text-decoration-style:wavy;
     }
 
 }
@@ -615,11 +629,12 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
 }
 
+//主banner
 .section-main-banner{
     .img-wrap{
         // height: 200px;
         position: relative;
-        padding-bottom: calc(100% * ( 370 / 1920));
+        // padding-bottom: calc(100% * ( 370 / 1920));
         // min-height: 480px;
         overflow: hidden;
 
@@ -630,6 +645,25 @@ $game-item-width-xml: $game-item-width-unit/7;
             object-position: center top;
             width: 100%;
             height: 100%;
+        }
+    }
+
+    .hero-item{
+       
+    }
+    .mobile{
+        .img-wrap{
+            padding-bottom: calc(100% * ( 330 / 768));
+        }
+        
+    }
+
+    .desktop{
+       
+        display: none;
+        .img-wrap{
+            padding-bottom: calc(100% * ( 370 / 1920));
+            
         }
     }
    
@@ -727,18 +761,24 @@ $game-item-width-xml: $game-item-width-unit/7;
      // 各分類-單一遊戲推薦區
      .category-dailypush{
         &-img{
-            border-radius: 15px;
-            overflow: hidden;
+            // border-radius: 15px;
+            // overflow: hidden;
         }
      }
-
 
 }
 
 @include media-breakpoint-up(smg) {
+     //主banner
+     .section-main-banner{
+        .mobile{
+            display: none;
+        }
 
-
-
+        .desktop{
+            display: inherit;
+        }
+    }
 }
 
 @include media-breakpoint-up(desc-md) {
@@ -794,6 +834,12 @@ $game-item-width-xml: $game-item-width-unit/7;
             padding: 10px 20px;
         }
     }
+
+    // 遊戲推薦區
+    .section-gamesArea{
+        margin-top: 30px;
+    }
+    
 
 
 }

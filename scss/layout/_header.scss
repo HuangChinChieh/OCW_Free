@@ -640,6 +640,19 @@
 
     }
 
+    @media (max-width: breakpoints_BS4(sm)){
+        .unLogIn_wrapper .btn{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .unLogIn_wrapper .btn-login{
+            padding-left: 35px;
+        }
+        
+
+    }
+
 }
 
 .avater {
