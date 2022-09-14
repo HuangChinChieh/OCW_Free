@@ -528,9 +528,19 @@ $game-item-width-xml: $game-item-width-unit/7;
     .form-group{
         margin-bottom: 1.2rem;
     }
+
     .login-wrapper{
         .form-group{
             margin-bottom: 2rem;
+        }
+    }
+
+    .wrapper_center{
+        .btn{
+            max-width: 250px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 50px;
         }
     }
     
@@ -548,6 +558,7 @@ $game-item-width-xml: $game-item-width-unit/7;
         }
     }
 }
+
 
 .tracking-bar{
     position: absolute;
@@ -665,9 +676,17 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
 }
 
-.btn-checkpwd{
+.btn.btn-checkpwd{
     color: inherit;
-    font-size: font-resize(18px);
+    font-size: font-resize(22px);
+
+    &:not(:disabled):hover{
+        color: inherit !important;
+    }
+
+    .icon-eye-off{
+        color: #888;
+    }
 }
 
 .btn-sendCode{

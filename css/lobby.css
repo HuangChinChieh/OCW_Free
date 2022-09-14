@@ -465,6 +465,12 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 .modal.customHeader .login-wrapper .form-group {
   margin-bottom: 2rem;
 }
+.modal.customHeader .wrapper_center .btn {
+  max-width: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50px;
+}
 @media (min-width: 768px) {
   .modal.customHeader .form-group {
     margin-bottom: 1.5rem;
@@ -564,9 +570,15 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   border-radius: 0 4px 4px 0;
 }
 
-.btn-checkpwd {
+.btn.btn-checkpwd {
   color: inherit;
-  font-size: 1.125rem;
+  font-size: 1.375rem;
+}
+.btn.btn-checkpwd:not(:disabled):hover {
+  color: inherit !important;
+}
+.btn.btn-checkpwd .icon-eye-off {
+  color: #888;
 }
 
 .btn-sendCode {

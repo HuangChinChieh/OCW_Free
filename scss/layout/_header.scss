@@ -192,7 +192,8 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: $zIndexs-header;
+    // z-index: $zIndexs-header;
+    z-index: 3;
     transition: all 0.3s linear;
     // color: color_main('white');
     color: $body-default-fontColor;
