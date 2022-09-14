@@ -393,6 +393,16 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
 }
 
+.text-link{
+    color: #00AFFF;
+    cursor: pointer;
+    padding: 0 2px;
+    &:hover{
+        text-decoration: underline;
+    }
+
+}
+
 .must-mark{
     color: #666666;
     margin-top: 20px;

@@ -332,6 +332,15 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   height: 1rem;
 }
 
+.text-link {
+  color: #00AFFF;
+  cursor: pointer;
+  padding: 0 2px;
+}
+.text-link:hover {
+  text-decoration: underline;
+}
+
 .must-mark {
   color: #666666;
   margin-top: 20px;
