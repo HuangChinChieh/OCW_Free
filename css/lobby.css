@@ -314,13 +314,13 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 50%;
-  max-width: 60px;
-  height: 60px;
+  max-width: 62px;
+  height: 62px;
   background: url(../images/icon/icon-freegame.svg) left top no-repeat;
   background-size: contain;
   position: absolute;
-  left: -15px;
-  top: -15px;
+  left: -10px;
+  top: -20px;
   z-index: 1;
 }
 
