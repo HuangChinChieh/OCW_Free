@@ -1994,6 +1994,18 @@
             }
         }
     }
+    
+    function showLangProp() {
+
+        if (EWinWebInfo.Lang=='JPN') {
+        $('.lang-popup-list').eq(0).find('input').eq(0).prop("checked", true);
+        } else {
+        $('.lang-popup-list').eq(0).find('input').eq(1).prop("checked", true);
+        }
+
+        $('#ModalLanguage').modal('show');
+    }
+
 
     window.onload = init;
 </script>
@@ -2382,6 +2394,7 @@
                                         <img src="/images/logo/footer/logo-va.png" alt="">
                                     </div>
                                 </div>
+                                <%--  
                                 <div class="logo-item">
                                     <div class="img-crop">
                                         <img src="/images/logo/footer/logo-pagcor.png" alt="">
@@ -2392,6 +2405,7 @@
                                         <img src="/images/logo/footer/logo-mishuha.png" alt="">
                                     </div>
                                 </div>
+                                --%>
                             </div>
                         </div>
                     </div>
@@ -2403,6 +2417,18 @@
                             <p class="address language_replace">MAHARAJA由(Online Chip World Co. N.V) 所有並營運。（註冊地址：Zuikertuintjeweg Z/N (Zuikertuin Tower), Willemstad, Curacao）取得庫拉索政府核發的執照 註冊號碼：#365 / JAZ 認可，並以此據為標準。</p>
                         </div>
                     </div>
+                    <div class="footer-lang">
+                        <div class="input-fake-select" onclick="showLangProp()">
+                            <div class="lang-list">
+                                <div class="lang-item">
+                                    <!-- icon-flag-JP/icon-flag-ZH 切換-->
+                                    <i id="" class="icon icon-mask icon-flag-JP"></i>
+                                    <span class="lang-name language_replace">日本語</span>
+                                </div>
+                            </div>
+                            <div class="has-arrow"><i class="arrow"></i></div>
+                        </div>
+                    </div>
                     <div class="footer-copyright">
                         <p class="language_replace">Copyright © 2022 マハラジャ. All Rights Reserved.</p>
                     </div>
@@ -2410,7 +2436,8 @@
             </div>
         </footer>
     </div>
-      <!-- Modal Language -->
+    
+      <!-- Modal Login/Register -->
       <div class="modal fade show customHeader" id="ModalUserLogIn" tabindex="-1" aria-hidden="true" style="display: ;">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" >
             <div class="modal-content">
@@ -2520,6 +2547,60 @@
             </div>
         </div>
     </div>
+
+     <!-- Modal Language -->
+     <div class="modal fade footer-center" id="ModalLanguage" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><span class="language_replace">請選擇語言</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btn_PupLangClose">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="lang-popup-wrapper">
+                        <ul class="lang-popup-list">
+                            <li class="lang-item custom-control custom-radioValue-lang" onclick="switchLang('JPN', true)">
+                                <label class="custom-label">
+                                    <input type="radio" name="button-langExchange" class="custom-control-input-hidden"
+                                        checked>
+                                    <div class="custom-input radio-button">
+                                        <span class="flag JP"><i class="icon icon-mask icon-flag-JP"></i></span>
+                                        <span class="name">日本語</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <%--<li class="lang-item custom-control custom-radioValue-lang" onclick="switchLang('ENG', true)">
+                                <label class="custom-label">
+                                    <input type="radio" name="button-langExchange" class="custom-control-input-hidden">
+                                    <div class="custom-input radio-button">
+                                        <span class="flag EN"><i class="icon icon-mask icon-flag-EN"></i></span>
+                                        <span class="name">English</span>
+                                    </div>
+                                </label>
+                            </li>--%>
+                            <li class="lang-item custom-control custom-radioValue-lang" onclick="switchLang('CHT', true)">
+                                <label class="custom-label">
+                                    <input type="radio" name="button-langExchange" class="custom-control-input-hidden">
+                                    <div class="custom-input radio-button">
+                                        <span class="flag ZH"><i class="icon icon-mask icon-flag-ZH"></i></span>
+                                        <span class="name">繁體中文</span>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <%--<div class="modal-footer">
+                    <button type="button" class="btn btn-primary">確定</button>
+                </div>--%>
+            </div>
+        </div>
+    </div>
+
 
      <!--alert Msg-->
     <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="alertMsg" aria-hidden="true" id="alertMsg" style="z-index: 10000;">

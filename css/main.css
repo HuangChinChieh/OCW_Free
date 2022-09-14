@@ -2422,6 +2422,21 @@ hr.line {
   text-align: center;
   font-size: 0.8125em;
 }
+.footer-lang {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.footer-lang .lang-item {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer-lang .lang-item .icon {
+  margin-right: 5px;
+}
 @media (min-width: 375px) {
   .footer-inner .partner .logo-item {
     width: 20%;

@@ -15,6 +15,7 @@
         }
     }
 
+    
 
 
     &-inner {
@@ -153,6 +154,21 @@
             font-size: .8125em;
         }
     }
+
+    &-lang{
+        max-width: 300px;
+        margin: 0 auto;     
+        
+        .lang-item{
+            display: inline-flex;
+            align-items: center;
+            
+            .icon{
+                margin-right: 5px;
+            }
+        }
+    }
+
 
 
 
