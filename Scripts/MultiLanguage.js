@@ -274,17 +274,15 @@
 
                 _LanguageContextJSON = [];
 
-                loadLanguageFromFile("/_Global." + lang + ".json", function () {
-                    loadLanguageFromFile(pageName + "." + lang + ".json", function () {
-                        if (orderPageName) {
-                            loadLanguageFromFile(`/${orderPageName}.` + lang + ".json", function () {
-                                DoLanguageReplace(cb);
-                            })
-                        } else {
+                loadLanguageFromFile(pageName + "." + lang + ".json", function () {
+                    if (orderPageName) {
+                        loadLanguageFromFile(`/${orderPageName}.` + lang + ".json", function () {
                             DoLanguageReplace(cb);
-                        }
-                       
-                    });
+                        })
+                    } else {
+                        DoLanguageReplace(cb);
+                    }
+
                 });
             } else {
                 if (cb)
