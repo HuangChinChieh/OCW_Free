@@ -5,6 +5,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   background: rgba(204, 204, 204, 0.3);
   color: inherit;
   border-color: rgba(204, 204, 204, 0.3);
+  cursor: not-allowed;
 }
 
 .section-category-dailypush {
