@@ -174,7 +174,18 @@ public class LobbyAPI : System.Web.Services.WebService
                 }
             }
 
-            R.Result = EWin.Lobby.enumResult.OK;
+            //3.Login
+
+            SendBodyObj = Newtonsoft.Json.Linq.JObject.Parse(BasicBodyString);
+            SendBodyObj.Add("LoginAccount", "test" + AccountIndex.ToString());
+            SendBodyObj.Add("UserIP", "");
+
+            CallRet = Newtonsoft.Json.Linq.JObject.Parse(CodingControl.GetWebTextContent(BasicURL + "/UserLogin", "POST", SendBodyObj.ToString(Newtonsoft.Json.Formatting.None), null, "application/json"));
+
+            if ((int)CallRet["d"]["ResultState"] == 0) {
+                R.Message = CallRet["d"]["SID"].ToString();
+                R.Result = EWin.Lobby.enumResult.OK;
+            }
 
         } catch (Exception) {
         }
@@ -408,6 +419,14 @@ public class LobbyAPI : System.Web.Services.WebService
         }
         return result;
     }
+
+    [WebMethod]
+    [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+    public EWin.Lobby.APIResult CheckAccountExist(string GUID, string LoginAccount) {
+        EWin.Lobby.LobbyAPI lobbyAPI = new EWin.Lobby.LobbyAPI();
+        return lobbyAPI.CheckAccountExist(GetToken(), GUID, LoginAccount);
+    }
+
 
     public class APIResult
     {

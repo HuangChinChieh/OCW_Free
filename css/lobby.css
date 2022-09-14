@@ -177,6 +177,9 @@ animation:name duration | timing-function | delay | iteration-count | direction 
       -ms-flex: 1;
           flex: 1;
 }
+.category-dailypush-cotentBox .btn-play:hover {
+  background-color: #008ccc;
+}
 .category-dailypush-cotentBox .btn-like {
   background-color: transparent;
   border: solid 1px #fff;
@@ -314,19 +317,28 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 50%;
-  max-width: 60px;
-  height: 60px;
+  max-width: 62px;
+  height: 62px;
   background: url(../images/icon/icon-freegame.svg) left top no-repeat;
   background-size: contain;
   position: absolute;
-  left: -15px;
-  top: -15px;
+  left: -10px;
+  top: -20px;
   z-index: 1;
 }
 
 .text-sm .custom-input::before {
   width: 1rem;
   height: 1rem;
+}
+
+.text-link {
+  color: #00AFFF;
+  cursor: pointer;
+  padding: 0 2px;
+}
+.text-link:hover {
+  text-decoration: underline;
 }
 
 .must-mark {
