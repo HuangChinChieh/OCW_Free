@@ -195,11 +195,23 @@ public class LobbyAPI : System.Web.Services.WebService
 
     [WebMethod]
     [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    public EWin.Lobby.APIResult CreateAccount(string GUID, string LoginAccount, string LoginPassword, string ParentPersonCode, string CurrencyList, EWin.Lobby.PropertySet[] PS)
+    public EWin.Lobby.APIResult CreateAccount(string GUID, string LoginAccount, string LoginPassword, string ParentPersonCode, string CurrencyList, EWin.Lobby.PropertySet[] PS,EWinOfficial.LobbyAPI.PropertySet[] PS2)
     {
         EWin.Lobby.LobbyAPI lobbyAPI = new EWin.Lobby.LobbyAPI();
         EWin.Lobby.APIResult R = new EWin.Lobby.APIResult();
         R = lobbyAPI.CreateAccount(GetToken(), GUID, LoginAccount, LoginPassword, ParentPersonCode, CurrencyList, PS);
+        if (R.Result == EWin.Lobby.enumResult.OK)
+        {
+            EWinOfficial.LobbyAPI.LobbyAPI officiallobbyAPI = new EWinOfficial.LobbyAPI.LobbyAPI();
+            string Token;
+            int RValue;
+            Random Ran = new Random();
+            RValue = Ran.Next(100000, 9999999);
+            Token = EWinWeb.CreateToken("fdb40b9c-1082-4541-8f08-0a696c00b4ce", "448S17685539176887", RValue.ToString());
+
+            var R2 = officiallobbyAPI.CreateAccount(Token, GUID, LoginAccount, LoginPassword, ParentPersonCode, CurrencyList, PS2);
+
+        }
 
         return R;
     }

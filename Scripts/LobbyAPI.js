@@ -118,7 +118,8 @@
             LoginPassword: LoginPassword,
             ParentPersonCode: ParentPersonCode,
             CurrencyList: CurrencyList,
-            PS: PS
+            PS: PS,
+            PS2: PS
         };
 
         callService(url, postData, 10000, function (success, text) {
