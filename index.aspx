@@ -1191,7 +1191,7 @@
 
         let countInterval = setInterval(function () {
             let BtnSend = document.getElementById("divSendValidateCodeBtn");
-
+            $('#divSendValidateCodeBtn').attr('disabled', true);
             //min = parseInt(secondsRemaining / 60);
             //sec = parseInt(secondsRemaining % 60);
             BtnSend.innerText = secondsRemaining + "s"
@@ -1207,6 +1207,7 @@
 
     function SetBtnSend() {
         let BtnSend = document.getElementById("divSendValidateCodeBtn");
+        $('#divSendValidateCodeBtn').attr('disabled', false);
         BtnSend.innerText = mlp.getLanguageKey("驗證碼");
         isSent = false;
     }
@@ -1219,7 +1220,7 @@
                     if (o.Result != 0) {
                         validateEmail(mail, function (success1) {
                             //test
-                            if (true) {
+                            if (success1) {
                                 lobbyClient.SetUserMail(Math.uuid(), 0, 0, mail, "", "", "", function (success2, o) {
                                     closeLoading();
                                     if (success2) {
@@ -1299,7 +1300,7 @@
                             if (o.Result == 0) {
 
                                 window.parent.showMessageOK(mlp.getLanguageKey("成功"), mlp.getLanguageKey("註冊成功, 請按登入按鈕進行登入"), function () {
-                                    $('#ModalUserLogIn').modal('hide');
+                                    $('#userLogin').click();
                                 });
                             } else {
                                 window.parent.showMessageOK(mlp.getLanguageKey("失敗"), mlp.getLanguageKey(o.Message), function () {
