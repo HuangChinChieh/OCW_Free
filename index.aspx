@@ -954,6 +954,7 @@
     }
 
     function CloseGameFrame() {
+        $('body').removeClass('modal-open');
         //滿版遊戲介面
         $('#divGameFrame').css('display', 'none');
         //滿版遊戲介面 end
@@ -1312,6 +1313,7 @@
     }
 
     function GameLoadPage(url, gameBrand, gameName) {
+        $('body').addClass('modal-open');
         var IFramePage = document.getElementById("GameIFramePage");
 
         if (IFramePage != null) {
@@ -2522,7 +2524,7 @@
                                 <div class="custom-control custom-checkboxValue text-sm">
                                     <label class="custom-label">
                                         <input type="checkbox" name="chkCreateAccount1" class="custom-control-input-hidden" onclick="" value="" >
-                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿18歲，並且已閱讀並同意 MAHARAJA服務條款和隱私政策。</span></div>
+                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿20歲，並且已閱讀並同意 MAHARAJA服務條款和隱私政策。</span></div>
                                     </label>
                                 </div>
                                 <div class="custom-control custom-checkboxValue text-sm">
