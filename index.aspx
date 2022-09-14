@@ -82,6 +82,8 @@
         Response.Redirect(EWinWeb.EWinGameUrl + "/Game/Login.aspx?CT=" +   HttpUtility.UrlEncode(CT)   + "&KeepLogin=0"  + "&Action=Custom" + "&Callback=" + HttpUtility.UrlEncode(EwinCallBackUrl) + "&CallbackHash=" + CodingControl.GetMD5(EwinCallBackUrl + EWinWeb.PrivateKey, false));
     }
 
+
+
     EWin.Lobby.LobbyAPI lobbyAPI = new EWin.Lobby.LobbyAPI();
 
     RValue = R.Next(100000, 9999999);
@@ -697,6 +699,32 @@
             NeedLogin: true
         }
     ];
+
+    function eyeTogger() {
+        if ($('#login_Password').attr('type') == 'password') {
+            //  <!-- class切換=>icon-eye-off/icon-eye -->
+            $('#eyeTogger_i').removeClass('icon-eye-off');
+            $('#eyeTogger_i').addClass('icon-eye');
+            $('#login_Password').attr('type', 'text');
+        } else {
+            $('#eyeTogger_i').addClass('icon-eye-off');
+            $('#eyeTogger_i').removeClass('icon-eye');
+            $('#login_Password').attr('type', 'password');
+        }
+    }
+
+    function eyeTogger2() {
+        if ($('#createAccount_Password').attr('type') == 'password') {
+            //  <!-- class切換=>icon-eye-off/icon-eye -->
+            $('#eyeTogger2_i').removeClass('icon-eye-off');
+            $('#eyeTogger2_i').addClass('icon-eye');
+            $('#createAccount_Password').attr('type', 'text');
+        } else {
+            $('#eyeTogger2_i').addClass('icon-eye-off');
+            $('#eyeTogger2_i').removeClass('icon-eye');
+            $('#createAccount_Password').attr('type', 'password');
+        }
+    }
 
     function switchLang(Lang, isReload) {
         showLoading();
@@ -1402,7 +1430,7 @@
         $('.headerGameName').text(gameLangName);
 
         if (gameBrand.toUpperCase() == "EWin".toUpperCase() || gameBrand.toUpperCase() == "YS".toUpperCase()) {
-            gameWindow = window.open("/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx" + "&CT=" + EWinWebInfo.CT, "Maharaja Game")
+            gameWindow = window.open("/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx", "Maharaja Game")
             } else {
                 if (EWinWebInfo.DeviceType == 1) {
                     gameWindow = window.open("/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx", "Maharaja Game");
@@ -2608,9 +2636,9 @@
                                     <input id="login_Password" type="password" class="form-control" language_replace="placeholder" placeholder="密碼" name="LoginPassword">
                                 </div>
                                 <div class="input-group-append">
-                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="$('#login_Password').attr('type','text')">
+                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="eyeTogger()">
                                         <!-- class切換=>icon-eye-off/icon-eye -->
-                                        <i class="icon-moon icon-eye-off"></i>
+                                        <i id="eyeTogger_i" class="icon-moon icon-eye-off"></i>
                                     </button>
                                 </div>
                             </div>
@@ -2648,9 +2676,9 @@
                                     <input id="createAccount_Password" type="password" class="form-control" language_replace="placeholder" placeholder="密碼" onkeyup="">
                                 </div>
                                 <div class="input-group-append">
-                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="$('#createAccount_Password').attr('type','text')">
+                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="eyeTogger2()">
                                         <!-- class切換=>icon-eye-off/icon-eye -->
-                                        <i class="icon-moon icon-eye-off"></i>
+                                        <i id="eyeTogger2_i" class="icon-moon icon-eye-off"></i>
                                     </button>
                                 </div>
                             
