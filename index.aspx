@@ -82,6 +82,8 @@
         Response.Redirect(EWinWeb.EWinGameUrl + "/Game/Login.aspx?CT=" +   HttpUtility.UrlEncode(CT)   + "&KeepLogin=0"  + "&Action=Custom" + "&Callback=" + HttpUtility.UrlEncode(EwinCallBackUrl) + "&CallbackHash=" + CodingControl.GetMD5(EwinCallBackUrl + EWinWeb.PrivateKey, false));
     }
 
+
+
     EWin.Lobby.LobbyAPI lobbyAPI = new EWin.Lobby.LobbyAPI();
 
     RValue = R.Next(100000, 9999999);
@@ -238,7 +240,7 @@
         CT: "<%=CT%>",
         UserLogined: false,
         FirstLoaded: false,
-        Lang: "JPN",
+        Lang: "<%=Lang%>",
         UserInfo: null,
         DeviceType: getOS(),
         IsOpenGame: false
@@ -246,10 +248,10 @@
 
     var jsonGames = [
         {
-            GameName: '33',
-            GameBrand: 'KGS',
-            GameLangNameCHT: '夜店',
-            GameLangNameJPN: 'ナイトクラブ',
+            GameName: '36',
+            GameBrand: 'CQ9',
+            GameLangNameCHT: '夜店大亨',
+            GameLangNameJPN: 'パブタイクーン',
             NeedLogin: false
         }, {
             GameName: 'GonzoTH000000001',
@@ -264,36 +266,39 @@
             GameLangNameJPN: 'ブラックウルフ',
             NeedLogin: false
         }, {
-            GameName: '18',
-            GameBrand: 'PG',
-            GameLangNameCHT: '逆襲的小紅帽',
-            GameLangNameJPN: 'リトルレッド vs ビッグウルフ',
+            GameName: 'thelastsundown',
+            GameBrand: 'PNG',
+            GameLangNameCHT: '終極日落',
+            GameLangNameJPN: 'ザ ラースト サンダウン',
             NeedLogin: false
-        }, {
-            GameName: '1',
-            GameBrand: 'BBIN',
-            GameLangNameCHT: '糖果派對3',
-            GameLangNameJPN: 'キャンディーパーティ3',
-            NeedLogin: true
-        }, {
-            GameName: '1187',
-            GameBrand: 'BBIN',
-            GameLangNameCHT: '魚蝦蟹開了',
-            GameLangNameJPN: 'フーヘイハウ',
-            NeedLogin: true
-        }, {
-            GameName: '1336',
-            GameBrand: 'BBIN',
-            GameLangNameCHT: '酷搜馬戲團',
-            GameLangNameJPN: 'クソサーカス',
-            NeedLogin: true
-        }, {
-            GameName: '76',
-            GameBrand: 'BBIN',
-            GameLangNameCHT: '開心消消樂',
-            GameLangNameJPN: 'アーニポップ',
-            NeedLogin: true
-        }, {
+        },
+        //{
+        //    GameName: '1',
+        //    GameBrand: 'BBIN',
+        //    GameLangNameCHT: '糖果派對3',
+        //    GameLangNameJPN: 'キャンディーパーティ3',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '1187',
+        //    GameBrand: 'BBIN',
+        //    GameLangNameCHT: '魚蝦蟹開了',
+        //    GameLangNameJPN: 'フーヘイハウ',
+        //    NeedLogin: true
+        //}, {
+        //    GameName: '1336',
+        //    GameBrand: 'BBIN',
+        //    GameLangNameCHT: '酷搜馬戲團',
+        //    GameLangNameJPN: 'クソサーカス',
+        //    NeedLogin: true
+        //}, {
+        //    GameName: '76',
+        //    GameBrand: 'BBIN',
+        //    GameLangNameCHT: '開心消消樂',
+        //    GameLangNameJPN: 'アーニポップ',
+        //    NeedLogin: true
+        //},
+        {
             GameName: '202',
             GameBrand: 'BNG',
             GameLangNameCHT: '太陽神殿2 - 集鴻運',
@@ -409,146 +414,147 @@
             GameLangNameJPN: 'EWinゲーミング',
             NeedLogin: true
         },
+        //{
+        //    GameName: '889',
+        //    GameBrand: 'GMW',
+        //    GameLangNameCHT: '小紅帽',
+        //    GameLangNameJPN: 'レッド',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '917',
+        //    GameBrand: 'GMW',
+        //    GameLangNameCHT: '聖花',
+        //    GameLangNameJPN: 'セイクリドフラワー',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '925',
+        //    GameBrand: 'GMW',
+        //    GameLangNameCHT: '豪華鑽石升級版',
+        //    GameLangNameJPN: 'エクストラダイアモンドデュラクス',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '755',
+        //    GameBrand: 'HB',
+        //    GameLangNameCHT: '海洋之音',
+        //    GameLangNameJPN: 'オーシャンズコール',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '757',
+        //    GameBrand: 'HB',
+        //    GameLangNameCHT: '超級龍捲風',
+        //    GameLangNameJPN: 'スーパーツイスター',
+        //    NeedLogin: true
+        //},
+
         {
-            GameName: '889',
-            GameBrand: 'GMW',
-            GameLangNameCHT: '小紅帽',
-            GameLangNameJPN: 'レッド',
+            GameName: '112',
+            GameBrand: 'CQ9',
+            GameLangNameCHT: '盜法老墓',
+            GameLangNameJPN: 'ピラミッドレイダー',
             NeedLogin: true
         },
         {
-            GameName: '917',
-            GameBrand: 'GMW',
-            GameLangNameCHT: '聖花',
-            GameLangNameJPN: 'セイクリドフラワー',
+            GameName: '140',
+            GameBrand: 'CQ9',
+            GameLangNameCHT: '火燒連環船2',
+            GameLangNameJPN: 'ファイアーレットクリフ2',
             NeedLogin: true
         },
         {
-            GameName: '925',
-            GameBrand: 'GMW',
-            GameLangNameCHT: '豪華鑽石升級版',
-            GameLangNameJPN: 'エクストラダイアモンドデュラクス',
+            GameName: '161',
+            GameBrand: 'CQ9',
+            GameLangNameCHT: '大力神',
+            GameLangNameJPN: 'ハーキュリーズ',
             NeedLogin: true
         },
         {
-            GameName: '755',
-            GameBrand: 'HB',
-            GameLangNameCHT: '海洋之音',
-            GameLangNameJPN: 'オーシャンズコール',
+            GameName: '201',
+            GameBrand: 'CQ9',
+            GameLangNameCHT: '拳霸',
+            GameLangNameJPN: 'ムエタイ',
             NeedLogin: true
         },
         {
-            GameName: '757',
-            GameBrand: 'HB',
-            GameLangNameCHT: '超級龍捲風',
-            GameLangNameJPN: 'スーパーツイスター',
+            GameName: '79',
+            GameBrand: 'CQ9',
+            GameLangNameCHT: '變色龍',
+            GameLangNameJPN: 'カメレオン',
             NeedLogin: true
         },
-        {
-            GameName: '3',
-            GameBrand: 'KGS',
-            GameLangNameCHT: '甜點廚房',
-            GameLangNameJPN: 'スイーティーキッチン',
-            NeedLogin: true
-        },
-        {
-            GameName: '32',
-            GameBrand: 'KGS',
-            GameLangNameCHT: '神話時代',
-            GameLangNameJPN: 'エイジ オブ ミソロジー',
-            NeedLogin: true
-        },
-        {
-            GameName: '8',
-            GameBrand: 'KGS',
-            GameLangNameCHT: '糖果派對',
-            GameLangNameJPN: 'キャンディーパーティー',
-            NeedLogin: true
-        },
-        {
-            GameName: '5',
-            GameBrand: 'KGS',
-            GameLangNameCHT: '人魚寶藏',
-            GameLangNameJPN: 'マーメイド',
-            NeedLogin: true
-        },
-        {
-            GameName: '15',
-            GameBrand: 'KGS',
-            GameLangNameCHT: '拉布列康',
-            GameLangNameJPN: 'レプラコーン',
-            NeedLogin: true
-        },
-        {
-            GameName: '348',
-            GameBrand: 'MG',
-            GameLangNameCHT: '神聖鑽石',
-            GameLangNameJPN: 'ディバインダイヤモンズ',
-            NeedLogin: true
-        },
-        {
-            GameName: '359',
-            GameBrand: 'MG',
-            GameLangNameCHT: '亞歷山大女王',
-            GameLangNameJPN: 'クイーン オブ アレキサンドリア™',
-            NeedLogin: true
-        },
-        {
-            GameName: '367',
-            GameBrand: 'MG',
-            GameLangNameCHT: '鬼狩',
-            GameLangNameJPN: 'オニハンター',
-            NeedLogin: true
-        },
-        {
-            GameName: '387',
-            GameBrand: 'MG',
-            GameLangNameCHT: '奇遇宮殿',
-            GameLangNameJPN: 'アドベンチャーパレス',
-            NeedLogin: true
-        },
-        {
-            GameName: '400',
-            GameBrand: 'MG',
-            GameLangNameCHT: '愛麗娜',
-            GameLangNameJPN: 'アリアナ',
-            NeedLogin: true
-        },
-        {
-            GameName: '426',
-            GameBrand: 'MG',
-            GameLangNameCHT: '好運經紀人',
-            GameLangNameJPN: 'ブッキーオブオッズ',
-            NeedLogin: true
-        },
-        {
-            GameName: '458',
-            GameBrand: 'MG',
-            GameLangNameCHT: '板球明星',
-            GameLangNameJPN: 'クリケットスター',
-            NeedLogin: true
-        },
-        {
-            GameName: '495',
-            GameBrand: 'MG',
-            GameLangNameCHT: '美女槍手叢林激戰',
-            GameLangNameJPN: 'ガールズ ウィズ ガンズ-ジャングル ヒート',
-            NeedLogin: true
-        },
-        {
-            GameName: '935',
-            GameBrand: 'NE',
-            GameLangNameCHT: '元素：覺醒',
-            GameLangNameJPN: 'エレメンツ：ザ アウェイクニング',
-            NeedLogin: true
-        },
-        {
-            GameName: '965',
-            GameBrand: 'NE',
-            GameLangNameCHT: '尋蝶記 2',
-            GameLangNameJPN: 'バタフライスタックス2',
-            NeedLogin: true
-        },
+        //{
+        //    GameName: '348',
+        //    GameBrand: 'MG',
+        //    GameLangNameCHT: '神聖鑽石',
+        //    GameLangNameJPN: 'ディバインダイヤモンズ',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '359',
+        //    GameBrand: 'MG',
+        //    GameLangNameCHT: '亞歷山大女王',
+        //    GameLangNameJPN: 'クイーン オブ アレキサンドリア™',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '367',
+        //    GameBrand: 'MG',
+        //    GameLangNameCHT: '鬼狩',
+        //    GameLangNameJPN: 'オニハンター',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '387',
+        //    GameBrand: 'MG',
+        //    GameLangNameCHT: '奇遇宮殿',
+        //    GameLangNameJPN: 'アドベンチャーパレス',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '400',
+        //    GameBrand: 'MG',
+        //    GameLangNameCHT: '愛麗娜',
+        //    GameLangNameJPN: 'アリアナ',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '426',
+        //    GameBrand: 'MG',
+        //    GameLangNameCHT: '好運經紀人',
+        //    GameLangNameJPN: 'ブッキーオブオッズ',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '458',
+        //    GameBrand: 'MG',
+        //    GameLangNameCHT: '板球明星',
+        //    GameLangNameJPN: 'クリケットスター',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '495',
+        //    GameBrand: 'MG',
+        //    GameLangNameCHT: '美女槍手叢林激戰',
+        //    GameLangNameJPN: 'ガールズ ウィズ ガンズ-ジャングル ヒート',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '935',
+        //    GameBrand: 'NE',
+        //    GameLangNameCHT: '元素：覺醒',
+        //    GameLangNameJPN: 'エレメンツ：ザ アウェイクニング',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '965',
+        //    GameBrand: 'NE',
+        //    GameLangNameCHT: '尋蝶記 2',
+        //    GameLangNameJPN: 'バタフライスタックス2',
+        //    NeedLogin: true
+        //},
         {
             GameName: 'eastereggs',
             GameBrand: 'PNG',
@@ -605,20 +611,20 @@
             GameLangNameJPN: 'ベガスナイト',
             NeedLogin: true
         },
-        {
-            GameName: '1116',
-            GameBrand: 'RT',
-            GameLangNameCHT: '波斯寶藏',
-            GameLangNameJPN: 'ペルシアンフォーチュン',
-            NeedLogin: true
-        },
-        {
-            GameName: '1096',
-            GameBrand: 'RT',
-            GameLangNameCHT: '幸運魔法師',
-            GameLangNameJPN: 'ラッキーウィザード',
-            NeedLogin: true
-        },
+        //{
+        //    GameName: '1116',
+        //    GameBrand: 'RT',
+        //    GameLangNameCHT: '波斯寶藏',
+        //    GameLangNameJPN: 'ペルシアンフォーチュン',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '1096',
+        //    GameBrand: 'RT',
+        //    GameLangNameCHT: '幸運魔法師',
+        //    GameLangNameJPN: 'ラッキーウィザード',
+        //    NeedLogin: true
+        //},
         {
             GameName: 'masquerade',
             GameBrand: 'PNG',
@@ -674,29 +680,56 @@
             GameLangNameCHT: '調皮的皇帝',
             GameLangNameJPN: 'チーキーエンペラー',
             NeedLogin: true
-        },
-        {
-            GameName: '1087',
-            GameBrand: 'RT',
-            GameLangNameCHT: '王者之劍',
-            GameLangNameJPN: 'レジェンダリーエクスカリバー',
-            NeedLogin: true
-        },
-        {
-            GameName: '1146',
-            GameBrand: 'RT',
-            GameLangNameCHT: '相撲大賞',
-            GameLangNameJPN: 'スモウスピン',
-            NeedLogin: true
-        },
-        {
-            GameName: '1009',
-            GameBrand: 'RT',
-            GameLangNameCHT: '一萬零一夜',
-            GameLangNameJPN: '10001ナイツ',
-            NeedLogin: true
         }
+        //,
+        //{
+        //    GameName: '1087',
+        //    GameBrand: 'RT',
+        //    GameLangNameCHT: '王者之劍',
+        //    GameLangNameJPN: 'レジェンダリーエクスカリバー',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '1146',
+        //    GameBrand: 'RT',
+        //    GameLangNameCHT: '相撲大賞',
+        //    GameLangNameJPN: 'スモウスピン',
+        //    NeedLogin: true
+        //},
+        //{
+        //    GameName: '1009',
+        //    GameBrand: 'RT',
+        //    GameLangNameCHT: '一萬零一夜',
+        //    GameLangNameJPN: '10001ナイツ',
+        //    NeedLogin: true
+        //}
     ];
+
+    function eyeTogger() {
+        if ($('#login_Password').attr('type') == 'password') {
+            //  <!-- class切換=>icon-eye-off/icon-eye -->
+            $('#eyeTogger_i').removeClass('icon-eye-off');
+            $('#eyeTogger_i').addClass('icon-eye');
+            $('#login_Password').attr('type', 'text');
+        } else {
+            $('#eyeTogger_i').addClass('icon-eye-off');
+            $('#eyeTogger_i').removeClass('icon-eye');
+            $('#login_Password').attr('type', 'password');
+        }
+    }
+
+    function eyeTogger2() {
+        if ($('#createAccount_Password').attr('type') == 'password') {
+            //  <!-- class切換=>icon-eye-off/icon-eye -->
+            $('#eyeTogger2_i').removeClass('icon-eye-off');
+            $('#eyeTogger2_i').addClass('icon-eye');
+            $('#createAccount_Password').attr('type', 'text');
+        } else {
+            $('#eyeTogger2_i').addClass('icon-eye-off');
+            $('#eyeTogger2_i').removeClass('icon-eye');
+            $('#createAccount_Password').attr('type', 'password');
+        }
+    }
 
     function switchLang(Lang, isReload) {
         showLoading();
@@ -716,13 +749,14 @@
                 $("#btn_switchlang").append(`<i class="icon icon-mask icon-flag-JP"></i>`);
                 $('#footerLangIcon').addClass('icon-flag-JP');
                 $('#footerLangText').text(LangText);
-                
+                setCookie("Lang", "JPN", 365);
                 break;
             case "CHT":
                 LangText = "繁體中文";
                 $("#btn_switchlang").append(`<i class="icon icon-mask icon-flag-ZH"></i>`);
                 $('#footerLangIcon').addClass('icon-flag-ZH');
                 $('#footerLangText').text(LangText);
+                setCookie("Lang", "CHT", 365);
                 break;
             case "ENG":
                 LangText = "日本語";
@@ -751,7 +785,7 @@
                 closeLoading();
             });
         }
-
+        $('#ModalLanguage').modal('hide');
         $("#btn_PupLangClose").click();
     }
 
@@ -818,6 +852,10 @@
     function init() {
         showLoading();
         mlp = new multiLanguage();
+        var cookieLang = getCookie("Lang");
+        if (cookieLang != null && cookieLang!="") {
+            EWinWebInfo.Lang = cookieLang;
+        }
       
         switch (EWinWebInfo.Lang) {
             case "JPN":
@@ -1180,7 +1218,8 @@
                 if (success) {
                     if (o.Result != 0) {
                         validateEmail(mail, function (success1) {
-                            if (success1) {
+                            //test
+                            if (true) {
                                 lobbyClient.SetUserMail(Math.uuid(), 0, 0, mail, "", "", "", function (success2, o) {
                                     closeLoading();
                                     if (success2) {
@@ -1286,6 +1325,19 @@
         });
 
        
+    }
+
+    function openHeaderGame() {
+        if (!EWinWebInfo.UserLogined) {
+
+            showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("請先登入"), function () {
+                showUserLogInModal();
+            }, null);
+            return false;
+        } else {
+            openGame('BNG', '242', mlp.getLanguageKey("叢林之王-集鴻運"));
+        }
+        
     }
 
     function validateEmail(mail, cb) {
@@ -1402,7 +1454,7 @@
         $('.headerGameName').text(gameLangName);
 
         if (gameBrand.toUpperCase() == "EWin".toUpperCase() || gameBrand.toUpperCase() == "YS".toUpperCase()) {
-            gameWindow = window.open("/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx" + "&CT=" + EWinWebInfo.CT, "Maharaja Game")
+            gameWindow = window.open("/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx", "Maharaja Game")
             } else {
                 if (EWinWebInfo.DeviceType == 1) {
                     gameWindow = window.open("/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx", "Maharaja Game");
@@ -1572,6 +1624,8 @@
     }
 
     function showPartialHtml(title, pathName, isNeedLang, cbOK) {
+        event.stopPropagation();
+        event.preventDefault();
         var realPath;
         var divMessageBox = document.getElementById("alertPartialHtml");
         var divMessageBoxOKButton = divMessageBox.querySelector(".alertPartialHtml_OK");
@@ -2319,17 +2373,15 @@
                             <div class="category-dailypush-cotent">
                                 <h2 class="title language_replace">本日優選推薦</h2>
                                 <div class="info">
-                                    <h3 class="gamename language_replace">タイガージャングル</h3>
+                                    <h3 class="gamename language_replace">叢林之王-集鴻運</h3>
                                     <div class="detail">
-                                        <span class="gamebrand">BNG</span>
-                                        <span class="gamecategory">老虎機</span>
+                                        <span class="gamebrand language_replace">BNG</span>
+                                        <span class="gamecategory language_replace">Slot</span>
                                     </div>
                                 </div>
-                                <div class="intro language_replace is-hide">
-                                    遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹遊戲介紹
-                                </div>
+                            
                                 <div class="action">
-                                    <button class="btn btn-play" onclick="window.parent.openGame('BNG', '242','叢林之王-集鴻運')"><span class="language_replace">進入遊戲</span></button>
+                                    <button class="btn btn-play" onclick="openHeaderGame()"><span class="language_replace">進入遊戲</span></button>
                                     
                                 </div>
                             </div>
@@ -2600,9 +2652,9 @@
                                     <input id="login_Password" type="password" class="form-control" language_replace="placeholder" placeholder="密碼" name="LoginPassword">
                                 </div>
                                 <div class="input-group-append">
-                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="$('#login_Password').attr('type','text')">
+                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="eyeTogger()">
                                         <!-- class切換=>icon-eye-off/icon-eye -->
-                                        <i class="icon-moon icon-eye-off"></i>
+                                        <i id="eyeTogger_i" class="icon-moon icon-eye-off"></i>
                                     </button>
                                 </div>
                             </div>
@@ -2640,9 +2692,9 @@
                                     <input id="createAccount_Password" type="password" class="form-control" language_replace="placeholder" placeholder="密碼" onkeyup="">
                                 </div>
                                 <div class="input-group-append">
-                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="$('#createAccount_Password').attr('type','text')">
+                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="eyeTogger2()">
                                         <!-- class切換=>icon-eye-off/icon-eye -->
-                                        <i class="icon-moon icon-eye-off"></i>
+                                        <i id="eyeTogger2_i" class="icon-moon icon-eye-off"></i>
                                     </button>
                                 </div>
                             
@@ -2651,7 +2703,7 @@
                                 <div class="custom-control custom-checkboxValue text-sm">
                                     <label class="custom-label">
                                         <input type="checkbox" name="chkCreateAccount1" class="custom-control-input-hidden" onclick="" value="" >
-                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿20歲，並且已閱讀並同意<span class="text-link">MAHARAJA服務條款</span>和<span class="text-link">隱私政策</span>。</span></div>
+                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿20歲，並且已閱讀並同意 利用規約和隱私政策。</span></div>
                                     </label>
                                 </div>
                                 <div class="custom-control custom-checkboxValue text-sm">

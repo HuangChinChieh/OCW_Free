@@ -169,7 +169,7 @@
   "發送驗證碼": "發送驗證碼",
   "請勾選所有確認項目": "請勾選所有確認項目",
   "我同意通過我註冊的電子郵件地址接收來自第三方的活動信息和信息": "我同意通過我註冊的電子郵件地址接收來自第三方的活動信息和信息",
-  "我已年滿20歲，並且已閱讀並同意 MAHARAJA服務條款和隱私政策。": "我已年滿20歲，並且已閱讀並同意 MAHARAJA服務條款和隱私政策。",
+  "我已年滿20歲，並且已閱讀並同意 利用規約和隱私政策。": "我已年滿20歲，並且已閱讀並同意<span onclick=\"showPartialHtml('', 'Rules', true, null)\" class='text-link'>利用規約</span>和<span class='text-link' onclick=\"showPartialHtml('', 'PrivacyPolicy', true, null)\">隱私政策</span>。",
   "信箱已存在": "信箱已存在",
   "UserNotExist": "帳號不存在",
   "InvalidImageCode": "驗證錯誤",
@@ -196,5 +196,7 @@
   "LoginAccountNotExist": "登入帳號錯誤",
   "InvalidValidateCode": "驗證錯誤",
   "ValidateFailure": "驗證錯誤",
-  "LoginExpire:InvalidHash": "登入狀態已失效，請確認是否有其他裝置同時登入"
+  "LoginExpire:InvalidHash": "登入狀態已失效，請確認是否有其他裝置同時登入",
+  "本日優選推薦": "本日優選推薦"
+
 }
