@@ -225,6 +225,9 @@
             background-color: #00AFFF;
             color: #fff;
             flex: 1;
+            &:hover{
+                background-color: darken(#00AFFF, 10%);
+            }
         }
 
         .btn-like{
@@ -388,6 +391,16 @@ $game-item-width-xml: $game-item-width-unit/7;
         width: 1rem;
         height: 1rem;
     }
+}
+
+.text-link{
+    color: #00AFFF;
+    cursor: pointer;
+    padding: 0 2px;
+    &:hover{
+        text-decoration: underline;
+    }
+
 }
 
 .must-mark{

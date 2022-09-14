@@ -940,6 +940,16 @@
         }
       },
       {
+        "file": "scss/main.scss",
+        "config": {
+          "tasks": {
+            "minify-css": {
+              "enable": true
+            }
+          }
+        }
+      },
+      {
         "file": "scss/pages/index.scss",
         "config": {
           "customOutput": "css\\index.css"

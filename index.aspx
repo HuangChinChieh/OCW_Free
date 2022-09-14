@@ -2659,7 +2659,7 @@
                                 <div class="custom-control custom-checkboxValue text-sm">
                                     <label class="custom-label">
                                         <input type="checkbox" name="chkCreateAccount1" class="custom-control-input-hidden" onclick="" value="" >
-                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿20歲，並且已閱讀並同意 MAHARAJA服務條款和隱私政策。</span></div>
+                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿20歲，並且已閱讀並同意<span class="text-link">MAHARAJA服務條款</span>和<span class="text-link">隱私政策</span>。</span></div>
                                     </label>
                                 </div>
                                 <div class="custom-control custom-checkboxValue text-sm">
