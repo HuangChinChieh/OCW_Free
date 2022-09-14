@@ -11,12 +11,12 @@
     string PCode = string.Empty;
     int GoEwinLogin=0;
     string Version = EWinWeb.Version;
-
-        if (CodingControl.FormSubmit()) {
+    string LoginFailMessage = "";
+    if (CodingControl.FormSubmit()) {
         string LoginGUID = Request["LoginGUID"];
         string LoginPassword = Request["LoginPassword"];
         string LoginAccount = Request["LoginAccount"];
-
+     
 
         Newtonsoft.Json.Linq.JObject obj_FingerPrint = new Newtonsoft.Json.Linq.JObject();
 
@@ -29,27 +29,27 @@
         Token = EWinWeb.CreateToken(EWinWeb.PrivateKey, EWinWeb.APIKey, RValue.ToString());
 
         LoginAPIResult = LoginAPI.UserLoginByCustomValidate(Token, LoginAccount, LoginPassword, EWinWeb.CompanyCode, UserIP);
-     
+
 
         if (LoginAPIResult.ResultState == EWin.Login.enumResultState.OK) {
 
-               string EwinCallBackUrl;
-                if ( CodingControl.GetIsHttps())
-                {
-                    EwinCallBackUrl =  "https://" + Request.Url.Authority + "/RefreshParent.aspx?index.aspx";
-                }
-                else {
-                    EwinCallBackUrl = "http://" + Request.Url.Authority + "/RefreshParent.aspx?index.aspx";
-                }
+            string EwinCallBackUrl;
+            if ( CodingControl.GetIsHttps())
+            {
+                EwinCallBackUrl =  "https://" + Request.Url.Authority + "/RefreshParent.aspx?index.aspx";
+            }
+            else {
+                EwinCallBackUrl = "http://" + Request.Url.Authority + "/RefreshParent.aspx?index.aspx";
+            }
 
-                Response.SetCookie(new HttpCookie("RecoverToken", LoginAPIResult.RecoverToken) { Expires = System.DateTime.Parse("2038/12/31") });
-                Response.SetCookie(new HttpCookie("LoginAccount", LoginAccount) { Expires = System.DateTime.Parse("2038/12/31") });
-                Response.SetCookie(new HttpCookie("SID",LoginAPIResult.SID));
-                Response.SetCookie(new HttpCookie("CT", LoginAPIResult.CT));
-                Response.Redirect("RefreshParent.aspx?index.aspx");
+            Response.SetCookie(new HttpCookie("RecoverToken", LoginAPIResult.RecoverToken) { Expires = System.DateTime.Parse("2038/12/31") });
+            Response.SetCookie(new HttpCookie("LoginAccount", LoginAccount) { Expires = System.DateTime.Parse("2038/12/31") });
+            Response.SetCookie(new HttpCookie("SID",LoginAPIResult.SID));
+            Response.SetCookie(new HttpCookie("CT", LoginAPIResult.CT));
+            Response.Redirect("RefreshParent.aspx?index.aspx");
 
         } else {
-            Response.Write("<script> var defaultError = function(){ showMessageOK('', mlp.getLanguageKey('登入失敗') + ' ' +  mlp.getLanguageKey('" + LoginAPIResult.Message + "'),function () { })};</script>");
+            LoginFailMessage = LoginAPIResult.Message;
             //Response.Write("<script>var defalutLoginAccount = '" + LoginAccount +"'; var defaultError = function(){ window.parent.showMessageOK('', mlp.getLanguageKey('登入失敗'),function () { })};</script>");
         }
     }
@@ -748,6 +748,7 @@
         if (isReload) {
             setLanguage(Lang, function () {
                 appendGameItem();
+                closeLoading();
             });
         }
 
@@ -815,10 +816,9 @@
     };
 
     function init() {
+        showLoading();
         mlp = new multiLanguage();
-        appendGameItem();
-
-
+      
         switch (EWinWebInfo.Lang) {
             case "JPN":
                 LangText = "日本語";
@@ -855,10 +855,19 @@
 
         mlp.loadLanguage(EWinWebInfo.Lang, function () {
 
+            var loginFailMessage="<%=LoginFailMessage%>"
+            if (loginFailMessage != "") {
+                
+                showMessageOK(mlp.getLanguageKey("登入失敗"), mlp.getLanguageKey(loginFailMessage), function () {
+                    window.history.back();
+                });
+            }
+
             lobbyClient = new LobbyAPI("/API/LobbyAPI.asmx");
 
             appendGameFrame();
-
+            appendGameItem();
+            closeLoading();
             window.setTimeout(function () {
                 lobbyClient.GetCompanySite(Math.uuid(), function (success, o) {
                     if (success) {
@@ -1032,7 +1041,7 @@
                         } else {
                             EWinWebInfo.UserLogined = false;
                             showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("請重新登入") + ":" + mlp.getLanguageKey(obj.Message), function () {
-                                API_Logout(true);
+                              logout(true);
                             });
 
                             if (cb)
@@ -1167,24 +1176,36 @@
     function onBtnSendValidateCode() {
         if (isSent == false) {
             var mail = $('#createAccount_Mail').val().trim();
-            validateEmail(mail, function (success) {
+            lobbyClient.CheckAccountExist(Math.uuid(), mail, function (success, o) {
                 if (success) {
-                    lobbyClient.SetUserMail(Math.uuid(), 0, 0, mail, "", "", "", function (success2, o) {
-                        closeLoading();
-                        if (success2) {
-                            if (o.Result != 0) {
-                                showMessageOK("", mlp.getLanguageKey("發送驗證碼失敗"));
-                            } else {
-                                showMessageOK("", mlp.getLanguageKey("發送驗證碼成功"));
-                                startCountDown(120);
+                    if (o.Result != 0) {
+                        validateEmail(mail, function (success1) {
+                            if (success1) {
+                                lobbyClient.SetUserMail(Math.uuid(), 0, 0, mail, "", "", "", function (success2, o) {
+                                    closeLoading();
+                                    if (success2) {
+                                        if (o.Result != 0) {
+                                            showMessageOK("", mlp.getLanguageKey("發送驗證碼失敗"));
+                                        } else {
+                                            showMessageOK("", mlp.getLanguageKey("發送驗證碼成功"));
+                                            startCountDown(120);
 
+                                        }
+                                    }
+                                });
+                            } else {
+                                showMessageOK("", mlp.getLanguageKey("EMail格式有誤"));
                             }
-                        }
-                    });
-                } else {
-                    showMessageOK("", mlp.getLanguageKey("EMail格式有誤"));
+                        });
+                    } else {
+                        window.parent.showMessageOK("", mlp.getLanguageKey("信箱已存在"));
+                    }
                 }
+
             });
+
+
+       
     
 
         } else {
@@ -1192,11 +1213,18 @@
         }
     }
 
+ 
     function createAccount() {
         var password = $('#createAccount_Password').val().trim();
         var validateCode = $('#createAccount_ValidateCode').val().trim();
         var mail = $('#createAccount_Mail').val().trim();
         var CurrencyList = EWinWebInfo.RegisterCurrencyType;
+
+        if (mail == "") {
+            showMessageOK("", mlp.getLanguageKey("EMail尚未填寫"));
+            return false;
+        }
+
         if (validateCode == "") {
             showMessageOK("", mlp.getLanguageKey("驗證碼尚未填寫"));
             return false;
@@ -1207,11 +1235,7 @@
             return false;
         }
 
-        if (mail == "") {
-            showMessageOK("", mlp.getLanguageKey("EMail尚未填寫"));
-            return false;
-        }
-
+      
         if (!$("input[name='chkCreateAccount1']").prop("checked")) {
             showMessageOK("", mlp.getLanguageKey("請勾選所有確認項目"));
             return false;
@@ -1503,10 +1527,9 @@
   
         }
         $('#gameList').append(`<div class="wrapper_center" id="wrapper_center">
-                        <div class="btn btn-more" onclick="appendGameItem2()">${mlp.getLanguageKey("もっと見る")}</div>
+                        <div class="btn btn-more" onclick="appendGameItem2()">${mlp.getLanguageKey("查看更多")}</div>
                     </div>`);
 
-        closeLoading();
     }
 
     function appendGameItem2() {
@@ -2515,25 +2538,10 @@
                                         <img src="/images/logo/footer/logo-va.png" alt="">
                                     </div>
                                 </div>
-                                <%--  
-                                <div class="logo-item">
-                                    <div class="img-crop">
-                                        <img src="/images/logo/footer/logo-pagcor.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="logo-item">
-                                    <div class="img-crop">
-                                        <img src="/images/logo/footer/logo-mishuha.png" alt="">
-                                    </div>
-                                </div>
-                                --%>
                             </div>
                         </div>
                     </div>
                     <div class="company-detail">
-                        <!-- <div class="company-license">
-                            <iframe src="https://licensing.gaming-curacao.com/validator/?lh=73f82515ca83aaf2883e78a6c118bea3&template=tseal" width="150" height="50" style="border: none;"></iframe>
-                        </div> -->
                         <div class="company-address">
                             <p class="address language_replace">MAHARAJA由(Online Chip World Co. N.V) 所有並營運。（註冊地址：Zuikertuintjeweg Z/N (Zuikertuin Tower), Willemstad, Curacao）取得庫拉索政府核發的執照 註冊號碼：#365 / JAZ 認可，並以此據為標準。</p>
                         </div>
