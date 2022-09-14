@@ -177,6 +177,9 @@ animation:name duration | timing-function | delay | iteration-count | direction 
       -ms-flex: 1;
           flex: 1;
 }
+.category-dailypush-cotentBox .btn-play:hover {
+  background-color: #008ccc;
+}
 .category-dailypush-cotentBox .btn-like {
   background-color: transparent;
   border: solid 1px #fff;

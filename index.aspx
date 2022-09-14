@@ -2258,7 +2258,7 @@
                 <div class="container">
                     <ul class="company-info row">
                         <li class="info-item col">
-                            <a id="Footer_About" onclick="showPartialHtml('','About', false, null)"><span class="language_replace">關於我們</span></a>
+                            <a id="Footer_About" onclick="showPartialHtml('','About', true, null)"><span class="language_replace">關於我們</span></a>
                         </li>
                        
                         <!-- <li class="info-item col">

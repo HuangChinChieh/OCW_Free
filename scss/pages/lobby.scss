@@ -225,6 +225,9 @@
             background-color: #00AFFF;
             color: #fff;
             flex: 1;
+            &:hover{
+                background-color: darken(#00AFFF, 10%);
+            }
         }
 
         .btn-like{
