@@ -1,6 +1,12 @@
 /*=================== fonts ====================*/
 /* animation =================================
 animation:name duration | timing-function | delay | iteration-count | direction | fill-mode | play-state; */
+.btn-full-main:disabled {
+  background: rgba(204, 204, 204, 0.3);
+  color: inherit;
+  border-color: rgba(204, 204, 204, 0.3);
+}
+
 .section-category-dailypush {
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
