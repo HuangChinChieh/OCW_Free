@@ -1398,6 +1398,16 @@
         if (gameWindow) {
             gameWindow.close();
         }
+
+        if (gameBrand.toUpperCase() == "EWin".toUpperCase() || gameBrand.toUpperCase() == "YS".toUpperCase()) {
+            gameWindow = window.open("_blank")
+          } else {
+              if (EWinWebInfo.DeviceType == 1) {
+                  gameWindow = window.open("_blank");
+                }
+          }
+
+
         var SID = "";
 
         if (needLogin) {
@@ -1455,10 +1465,10 @@
         $('.headerGameName').text(gameLangName);
 
         if (gameBrand.toUpperCase() == "EWin".toUpperCase() || gameBrand.toUpperCase() == "YS".toUpperCase()) {
-            gameWindow = window.open("/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx", "Maharaja Game")
+            gameWindow.location = "/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx";
             } else {
                 if (EWinWebInfo.DeviceType == 1) {
-                    gameWindow = window.open("/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx", "Maharaja Game");
+                    gameWindow.location = "/OpenGame.aspx?SID=" + SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + EWinWebInfo.MainCurrencyType + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx";
 
                     //window.location.href = "/kevintest.aspx?SID=" + EWinWebInfo.SID + "&Lang=" + EWinWebInfo.Lang + "&CurrencyType=" + API_GetCurrency() + "&GameBrand=" + gameBrand + "&GameName=" + gameName + "&HomeUrl=" + "<%=EWinWeb.CasinoWorldUrl%>/CloseGame.aspx";
 
