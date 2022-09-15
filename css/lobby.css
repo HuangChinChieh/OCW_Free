@@ -478,7 +478,7 @@ animation:name duration | timing-function | delay | iteration-count | direction 
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding-top: 25px;
-  min-height: 280px;
+  min-height: 200px;
 }
 .modal.customHeader .content-inner-footer {
   -webkit-box-flex: 0;
