@@ -176,31 +176,31 @@
 
     <title>マハラジャ - 一番人気なオンラインカジノアミューズメント</title>
     <meta name='keywords' content="カジノ、スロット、アミューズメント、ゲーム、ギャンブル" />
-    <meta name='description' content="知名なオンラインゲームブランドを提携し、信頼価値もあるし、それにすぐ遊べることができます。お金の無駄遣いをせずに、今すぐサイトを登録して、ゲーム開始！" />
+    <meta name='description' content="知名なオンラインゲームブランドと提携し、信頼価値を追求し、すぐに遊ぶことができる。今すぐサイトを登録して、ゲーム開始！" />
     <meta property="og:site_name" content="マハラジャ" />
     <meta property="og:title" content="一番人気なオンラインカジノアミューズメント - マハラジャ" />
     <meta property="og:Keyword" content="カジノ、スロット、アミューズメント、ゲーム、ギャンブル" />
-    <meta property="og:description" content="知名なオンラインゲームブランドを提携し、信頼価値もあるし、それにすぐ遊べることができます。お金の無駄遣いをせずに、今すぐサイトを登録して、ゲーム開始！" />
-    <meta property="og:url" content="https://casino-maharaja.com/" />
+    <meta property="og:description" content="知名なオンラインゲームブランドと提携し、信頼価値を追求し、すぐに遊ぶことができる。今すぐサイトを登録して、ゲーム開始！" />
+    <meta property="og:url" content="https://www.free-maharaja.com/" />
     <!--日文圖片-->
-    <meta property="og:image" content="https://casino-maharaja.com/images/share_pic.png" />
+    <meta property="og:image" content="https://www.free-maharaja.com/images/app.png" />
     <meta property="og:type" content="website" />
     <!-- Share image -->
     <!--日文圖片-->
-    <link rel="image_src" href="https://casino-maharaja.com/images/share_pic.png">
-    <link rel="shortcut icon" href="images/share_pic.png">
+    <link rel="image_src" href="https://www.free-maharaja.com/images/app.png">
+    <link rel="shortcut icon" href="images/app.png">
     <link rel="stylesheet" href="css/basic.min.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/lobby.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="Prefetch" as="style" onload="this.rel = 'stylesheet'" />
 
-    <link rel="alternate" hreflang="ja" href="https://casino-maharaja.com/index.aspx?Lang=JPN">
-    <link rel="alternate" hreflang="ja-jp" href="https://casino-maharaja.com/index.aspx?Lang=JPN">
-    <link rel="alternate" hreflang="zh-cn" href="https://casino-maharaja.com/index.aspx?Lang=CHT">
-    <link rel="alternate" hreflang="zh-tw" href="https://casino-maharaja.com/index.aspx?Lang=CHT">
-    <link rel="alternate" hreflang="zh" href="https://casino-maharaja.com/index.aspx?Lang=CHT">
-    <link rel="alternate" hreflang="zh-hk" href="https://casino-maharaja.com/index.aspx?Lang=CHT">
+    <link rel="alternate" hreflang="ja" href="https://www.free-maharaja.com/index.aspx?Lang=JPN">
+    <link rel="alternate" hreflang="ja-jp" href="https://www.free-maharaja.com/index.aspx?Lang=JPN">
+    <link rel="alternate" hreflang="zh-cn" href="https://www.free-maharaja.com/index.aspx?Lang=CHT">
+    <link rel="alternate" hreflang="zh-tw" href="https://www.free-maharaja.com/index.aspx?Lang=CHT">
+    <link rel="alternate" hreflang="zh" href="https://www.free-maharaja.com/index.aspx?Lang=CHT">
+    <link rel="alternate" hreflang="zh-hk" href="https://www.free-maharaja.com/index.aspx?Lang=CHT">
     
 </head>
 
@@ -353,10 +353,10 @@
             GameLangNameJPN: 'ゲイシャ',
             NeedLogin: true
         }, {
-            GameName: 'LuckyPig',
+            GameName: 'FiveFlowers',
             GameBrand: 'CG',
-            GameLangNameCHT: '幸運小豬',
-            GameLangNameJPN: 'ラッキーピッグ',
+            GameLangNameCHT: '五花爭豔',
+            GameLangNameJPN: '5ディーラーズ',
             NeedLogin: true
         },{
             GameName: 'Baccarat2',
@@ -850,7 +850,7 @@
     };
 
     function init() {
-        showLoading();
+        //showLoading();
         mlp = new multiLanguage();
         var cookieLang = getCookie("Lang");
         if (cookieLang != null && cookieLang!="") {
@@ -2203,7 +2203,7 @@
 </script>
 
 <body class="mainBody vertical-menu">
-    <div class="loader-container" style="display: none;">
+    <div class="loader-container">
         <div class="loader-box">
             <div class="loader-spinner">
                 <div class="sk-fading-circle">
