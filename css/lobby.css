@@ -394,9 +394,6 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   margin-top: 20px;
 }
 
-.modal.customHeader .modal-dialog {
-  margin-top: 3rem;
-}
 .modal.customHeader .modal-content {
   border-radius: 30px;
   border: 0;
@@ -436,25 +433,13 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   padding-top: 6px;
 }
 .modal.customHeader .modal-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  padding: 0;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  min-height: 430px;
+  position: relative;
+  padding-top: 55px;
 }
-.modal.customHeader .content {
-  padding: 2rem 1rem 1.5rem;
+.modal.customHeader .content-wrapper {
   max-width: 420px;
   margin-left: auto;
   margin-right: auto;
-  height: calc(100% - 65px);
 }
 .modal.customHeader .form-control {
   height: calc(2.75rem + 2px);
@@ -465,11 +450,40 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 .modal.customHeader .login-wrapper .form-group {
   margin-bottom: 2rem;
 }
+.modal.customHeader .wrapper_center {
+  margin-top: 10px;
+  width: 100%;
+}
 .modal.customHeader .wrapper_center .btn {
   max-width: 250px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 50px;
+  margin-bottom: 0;
+}
+.modal.customHeader .content-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  max-height: calc(100vh - 140px);
+  overflow: hidden;
+}
+.modal.customHeader .content-inner-body {
+  overflow-y: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding-top: 25px;
+  min-height: 280px;
+}
+.modal.customHeader .content-inner-footer {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60px;
+          flex: 0 0 60px;
 }
 @media (min-width: 768px) {
   .modal.customHeader .form-group {
@@ -491,6 +505,10 @@ animation:name duration | timing-function | delay | iteration-count | direction 
   transition: left 0.3s ease-in-out;
 }
 
+.register-wrapper, .login-wrapper {
+  display: none !important;
+}
+
 .tabTypeInput {
   position: absolute;
   z-index: -1;
@@ -502,14 +520,18 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 .tabTypeInput.userLogin:checked ~ .tracking-bar {
   left: 0;
 }
-.tabTypeInput.userLogin:checked ~ .content .login-wrapper {
-  display: block;
+.tabTypeInput.userLogin:checked ~ .content-wrapper .login-wrapper {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 .tabTypeInput.userRegister:checked ~ .tracking-bar {
   left: 50%;
 }
-.tabTypeInput.userRegister:checked ~ .content .register-wrapper {
-  display: block;
+.tabTypeInput.userRegister:checked ~ .content-wrapper .register-wrapper {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 .tabTypeLabel {
@@ -524,16 +546,16 @@ animation:name duration | timing-function | delay | iteration-count | direction 
           justify-content: center;
   cursor: pointer;
   border-bottom: solid 1px #ccc;
+  position: absolute;
+  top: 0;
 }
 .tabTypeLabel.userLogin {
   border-radius: 30px 0 0 0;
+  left: 0;
 }
 .tabTypeLabel.userRegister {
   border-radius: 0 30px 0 0;
-}
-
-.register-wrapper, .login-wrapper {
-  display: none;
+  right: 0;
 }
 
 .login-wrapper .wrapper_center {

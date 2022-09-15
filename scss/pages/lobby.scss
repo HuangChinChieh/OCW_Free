@@ -471,7 +471,7 @@ $game-item-width-xml: $game-item-width-unit/7;
 .modal.customHeader{
 
     .modal-dialog{
-        margin-top: 3rem;
+        // margin-top: 3rem;
     }
 
     .modal-content{
@@ -508,19 +508,22 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
 
     .modal-body{
-        display: flex;
-        flex-flow: row wrap;
-        padding: 0;
-        flex: 0 0 auto;
-        min-height: 430px;   
+        // display: flex;
+        // flex-flow: row wrap;
+        // padding: 0;
+        // flex: 0 0 auto;
+        // min-height: 430px;
+        // overflow: visible;   
+        position: relative;
+        padding-top: 55px;
     }
 
-    .content{
-        padding: 2rem 1rem 1.5rem;       
+    .content-wrapper{
+        // padding: 2rem 1rem 1.5rem;       
         max-width: 420px;
         margin-left: auto;
         margin-right: auto;
-        height: calc(100% - 65px);
+        // height: calc(100% - 65px);
     }
     .form-control{
         height: calc(2.75rem + 2px);
@@ -536,14 +539,36 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
 
     .wrapper_center{
+        margin-top: 10px;
+        width: 100%;
         .btn{
             max-width: 250px;
             padding-top: 10px;
             padding-bottom: 10px;
             border-radius: 50px;
+            margin-bottom: 0;
         }
     }
-    
+
+    .content-inner{
+        display: flex;
+        flex-flow: column nowrap;
+       
+        max-height: calc(100vh - 140px);
+        overflow: hidden;
+        
+
+        &-body{
+            overflow-y: auto;
+            flex: 1 1 auto; 
+            padding-top:25px; 
+            min-height: 280px;
+        }
+
+        &-footer{
+            flex: 0 0 60px;
+        }
+    }
 
     @include media-breakpoint-up(md) {
 
@@ -571,6 +596,10 @@ $game-item-width-xml: $game-item-width-unit/7;
     transition: left 0.3s ease-in-out;
 }
 
+.register-wrapper, .login-wrapper{
+    display: none !important;
+}
+
 .tabTypeInput{
     position: absolute;
     z-index: -1;
@@ -587,9 +616,14 @@ $game-item-width-xml: $game-item-width-unit/7;
             left: 0;
         }
 
-        ~ .content .login-wrapper{
-            display: block;
+        ~ .content-wrapper .login-wrapper{
+            // display: inherit !important;
+            display: flex !important;
         }
+
+        // ~ .modal-body .content .login-wrapper{
+        //     display: block;
+        // }
 
     }
 
@@ -598,9 +632,14 @@ $game-item-width-xml: $game-item-width-unit/7;
             left: 50%;
         }
 
-        ~ .content .register-wrapper{
-            display: block;
+        ~ .content-wrapper .register-wrapper{
+            // display: block;
+            display: flex !important;
         }
+
+        // ~ .content-wrapper .register-wrapper{
+        //     display: block;
+        // }
     }
     
     
@@ -616,24 +655,25 @@ $game-item-width-xml: $game-item-width-unit/7;
     cursor: pointer;
     border-bottom: solid 1px #ccc;
 
+    position: absolute;
+    top: 0;
+
     &.userLogin{
         border-radius: 30px 0 0 0;
         // margin-top: -1rem;
         // margin-left: -1rem;
+
+        left: 0;
+        
     }
     &.userRegister{
         border-radius: 0 30px 0 0;
         // margin-top: -1rem;
         // margin-right: -1rem;
+        right: 0;
     }
 
 }
-
-
-.register-wrapper, .login-wrapper{
-    display: none;
-}
-
 
 
 .login-wrapper{
@@ -641,8 +681,6 @@ $game-item-width-xml: $game-item-width-unit/7;
         margin-top: 55px;
     }
 }
-
-
 
 .wrapper-full{
     width: 100%;
@@ -657,6 +695,7 @@ $game-item-width-xml: $game-item-width-unit/7;
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
 }
+
 .form-group .btn-icon {
     position: absolute;
     top: 2px;
@@ -766,8 +805,6 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
    
 }
-
-
 
 .section-Wrapper {
     margin-bottom: 60px;

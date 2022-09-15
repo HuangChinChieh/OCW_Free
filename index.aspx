@@ -2639,7 +2639,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- 登入 TAB-->
+                     <!-- 登入 TAB-->
                     <input type="radio" name="tabType" value="0" class="tabTypeInput userLogin" id="userLogin">
                     <label for="userLogin" class="tabTypeLabel userLogin language_replace">登入</label>
                     <!-- 註冊 TAB-->
@@ -2647,94 +2647,105 @@
                     <label for="userRegister" class="tabTypeLabel userRegister language_replace">註冊</label>
                     <div class="tracking-bar"></div>
 
-                    <div class="content wrapper-full">
+                    <div class="content-wrapper wrapper-full">
                          <!-- 登入 -->
                            <form method="post" id="idFormUserLogin">
-                                   <div class="login-wrapper ">
-                            <div class="form-group">
-                                <label class="form-title language_replace">電子信箱</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" language_replace="placeholder" placeholder="電子信箱" name="LoginAccount">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-title language_replace">密碼</label>
-                                <div class="input-group">
-                                    <input id="login_Password" type="password" class="form-control" language_replace="placeholder" placeholder="密碼" name="LoginPassword">
-                                </div>
-                                <div class="input-group-append">
-                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="eyeTogger()">
-                                        <!-- class切換=>icon-eye-off/icon-eye -->
-                                        <i id="eyeTogger_i" class="icon-moon icon-eye-off"></i>
-                                    </button>
-                                </div>
-                            </div>
-                   
-                            <div class="wrapper_center">
-                                <button class="btn btn-full-main btn-roundcorner btn-popup-login" type="button" onclick="onBtnSendLogin()">
-                                    <span class="language_replace">登入</span>
-                                </button>
-                            </div>
 
-                        </div>
+                               <div class="content-inner login-wrapper">
+                                  <div class="content-inner-body">
+                                    <div class="form-group">
+                                        <label class="form-title language_replace">電子信箱</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" language_replace="placeholder"
+                                                placeholder="電子信箱" name="LoginAccount">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-title language_replace">密碼</label>
+                                        <div class="input-group">
+                                            <input id="login_Password" type="password" class="form-control"
+                                                language_replace="placeholder" placeholder="密碼" name="LoginPassword">
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-icon btn-transparent btn-checkpwd" type="button"
+                                                onclick="eyeTogger()">
+                                                <!-- class切換=>icon-eye-off/icon-eye -->
+                                                <i id="eyeTogger_i" class="icon-moon icon-eye-off"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="content-inner-footer">
+                                    <div class="wrapper_center">
+                                        <button class="btn btn-full-main btn-roundcorner btn-popup-login" type="button"
+                                            onclick="onBtnSendLogin()">
+                                            <span class="language_replace">登入</span>
+                                        </button>
+                                    </div>
+                                  </div>
+                               </div>
                            </form>
                     
 
                         <!-- 註冊 -->
-                        <div class="register-wrapper">
-                            <div class="form-group">
-                                <label class="form-title language_replace">電子信箱</label>
-                                <div class="input-group">
-                                    <input id="createAccount_Mail" type="text" class="form-control" language_replace="placeholder" placeholder="電子信箱" onkeyup="">
+                        <div class="content-inner register-wrapper">
+                            <div class="content-inner-body">
+                                <div class="form-group">
+                                    <label class="form-title language_replace">電子信箱</label>
+                                    <div class="input-group">
+                                        <input id="createAccount_Mail" type="text" class="form-control" language_replace="placeholder" placeholder="電子信箱" onkeyup="">
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button onclick="onBtnSendValidateCode()" id="divSendValidateCodeBtn" class="btn btn-icon btn-full-main btn-sendCode" type="button"><span class="language_replace">發送驗證碼</span></button>
+                                    </div>
                                 </div>
-                                <div class="input-group-append">
-                                    <button onclick="onBtnSendValidateCode()" id="divSendValidateCodeBtn" class="btn btn-icon btn-full-main btn-sendCode" type="button"><span class="language_replace">發送驗證碼</span></button>
+                                <div class="form-group">
+                                    <label class="form-title language_replace">驗證碼</label>
+                                    <div class="input-group">
+                                        <input id="createAccount_ValidateCode" type="text" class="form-control" language_replace="placeholder" placeholder="驗證碼" onkeyup="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-title language_replace">密碼</label>
+                                    <div class="input-group">
+                                        <input id="createAccount_Password" type="password" class="form-control" language_replace="placeholder" placeholder="密碼" onkeyup="">
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="eyeTogger2()">
+                                            <!-- class切換=>icon-eye-off/icon-eye -->
+                                            <i id="eyeTogger2_i" class="icon-moon icon-eye-off"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-title language_replace">暱稱（部分遊戲遊玩時顯示使用）</label>
+                                    <div class="input-group">
+                                        <input id="createAccount_ValidateCode" type="text" class="form-control" language_replace="placeholder" placeholder="請輸入暱稱" onkeyup="">
+                                    </div>
+                                </div>
+                                <div class="must-mark">
+                                    <div class="custom-control custom-checkboxValue text-sm">
+                                        <label class="custom-label">
+                                            <input type="checkbox" name="chkCreateAccount1" class="custom-control-input-hidden" onclick="" value="" >
+                                            <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿20歲，並且已閱讀並同意 利用規約和隱私政策。</span></div>
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-checkboxValue text-sm">
+                                        <label class="custom-label">
+                                            <input type="checkbox" name="chkCreateAccount2" class="custom-control-input-hidden" onclick="" value="" >
+                                            <div class="custom-input checkbox"><span class="language_replace">我同意通過我註冊的電子郵件地址接收來自第三方的活動信息和信息</span></div>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="form-title language_replace">驗證碼</label>
-                                <div class="input-group">
-                                    <input id="createAccount_ValidateCode" type="text" class="form-control" language_replace="placeholder" placeholder="驗證碼" onkeyup="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-title language_replace">密碼</label>
-                                <div class="input-group">
-                                    <input id="createAccount_Password" type="password" class="form-control" language_replace="placeholder" placeholder="密碼" onkeyup="">
-                                </div>
-                                <div class="input-group-append">
-                                    <button class="btn btn-icon btn-transparent btn-checkpwd" type="button" onclick="eyeTogger2()">
-                                        <!-- class切換=>icon-eye-off/icon-eye -->
-                                        <i id="eyeTogger2_i" class="icon-moon icon-eye-off"></i>
+                            <div class="content-inner-footer">
+                                <div class="wrapper_center">
+                                    <button class="btn btn-full-main btn-roundcorner btn-popup-register" type="button" onclick="createAccount()">
+                                        <span class="language_replace">註冊</span>
                                     </button>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="form-title language_replace">暱稱（部分遊戲遊玩時顯示使用）</label>
-                                <div class="input-group">
-                                    <input id="createAccount_ValidateCode" type="text" class="form-control" language_replace="placeholder" placeholder="請輸入暱稱" onkeyup="">
-                                </div>
-                            </div>
-                            <div class="must-mark">
-                                <div class="custom-control custom-checkboxValue text-sm">
-                                    <label class="custom-label">
-                                        <input type="checkbox" name="chkCreateAccount1" class="custom-control-input-hidden" onclick="" value="" >
-                                        <div class="custom-input checkbox"><span class="language_replace"><span class="language_replace">我已年滿20歲，並且已閱讀並同意 利用規約和隱私政策。</span></div>
-                                    </label>
-                                </div>
-                                <div class="custom-control custom-checkboxValue text-sm">
-                                    <label class="custom-label">
-                                        <input type="checkbox" name="chkCreateAccount2" class="custom-control-input-hidden" onclick="" value="" >
-                                        <div class="custom-input checkbox"><span class="language_replace">我同意通過我註冊的電子郵件地址接收來自第三方的活動信息和信息</span></div>
-                                    </label>
-                                </div>
-                            </div>  
-                            <div class="wrapper_center">
-                                <button class="btn btn-full-main btn-roundcorner btn-popup-register" type="button" onclick="createAccount()">
-                                    <span class="language_replace">註冊</span>
-                                </button>
-                            </div>
-
                         </div> 
                     </div>        
                 </div>
