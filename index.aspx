@@ -407,13 +407,13 @@
             GameLangNameJPN: 'ファニーアルパカ',
             NeedLogin: true
         },
-        {
-            GameName: 'EWinGaming',
-            GameBrand: 'EWin',
-            GameLangNameCHT: '真人百家樂(eWIN)',
-            GameLangNameJPN: 'EWinゲーミング',
-            NeedLogin: true
-        },
+        //{
+        //    GameName: 'EWinGaming',
+        //    GameBrand: 'EWin',
+        //    GameLangNameCHT: '真人百家樂(eWIN)',
+        //    GameLangNameJPN: 'EWinゲーミング',
+        //    NeedLogin: true
+        //},
         //{
         //    GameName: '889',
         //    GameBrand: 'GMW',
@@ -1400,10 +1400,10 @@
         }
 
         if (gameBrand.toUpperCase() == "EWin".toUpperCase() || gameBrand.toUpperCase() == "YS".toUpperCase()) {
-            gameWindow = window.open("_blank")
+            gameWindow = window.open("/GameLoading.aspx", "Maharaja Free Game")
           } else {
               if (EWinWebInfo.DeviceType == 1) {
-                  gameWindow = window.open("_blank");
+                  gameWindow = window.open("/GameLoading.aspx", "Maharaja Free Game");
                 }
           }
 
@@ -1428,9 +1428,11 @@
                         openGameStep2(gameBrand, gameName, gameLangName, SID);
                     } else {
                         showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("試玩遊戲人數已滿,請稍後再試"));
+                        gameWindow.close();
                     }
                 }
                 else {
+                    gameWindow.close();
                     showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("服務器異常, 請稍後再嘗試一次"), function () {
                         window.location.href = "index.aspx"
                     });
@@ -1444,12 +1446,14 @@
                         SID = EWinWebInfo.SID;
                         openGameStep2(gameBrand, gameName, gameLangName, SID);
                     } else {
+                        gameWindow.close();
                         showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("服務器異常, 請稍後再嘗試一次"), function () {
                             window.location.href = "index.aspx"
                         });
                     }
                 }
                 else {
+                    gameWindow.close();
                     showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("服務器異常, 請稍後再嘗試一次"), function () {
                         window.location.href = "index.aspx"
                     });
