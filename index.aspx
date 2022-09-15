@@ -407,13 +407,13 @@
             GameLangNameJPN: 'ファニーアルパカ',
             NeedLogin: true
         },
-        {
-            GameName: 'EWinGaming',
-            GameBrand: 'EWin',
-            GameLangNameCHT: '真人百家樂(eWIN)',
-            GameLangNameJPN: 'EWinゲーミング',
-            NeedLogin: true
-        },
+        //{
+        //    GameName: 'EWinGaming',
+        //    GameBrand: 'EWin',
+        //    GameLangNameCHT: '真人百家樂(eWIN)',
+        //    GameLangNameJPN: 'EWinゲーミング',
+        //    NeedLogin: true
+        //},
         //{
         //    GameName: '889',
         //    GameBrand: 'GMW',
@@ -1259,7 +1259,7 @@
         var validateCode = $('#createAccount_ValidateCode').val().trim();
         var mail = $('#createAccount_Mail').val().trim();
         var CurrencyList = EWinWebInfo.RegisterCurrencyType;
-
+        var NickName= $('#createAccount_NickName').val().trim();
         if (mail == "") {
             showMessageOK("", mlp.getLanguageKey("EMail尚未填寫"));
             return false;
@@ -1275,6 +1275,11 @@
             return false;
         }
 
+        if (NickName=="") {
+            showMessageOK("", mlp.getLanguageKey("請輸入暱稱"));
+            return false;
+        }
+
       
         if (!$("input[name='chkCreateAccount1']").prop("checked")) {
             showMessageOK("", mlp.getLanguageKey("請勾選所有確認項目"));
@@ -1287,7 +1292,8 @@
         }
 
         var PS = [
-            { Name: "EMail", Value: mail }
+            { Name: "EMail", Value: mail },
+            { Name: "NickName", Value: NickName },
         ];
 
         lobbyClient.CheckValidateCode(Math.uuid(), 0, mail, "", "", validateCode, function (success2, o2) {
@@ -1400,10 +1406,10 @@
         }
 
         if (gameBrand.toUpperCase() == "EWin".toUpperCase() || gameBrand.toUpperCase() == "YS".toUpperCase()) {
-            gameWindow = window.open("_blank")
+            gameWindow = window.open("/GameLoading.aspx", "Maharaja Free Game")
           } else {
               if (EWinWebInfo.DeviceType == 1) {
-                  gameWindow = window.open("_blank");
+                  gameWindow = window.open("/GameLoading.aspx", "Maharaja Free Game");
                 }
           }
 
@@ -1428,9 +1434,11 @@
                         openGameStep2(gameBrand, gameName, gameLangName, SID);
                     } else {
                         showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("試玩遊戲人數已滿,請稍後再試"));
+                        gameWindow.close();
                     }
                 }
                 else {
+                    gameWindow.close();
                     showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("服務器異常, 請稍後再嘗試一次"), function () {
                         window.location.href = "index.aspx"
                     });
@@ -1444,12 +1452,14 @@
                         SID = EWinWebInfo.SID;
                         openGameStep2(gameBrand, gameName, gameLangName, SID);
                     } else {
+                        gameWindow.close();
                         showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("服務器異常, 請稍後再嘗試一次"), function () {
                             window.location.href = "index.aspx"
                         });
                     }
                 }
                 else {
+                    gameWindow.close();
                     showMessageOK(mlp.getLanguageKey("錯誤"), mlp.getLanguageKey("服務器異常, 請稍後再嘗試一次"), function () {
                         window.location.href = "index.aspx"
                     });
