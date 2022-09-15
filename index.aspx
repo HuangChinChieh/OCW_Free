@@ -1259,7 +1259,7 @@
         var validateCode = $('#createAccount_ValidateCode').val().trim();
         var mail = $('#createAccount_Mail').val().trim();
         var CurrencyList = EWinWebInfo.RegisterCurrencyType;
-
+        var NickName= $('#createAccount_NickName').val().trim();
         if (mail == "") {
             showMessageOK("", mlp.getLanguageKey("EMail尚未填寫"));
             return false;
@@ -1275,6 +1275,11 @@
             return false;
         }
 
+        if (NickName=="") {
+            showMessageOK("", mlp.getLanguageKey("請輸入暱稱"));
+            return false;
+        }
+
       
         if (!$("input[name='chkCreateAccount1']").prop("checked")) {
             showMessageOK("", mlp.getLanguageKey("請勾選所有確認項目"));
@@ -1287,7 +1292,8 @@
         }
 
         var PS = [
-            { Name: "EMail", Value: mail }
+            { Name: "EMail", Value: mail },
+            { Name: "NickName", Value: NickName },
         ];
 
         lobbyClient.CheckValidateCode(Math.uuid(), 0, mail, "", "", validateCode, function (success2, o2) {
@@ -2716,7 +2722,7 @@
                             <div class="form-group">
                                 <label class="form-title language_replace">暱稱（部分遊戲遊玩時顯示使用）</label>
                                 <div class="input-group">
-                                    <input id="createAccount_ValidateCode" type="text" class="form-control" language_replace="placeholder" placeholder="請輸入暱稱" onkeyup="">
+                                    <input id="createAccount_NickName" type="text" class="form-control" language_replace="placeholder" placeholder="請輸入暱稱" onkeyup="">
                                 </div>
                             </div>
                             <div class="must-mark">
