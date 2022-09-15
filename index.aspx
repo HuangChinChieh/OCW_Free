@@ -2712,7 +2712,12 @@
                                         <i id="eyeTogger2_i" class="icon-moon icon-eye-off"></i>
                                     </button>
                                 </div>
-                            
+                            </div>
+                            <div class="form-group">
+                                <label class="form-title language_replace">暱稱（部分遊戲遊玩時顯示使用）</label>
+                                <div class="input-group">
+                                    <input id="createAccount_ValidateCode" type="text" class="form-control" language_replace="placeholder" placeholder="請輸入暱稱" onkeyup="">
+                                </div>
                             </div>
                             <div class="must-mark">
                                 <div class="custom-control custom-checkboxValue text-sm">

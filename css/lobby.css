@@ -584,6 +584,8 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 .btn-sendCode {
   font-weight: 300;
   font-size: 0.875rem;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .wrapper_center {
