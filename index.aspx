@@ -181,7 +181,7 @@
     <meta property="og:title" content="一番人気なオンラインカジノアミューズメント - マハラジャ" />
     <meta property="og:Keyword" content="カジノ、スロット、アミューズメント、ゲーム、ギャンブル" />
     <meta property="og:description" content="知名なオンラインゲームブランドを提携し、信頼価値もあるし、それにすぐ遊べることができます。お金の無駄遣いをせずに、今すぐサイトを登録して、ゲーム開始！" />
-    <meta property="og:url" content="https://casino-maharaja.com/" />
+    <meta property="og:url" content="https://www.free-maharaja.com/" />
     <!--日文圖片-->
     <meta property="og:image" content="https://www.free-maharaja.com/images/share_pic.png" />
     <meta property="og:type" content="website" />
