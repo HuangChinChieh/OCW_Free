@@ -183,11 +183,11 @@
     <meta property="og:description" content="知名なオンラインゲームブランドを提携し、信頼価値もあるし、それにすぐ遊べることができます。お金の無駄遣いをせずに、今すぐサイトを登録して、ゲーム開始！" />
     <meta property="og:url" content="https://casino-maharaja.com/" />
     <!--日文圖片-->
-    <meta property="og:image" content="https://casino-maharaja.com/images/share_pic.png" />
+    <meta property="og:image" content="https://www.free-maharaja.com/images/share_pic.png" />
     <meta property="og:type" content="website" />
     <!-- Share image -->
     <!--日文圖片-->
-    <link rel="image_src" href="https://casino-maharaja.com/images/share_pic.png">
+    <link rel="image_src" href="https://www.free-maharaja.com/images/share_pic.png">
     <link rel="shortcut icon" href="images/share_pic.png">
     <link rel="stylesheet" href="css/basic.min.css">
     <link rel="stylesheet" href="css/icons.css">
