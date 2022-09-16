@@ -1,5 +1,15 @@
 @import "../base/base";
 
+
+.btn-full-main:disabled{
+    // background: rgba(255,255,255,0.3);
+    // color: rgba(255,255,255,0.9);
+    // border-color: rgba(165,159,159,0.2);
+    background: rgba(#ccc,0.3);
+    color: inherit;
+    border-color: rgba(#ccc,0.3);
+    cursor: not-allowed;
+}
 // 各分類-單一遊戲推薦區
 .section-category-dailypush{
     margin-bottom: 1.5rem;
@@ -94,9 +104,13 @@
         left: 0;
         right: 0;
 
+        border-radius: 15px;
+        overflow: hidden;
+
         .img-box{
             width: 100%;
             height: 100%;
+            border-radius: 15px;
         }
 
         .img-wrap{
@@ -226,7 +240,10 @@
             color: #fff;
             flex: 1;
             &:hover{
-                background-color: darken(#00AFFF, 10%);
+                background-color: lighten(#00AFFF, 20%);
+                // background-color: #fff;
+                // border: solid 1px #00AFFF;
+                // color: #009FE8;
             }
         }
 
@@ -278,17 +295,29 @@
 
 // 遊戲推薦區
 .section-gamesArea{
-
+    // margin-top: 30px;
 }
 
 .game-list{
     display: flex;
     flex-flow: row wrap;
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: -6px;
+    margin-right: -6px;
 
     .wrapper_center{
         width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-left: -10px;
+        margin-right: -10px;
+
+        .wrapper_center{            
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
     }
 }
 
@@ -315,9 +344,12 @@ $game-item-width-xml: $game-item-width-unit/7;
         position: relative;
         padding-bottom: 100%;
         border-radius: 15px;
+        transition: box-shadow 0.35s ease-in-out;
+        z-index: 1; // !!!IMPORTANT 為了HOVER 時，讓 imgae 縮放 時 不要讓圖片超過img-wrap範圍
 
         img {
-            @include img-fit;
+            @include img-fit;            
+            transition: transform 0.35s ease-in-out;
         }
 
     }
@@ -328,13 +360,24 @@ $game-item-width-xml: $game-item-width-unit/7;
         margin-top: 0.5rem;
 
         .game-item-name{
-            font-size: 1rem;
+            font-size: font-resize(15px);
         }
     }
 
-    &-link{
+    .game-item-link{
         cursor: pointer;
+
+        &:hover{
+            .img-wrap{
+                box-shadow: 0 0 10px 2px rgba(#000, 0.45);
+            }
+
+            img{
+                transform: scale(1.2, 1.2);                
+            }        
+        }
     }
+   
 
     @include media-breakpoint-up(sm) {
         width: $game-item-width-sm;
@@ -357,6 +400,7 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
     @include media-breakpoint-up(xl) {
         width: $game-item-width-xl;
+        padding-bottom: 30px;
     }
     @include media-breakpoint-up(xml) {
         width: $game-item-width-xml;
@@ -366,6 +410,7 @@ $game-item-width-xml: $game-item-width-unit/7;
 .game-free{
     .game-item-img{
         position: relative;
+
         &::before{
             content: '';
             display: inline-flex;
@@ -379,7 +424,17 @@ $game-item-width-xml: $game-item-width-unit/7;
 
             left: -10px;
             top: -20px;
-            z-index: 1;
+            z-index: 2;
+        }
+    }
+
+    @media (max-width:breakpoints_BS4(sm)){
+
+        .game-item-img{
+            &::before{
+                max-width: 56px;
+                height: 56px;
+            }
         }
     }
     
@@ -394,11 +449,12 @@ $game-item-width-xml: $game-item-width-unit/7;
 }
 
 .text-link{
-    color: #00AFFF;
+    color: #009FE8;
     cursor: pointer;
     padding: 0 2px;
+    text-decoration: underline;
     &:hover{
-        text-decoration: underline;
+        text-decoration-style:wavy;
     }
 
 }
@@ -415,8 +471,7 @@ $game-item-width-xml: $game-item-width-unit/7;
 .modal.customHeader{
 
     .modal-dialog{
-        margin-top: 3rem;
-        min-height: 470px;        
+        // margin-top: 3rem;
     }
 
     .modal-content{
@@ -430,37 +485,105 @@ $game-item-width-xml: $game-item-width-unit/7;
     .modal-header{
         position: absolute;
         z-index: 1;
-        right: 0;
-        top: -50px;
+        right: -10px;
+        top: -45px;
         border: 0;
 
         .close{
-            font-size: 36px;
+            font-size: 33px;
             color: #fff;
             opacity: 1;
             font-weight: 300;
-            // background-color: #666;
-            // border-radius: 50%;
+            background-color: rgba(#000, 0.65);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 43px;
+            width: 43px;
+            height: 43px;
+            padding: 10px;
+            padding-top: 6px;
         }
     }
 
     .modal-body{
-        display: flex;
-        flex-flow: row wrap;
-        padding: 0;
-        flex: 0 0 auto;
+        // display: flex;
+        // flex-flow: row wrap;
+        // padding: 0;
+        // flex: 0 0 auto;
+        // min-height: 430px;
+        // overflow: visible;   
+        position: relative;
+        padding-top: 55px;
     }
 
-    .content{
-        padding: 2rem 1rem 1.5rem;       
+    .content-wrapper{
+        // padding: 2rem 1rem 1.5rem;       
         max-width: 420px;
         margin-left: auto;
         margin-right: auto;
+        // height: calc(100% - 65px);
     }
     .form-control{
         height: calc(2.75rem + 2px);
     }
+    .form-group{
+        margin-bottom: 1.2rem;
+    }
+
+    .login-wrapper{
+        .form-group{
+            margin-bottom: 2rem;
+        }
+    }
+
+    .wrapper_center{
+        margin-top: 10px;
+        width: 100%;
+        .btn{
+            max-width: 250px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 50px;
+            margin-bottom: 0;
+        }
+    }
+
+    .content-inner{
+        display: flex;
+        flex-flow: column nowrap;
+       
+        max-height: calc(100vh - 140px);
+        overflow: hidden;
+        
+
+        &-body{
+            overflow-y: auto;
+            flex: 1 1 auto; 
+            padding-top:25px; 
+            min-height: 230px;
+        }
+
+        &-footer{
+            flex: 0 0 60px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+
+        .form-group{
+            margin-bottom: 1.5rem;
+        }
+
+        .login-wrapper{
+            .form-group{
+                margin-bottom: 2rem;
+            }
+        }
+    }
 }
+
 
 .tracking-bar{
     position: absolute;
@@ -471,6 +594,10 @@ $game-item-width-xml: $game-item-width-unit/7;
     top: 52px;
 
     transition: left 0.3s ease-in-out;
+}
+
+.register-wrapper, .login-wrapper{
+    display: none !important;
 }
 
 .tabTypeInput{
@@ -489,9 +616,14 @@ $game-item-width-xml: $game-item-width-unit/7;
             left: 0;
         }
 
-        ~ .content .login-wrapper{
-            display: block;
+        ~ .content-wrapper .login-wrapper{
+            // display: inherit !important;
+            display: flex !important;
         }
+
+        // ~ .modal-body .content .login-wrapper{
+        //     display: block;
+        // }
 
     }
 
@@ -500,9 +632,14 @@ $game-item-width-xml: $game-item-width-unit/7;
             left: 50%;
         }
 
-        ~ .content .register-wrapper{
-            display: block;
+        ~ .content-wrapper .register-wrapper{
+            // display: block;
+            display: flex !important;
         }
+
+        // ~ .content-wrapper .register-wrapper{
+        //     display: block;
+        // }
     }
     
     
@@ -518,30 +655,32 @@ $game-item-width-xml: $game-item-width-unit/7;
     cursor: pointer;
     border-bottom: solid 1px #ccc;
 
+    position: absolute;
+    top: 0;
+
     &.userLogin{
         border-radius: 30px 0 0 0;
         // margin-top: -1rem;
         // margin-left: -1rem;
+
+        left: 0;
+        
     }
     &.userRegister{
         border-radius: 0 30px 0 0;
         // margin-top: -1rem;
         // margin-right: -1rem;
+        right: 0;
     }
 
 }
 
-.register-wrapper, .login-wrapper{
-    display: none;
-}
 
 .login-wrapper{
     .wrapper_center{
-        margin-top: 85px;
+        margin-top: 55px;
     }
 }
-
-
 
 .wrapper-full{
     width: 100%;
@@ -556,6 +695,7 @@ $game-item-width-xml: $game-item-width-unit/7;
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
 }
+
 .form-group .btn-icon {
     position: absolute;
     top: 2px;
@@ -575,14 +715,24 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
 }
 
-.btn-checkpwd{
+.btn.btn-checkpwd{
     color: inherit;
-    font-size: font-resize(18px);
+    font-size: font-resize(22px);
+
+    &:not(:disabled):hover{
+        color: inherit !important;
+    }
+
+    .icon-eye-off{
+        color: #888;
+    }
 }
 
 .btn-sendCode{
     font-weight: 300;  
     font-size: font-resize(14px);
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .btn-popup-register{
@@ -591,6 +741,7 @@ $game-item-width-xml: $game-item-width-unit/7;
 
 .wrapper_center{
     margin-top: 20px;
+    
     .btn{
         max-width: 150px;
         
@@ -615,11 +766,12 @@ $game-item-width-xml: $game-item-width-unit/7;
     }
 }
 
+//主banner
 .section-main-banner{
     .img-wrap{
         // height: 200px;
         position: relative;
-        padding-bottom: calc(100% * ( 370 / 1920));
+        // padding-bottom: calc(100% * ( 370 / 1920));
         // min-height: 480px;
         overflow: hidden;
 
@@ -632,10 +784,27 @@ $game-item-width-xml: $game-item-width-unit/7;
             height: 100%;
         }
     }
+
+    .hero-item{
+       
+    }
+    .mobile{
+        .img-wrap{
+            padding-bottom: calc(100% * ( 330 / 768));
+        }
+        
+    }
+
+    .desktop{
+       
+        display: none;
+        .img-wrap{
+            padding-bottom: calc(100% * ( 370 / 1920));
+            
+        }
+    }
    
 }
-
-
 
 .section-Wrapper {
     margin-bottom: 60px;
@@ -727,18 +896,24 @@ $game-item-width-xml: $game-item-width-unit/7;
      // 各分類-單一遊戲推薦區
      .category-dailypush{
         &-img{
-            border-radius: 15px;
-            overflow: hidden;
+            // border-radius: 15px;
+            // overflow: hidden;
         }
      }
-
 
 }
 
 @include media-breakpoint-up(smg) {
+     //主banner
+     .section-main-banner{
+        .mobile{
+            display: none;
+        }
 
-
-
+        .desktop{
+            display: inherit;
+        }
+    }
 }
 
 @include media-breakpoint-up(desc-md) {
@@ -748,6 +923,12 @@ $game-item-width-xml: $game-item-width-unit/7;
 }
 
 @include media-breakpoint-up(md) {
+
+    // 各分類-單一遊戲推薦區
+    .section-category-dailypush{
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
     // 各分類-單一遊戲推薦區
     .category-dailypush{
         &-inner{         
@@ -786,7 +967,6 @@ $game-item-width-xml: $game-item-width-unit/7;
                 object-position: 100% 0;
             }
         }
-
     }
 
     .game-type{
@@ -795,13 +975,9 @@ $game-item-width-xml: $game-item-width-unit/7;
         }
     }
 
-
 }
 
 @include media-breakpoint-up(desc-lg) {
-
-   
-
     // 各分類-單一遊戲推薦區
     .category-dailypush{
         &-inner{
@@ -849,9 +1025,13 @@ $game-item-width-xml: $game-item-width-unit/7;
 
 
 
-@include media-breakpoint-up(desc-xl) {
-
-    
+@include media-breakpoint-up(xl) {
+  
+    // 各分類-單一遊戲推薦區
+    .section-category-dailypush{
+        margin-bottom: 4rem;
+        margin-top: 4rem;
+    }
     
 }
 

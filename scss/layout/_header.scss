@@ -69,7 +69,7 @@
     display: inline-flex;
     align-items: center;
     margin-right: 0;
-    cursor: pointer;
+    // cursor: pointer;
 
     .logo {
         display: inline-flex;
@@ -192,7 +192,8 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: $zIndexs-header;
+    // z-index: $zIndexs-header;
+    z-index: 3;
     transition: all 0.3s linear;
     // color: color_main('white');
     color: $body-default-fontColor;
@@ -640,6 +641,19 @@
 
     }
 
+    @media (max-width: breakpoints_BS4(sm)){
+        .unLogIn_wrapper .btn{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .unLogIn_wrapper .btn-login{
+            padding-left: 35px;
+        }
+        
+
+    }
+
 }
 
 .avater {
@@ -696,6 +710,9 @@
 .logIned_wrapper {
 
     // padding: 0 0.5rem;
+    .btn{
+        border: 0;
+    }
 
     .avater_wrapper {
         .btn {
@@ -732,7 +749,7 @@
         min-width: 4rem;
         border-radius: 50px;
 
-        background: linear-gradient(90deg, #0057FF 5.73%, #69C7FF 100%);
+        background: linear-gradient(90deg, #0057FF 0, #69C7FF 100%);
         color: #fff;
         // white-space: nowrap;
 
