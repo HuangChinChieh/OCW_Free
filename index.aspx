@@ -204,8 +204,18 @@
     
 </head>
 
+<% if (EWinWeb.IsTestSite == false)
+    { %>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRNSR38PQ7"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7WNYEFSKH5"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-7WNYEFSKH5');
+</script>
+<% } %>
 
 <script 
   src="https://code.jquery.com/jquery-2.2.4.js"
