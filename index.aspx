@@ -2684,15 +2684,16 @@
                                             </button>
                                         </div>
                                     </div>
-                                  </div>
-
-                                  <div class="content-inner-footer">
                                     <div class="wrapper_center">
                                         <button class="btn btn-full-main btn-roundcorner btn-popup-login" type="button"
                                             onclick="onBtnSendLogin()">
                                             <span class="language_replace">登入</span>
                                         </button>
                                     </div>
+                                  </div>
+
+                                  <div class="content-inner-footer">
+                                    
                                   </div>
                                </div>
                            </form>

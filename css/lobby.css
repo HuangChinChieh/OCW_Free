@@ -450,6 +450,9 @@ animation:name duration | timing-function | delay | iteration-count | direction 
 .modal.customHeader .login-wrapper .form-group {
   margin-bottom: 2rem;
 }
+.modal.customHeader .login-wrapper .wrapper_center {
+  margin-top: 50px;
+}
 .modal.customHeader .wrapper_center {
   margin-top: 10px;
   width: 100%;
@@ -478,16 +481,25 @@ animation:name duration | timing-function | delay | iteration-count | direction 
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding-top: 25px;
-  min-height: 230px;
+  min-height: 250px;
 }
 .modal.customHeader .content-inner-footer {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 60px;
           flex: 0 0 60px;
 }
+@media (min-width: 375px) {
+  .modal.customHeader .content-inner-body {
+    min-height: 300px;
+  }
+}
 @media (min-width: 768px) {
   .modal.customHeader .form-group {
     margin-bottom: 1.5rem;
+  }
+  .modal.customHeader .login-wrapper {
+    min-height: 400px;
+    padding-top: 30px;
   }
   .modal.customHeader .login-wrapper .form-group {
     margin-bottom: 2rem;

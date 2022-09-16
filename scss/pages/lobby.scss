@@ -536,6 +536,9 @@ $game-item-width-xml: $game-item-width-unit/7;
         .form-group{
             margin-bottom: 2rem;
         }
+        .wrapper_center{
+            margin-top: 50px;
+        }
     }
 
     .wrapper_center{
@@ -562,7 +565,7 @@ $game-item-width-xml: $game-item-width-unit/7;
             overflow-y: auto;
             flex: 1 1 auto; 
             padding-top:25px; 
-            min-height: 230px;
+            min-height: 250px;
         }
 
         &-footer{
@@ -570,6 +573,12 @@ $game-item-width-xml: $game-item-width-unit/7;
         }
     }
 
+    @include media-breakpoint-up(sm) {
+        .content-inner-body{
+            min-height: 300px;
+        }
+
+    }
     @include media-breakpoint-up(md) {
 
         .form-group{
@@ -577,6 +586,8 @@ $game-item-width-xml: $game-item-width-unit/7;
         }
 
         .login-wrapper{
+            min-height: 400px;
+            padding-top: 30px;
             .form-group{
                 margin-bottom: 2rem;
             }
