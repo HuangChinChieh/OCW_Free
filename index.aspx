@@ -282,32 +282,32 @@
             GameLangNameJPN: 'ザ ラースト サンダウン',
             NeedLogin: false
         },
-        //{
-        //    GameName: '1',
-        //    GameBrand: 'BBIN',
-        //    GameLangNameCHT: '糖果派對3',
-        //    GameLangNameJPN: 'キャンディーパーティ3',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '1187',
-        //    GameBrand: 'BBIN',
-        //    GameLangNameCHT: '魚蝦蟹開了',
-        //    GameLangNameJPN: 'フーヘイハウ',
-        //    NeedLogin: true
-        //}, {
-        //    GameName: '1336',
-        //    GameBrand: 'BBIN',
-        //    GameLangNameCHT: '酷搜馬戲團',
-        //    GameLangNameJPN: 'クソサーカス',
-        //    NeedLogin: true
-        //}, {
-        //    GameName: '76',
-        //    GameBrand: 'BBIN',
-        //    GameLangNameCHT: '開心消消樂',
-        //    GameLangNameJPN: 'アーニポップ',
-        //    NeedLogin: true
-        //},
+        {
+            GameName: '1',
+            GameBrand: 'BBIN',
+            GameLangNameCHT: '糖果派對3',
+            GameLangNameJPN: 'キャンディーパーティ3',
+            NeedLogin: true
+        },
+        {
+            GameName: '1187',
+            GameBrand: 'BBIN',
+            GameLangNameCHT: '魚蝦蟹開了',
+            GameLangNameJPN: 'フーヘイハウ',
+            NeedLogin: true
+        }, {
+            GameName: '1336',
+            GameBrand: 'BBIN',
+            GameLangNameCHT: '酷搜馬戲團',
+            GameLangNameJPN: 'クソサーカス',
+            NeedLogin: true
+        }, {
+            GameName: '76',
+            GameBrand: 'BBIN',
+            GameLangNameCHT: '開心消消樂',
+            GameLangNameJPN: 'アーニポップ',
+            NeedLogin: true
+        },
         {
             GameName: '202',
             GameBrand: 'BNG',
@@ -424,41 +424,41 @@
         //    GameLangNameJPN: 'EWinゲーミング',
         //    NeedLogin: true
         //},
-        //{
-        //    GameName: '889',
-        //    GameBrand: 'GMW',
-        //    GameLangNameCHT: '小紅帽',
-        //    GameLangNameJPN: 'レッド',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '917',
-        //    GameBrand: 'GMW',
-        //    GameLangNameCHT: '聖花',
-        //    GameLangNameJPN: 'セイクリドフラワー',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '925',
-        //    GameBrand: 'GMW',
-        //    GameLangNameCHT: '豪華鑽石升級版',
-        //    GameLangNameJPN: 'エクストラダイアモンドデュラクス',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '755',
-        //    GameBrand: 'HB',
-        //    GameLangNameCHT: '海洋之音',
-        //    GameLangNameJPN: 'オーシャンズコール',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '757',
-        //    GameBrand: 'HB',
-        //    GameLangNameCHT: '超級龍捲風',
-        //    GameLangNameJPN: 'スーパーツイスター',
-        //    NeedLogin: true
-        //},
+        {
+            GameName: '889',
+            GameBrand: 'GMW',
+            GameLangNameCHT: '小紅帽',
+            GameLangNameJPN: 'レッド',
+            NeedLogin: true
+        },
+        {
+            GameName: '917',
+            GameBrand: 'GMW',
+            GameLangNameCHT: '聖花',
+            GameLangNameJPN: 'セイクリドフラワー',
+            NeedLogin: true
+        },
+        {
+            GameName: '925',
+            GameBrand: 'GMW',
+            GameLangNameCHT: '豪華鑽石升級版',
+            GameLangNameJPN: 'エクストラダイアモンドデュラクス',
+            NeedLogin: true
+        },
+        {
+            GameName: '755',
+            GameBrand: 'HB',
+            GameLangNameCHT: '海洋之音',
+            GameLangNameJPN: 'オーシャンズコール',
+            NeedLogin: true
+        },
+        {
+            GameName: '757',
+            GameBrand: 'HB',
+            GameLangNameCHT: '超級龍捲風',
+            GameLangNameJPN: 'スーパーツイスター',
+            NeedLogin: true
+        },
 
         {
             GameName: '112',
@@ -495,62 +495,62 @@
             GameLangNameJPN: 'カメレオン',
             NeedLogin: true
         },
-        //{
-        //    GameName: '348',
-        //    GameBrand: 'MG',
-        //    GameLangNameCHT: '神聖鑽石',
-        //    GameLangNameJPN: 'ディバインダイヤモンズ',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '359',
-        //    GameBrand: 'MG',
-        //    GameLangNameCHT: '亞歷山大女王',
-        //    GameLangNameJPN: 'クイーン オブ アレキサンドリア™',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '367',
-        //    GameBrand: 'MG',
-        //    GameLangNameCHT: '鬼狩',
-        //    GameLangNameJPN: 'オニハンター',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '387',
-        //    GameBrand: 'MG',
-        //    GameLangNameCHT: '奇遇宮殿',
-        //    GameLangNameJPN: 'アドベンチャーパレス',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '400',
-        //    GameBrand: 'MG',
-        //    GameLangNameCHT: '愛麗娜',
-        //    GameLangNameJPN: 'アリアナ',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '426',
-        //    GameBrand: 'MG',
-        //    GameLangNameCHT: '好運經紀人',
-        //    GameLangNameJPN: 'ブッキーオブオッズ',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '458',
-        //    GameBrand: 'MG',
-        //    GameLangNameCHT: '板球明星',
-        //    GameLangNameJPN: 'クリケットスター',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '495',
-        //    GameBrand: 'MG',
-        //    GameLangNameCHT: '美女槍手叢林激戰',
-        //    GameLangNameJPN: 'ガールズ ウィズ ガンズ-ジャングル ヒート',
-        //    NeedLogin: true
-        //},
+        {
+            GameName: '348',
+            GameBrand: 'MG',
+            GameLangNameCHT: '神聖鑽石',
+            GameLangNameJPN: 'ディバインダイヤモンズ',
+            NeedLogin: true
+        },
+        {
+            GameName: '359',
+            GameBrand: 'MG',
+            GameLangNameCHT: '亞歷山大女王',
+            GameLangNameJPN: 'クイーン オブ アレキサンドリア™',
+            NeedLogin: true
+        },
+        {
+            GameName: '367',
+            GameBrand: 'MG',
+            GameLangNameCHT: '鬼狩',
+            GameLangNameJPN: 'オニハンター',
+            NeedLogin: true
+        },
+        {
+            GameName: '387',
+            GameBrand: 'MG',
+            GameLangNameCHT: '奇遇宮殿',
+            GameLangNameJPN: 'アドベンチャーパレス',
+            NeedLogin: true
+        },
+        {
+            GameName: '400',
+            GameBrand: 'MG',
+            GameLangNameCHT: '愛麗娜',
+            GameLangNameJPN: 'アリアナ',
+            NeedLogin: true
+        },
+        {
+            GameName: '426',
+            GameBrand: 'MG',
+            GameLangNameCHT: '好運經紀人',
+            GameLangNameJPN: 'ブッキーオブオッズ',
+            NeedLogin: true
+        },
+        {
+            GameName: '458',
+            GameBrand: 'MG',
+            GameLangNameCHT: '板球明星',
+            GameLangNameJPN: 'クリケットスター',
+            NeedLogin: true
+        },
+        {
+            GameName: '495',
+            GameBrand: 'MG',
+            GameLangNameCHT: '美女槍手叢林激戰',
+            GameLangNameJPN: 'ガールズ ウィズ ガンズ-ジャングル ヒート',
+            NeedLogin: true
+        },
         //{
         //    GameName: '935',
         //    GameBrand: 'NE',
@@ -621,20 +621,20 @@
             GameLangNameJPN: 'ベガスナイト',
             NeedLogin: true
         },
-        //{
-        //    GameName: '1116',
-        //    GameBrand: 'RT',
-        //    GameLangNameCHT: '波斯寶藏',
-        //    GameLangNameJPN: 'ペルシアンフォーチュン',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '1096',
-        //    GameBrand: 'RT',
-        //    GameLangNameCHT: '幸運魔法師',
-        //    GameLangNameJPN: 'ラッキーウィザード',
-        //    NeedLogin: true
-        //},
+        {
+            GameName: '1116',
+            GameBrand: 'RT',
+            GameLangNameCHT: '波斯寶藏',
+            GameLangNameJPN: 'ペルシアンフォーチュン',
+            NeedLogin: true
+        },
+        {
+            GameName: '1096',
+            GameBrand: 'RT',
+            GameLangNameCHT: '幸運魔法師',
+            GameLangNameJPN: 'ラッキーウィザード',
+            NeedLogin: true
+        },
         {
             GameName: 'masquerade',
             GameBrand: 'PNG',
@@ -691,28 +691,28 @@
             GameLangNameJPN: 'チーキーエンペラー',
             NeedLogin: true
         }
-        //,
-        //{
-        //    GameName: '1087',
-        //    GameBrand: 'RT',
-        //    GameLangNameCHT: '王者之劍',
-        //    GameLangNameJPN: 'レジェンダリーエクスカリバー',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '1146',
-        //    GameBrand: 'RT',
-        //    GameLangNameCHT: '相撲大賞',
-        //    GameLangNameJPN: 'スモウスピン',
-        //    NeedLogin: true
-        //},
-        //{
-        //    GameName: '1009',
-        //    GameBrand: 'RT',
-        //    GameLangNameCHT: '一萬零一夜',
-        //    GameLangNameJPN: '10001ナイツ',
-        //    NeedLogin: true
-        //}
+        ,
+        {
+            GameName: '1087',
+            GameBrand: 'RT',
+            GameLangNameCHT: '王者之劍',
+            GameLangNameJPN: 'レジェンダリーエクスカリバー',
+            NeedLogin: true
+        },
+        {
+            GameName: '1146',
+            GameBrand: 'RT',
+            GameLangNameCHT: '相撲大賞',
+            GameLangNameJPN: 'スモウスピン',
+            NeedLogin: true
+        },
+        {
+            GameName: '1009',
+            GameBrand: 'RT',
+            GameLangNameCHT: '一萬零一夜',
+            GameLangNameJPN: '10001ナイツ',
+            NeedLogin: true
+        }
     ];
 
     function eyeTogger() {
