@@ -1,9 +1,4 @@
-<%@ Page Language="C#" %>
-    string PCode = string.Empty;
-    if (string.IsNullOrEmpty(Request["PCode"]) == false)
-    {
-        PCode = Request["PCode"];
-    }
+<%@ Page Language="C#"%>
 <%
 
     string Token;
