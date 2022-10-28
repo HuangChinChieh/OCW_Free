@@ -199,7 +199,7 @@ public class LobbyAPI : System.Web.Services.WebService
     {
         EWin.Lobby.LobbyAPI lobbyAPI = new EWin.Lobby.LobbyAPI();
         EWin.Lobby.APIResult R = new EWin.Lobby.APIResult();
-        R = lobbyAPI.CreateAccount(GetToken(), GUID, LoginAccount, LoginPassword, ParentPersonCode, CurrencyList, PS);
+        R = lobbyAPI.CreateAccount(GetToken(), GUID, LoginAccount, LoginPassword, "", CurrencyList, PS);
         if (R.Result == EWin.Lobby.enumResult.OK)
         {
             EWinOfficial.LobbyAPI.LobbyAPI officiallobbyAPI = new EWinOfficial.LobbyAPI.LobbyAPI();

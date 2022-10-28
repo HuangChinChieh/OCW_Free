@@ -1,5 +1,4 @@
-<%@ Page Language="C#" %>
-
+<%@ Page Language="C#"%>
 <%
 
     string Token;
@@ -256,6 +255,7 @@
         DeviceType: getOS(),
         IsOpenGame: false
     };
+    var PCode = "<%=PCode%>";
 
     var jsonGames = [
         {
@@ -867,6 +867,14 @@
         if (cookieLang != null && cookieLang!="") {
             EWinWebInfo.Lang = cookieLang;
         }
+
+        if (PCode) {
+            $('#createAccount_PCode').val(PCode);
+            $('#createAccount_PCode').attr('disabled', 'disabled');
+            if (location.href.includes('?')) {
+                history.pushState({}, null, location.href.split('?')[0]);
+            }
+        }
       
         switch (EWinWebInfo.Lang) {
             case "JPN":
@@ -1270,7 +1278,15 @@
         var validateCode = $('#createAccount_ValidateCode').val().trim();
         var mail = $('#createAccount_Mail').val().trim();
         var CurrencyList = EWinWebInfo.RegisterCurrencyType;
-        var NickName= $('#createAccount_NickName').val().trim();
+        var NickName = $('#createAccount_NickName').val().trim();
+        var PCode2 = '';
+        if (PCode) {
+            PCode2 = PCode;
+        } else {
+            PCode2 = $('#createAccount_PCode').val().trim();
+        }
+      
+        
         if (mail == "") {
             showMessageOK("", mlp.getLanguageKey("EMail尚未填寫"));
             return false;
@@ -1312,7 +1328,7 @@
                 if (o2.Result != 0) {
                     window.parent.showMessageOK("", mlp.getLanguageKey("請輸入正確驗證碼"));
                 } else {
-                    lobbyClient.CreateAccount(Math.uuid(), mail, password, "", CurrencyList, PS, function (success, o) {
+                    lobbyClient.CreateAccount(Math.uuid(), mail, password, PCode2, CurrencyList, PS, function (success, o) {
                         if (success) {
                             if (o.Result == 0) {
 
@@ -2744,6 +2760,12 @@
                                     <label class="form-title language_replace">暱稱（部分遊戲遊玩時顯示使用）</label>
                                     <div class="input-group">
                                         <input id="createAccount_NickName" type="text" class="form-control" language_replace="placeholder" placeholder="請輸入暱稱" onkeyup="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-title language_replace">推廣碼</label>
+                                    <div class="input-group">
+                                        <input id="createAccount_PCode" type="text" class="form-control" language_replace="placeholder" placeholder="若無推廣碼可不填寫" onkeyup="">
                                     </div>
                                 </div>
                                 <div class="must-mark">
