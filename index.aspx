@@ -242,6 +242,7 @@
     var gameWindow;
     var EWinWebInfo = {
         EWinUrl: "<%=EWinWeb.EWinUrl %>",
+        ImageUrl: "<%=EWinWeb.ImageUrl %>",
         EWinGameUrl: "<%=EWinWeb.EWinGameUrl %>",
         MainCurrencyType: "<%=EWinWeb.MainCurrencyType %>",
         RegisterCurrencyType: "<%=EWinWeb.RegisterCurrencyType %>",
@@ -870,9 +871,9 @@
         if (PCode) {
             $('#createAccount_PCode').val(PCode);
             $('#createAccount_PCode').attr('disabled', 'disabled');
-            if (location.href.includes('?')) {
-                history.pushState({}, null, location.href.split('?')[0]);
-            }
+            //if (location.href.includes('?')) {
+            //    history.pushState({}, null, location.href.split('?')[0]);
+            //}
         }
       
         switch (EWinWebInfo.Lang) {
@@ -1604,14 +1605,14 @@
             } else {
                 gamelangName = data.GameLangNameCHT;
             }
-
+       
             var gameItem = `<div class="game-item ${gamefree}">
                         <div class="game-item-inner">
                             <div class="game-item-link" onclick="openGame('${data.GameBrand}','${data.GameName}','${gamelangName}',${data.NeedLogin})" onmouseover="">
                                 <div class="game-item-img">
                                     <div class="img-wrap">
                                         <img class="gameimg lozad"
-                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/${data.GameBrand}/PC/${EWinWebInfo.Lang}/${data.GameName}.png">
+                                            src="${EWinWebInfo.ImageUrl}/${data.GameBrand}/ENG/${data.GameName}.png">
                                     </div>
                                 </div>
                                 <div class="game-item-info">
@@ -1646,14 +1647,14 @@
             } else {
                 gamelangName = data.GameLangNameCHT;
             }
-
+ 
             var gameItem = `<div class="game-item ${gamefree}">
                         <div class="game-item-inner">
                             <div class="game-item-link" onclick="openGame('${data.GameBrand}','${data.GameName}','${gamelangName}',${data.NeedLogin})" onmouseover="">
                                 <div class="game-item-img">
                                     <div class="img-wrap">
                                         <img class="gameimg lozad"
-                                            src="https://ewin.dev.mts.idv.tw/Files/GamePlatformPic/${data.GameBrand}/PC/${EWinWebInfo.Lang}/${data.GameName}.png">
+                                            src="${EWinWebInfo.ImageUrl}/${data.GameBrand}/ENG/${data.GameName}.png">
                                     </div>
                                 </div>
                                 <div class="game-item-info">
