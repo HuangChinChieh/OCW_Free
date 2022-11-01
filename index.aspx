@@ -1605,14 +1605,15 @@
             } else {
                 gamelangName = data.GameLangNameCHT;
             }
-       
+
+            var imgsrc = `${EWinWebInfo.ImageUrl}/${data.GameBrand}/${EWinWebInfo.Lang}/${data.GameName}.png`;
             var gameItem = `<div class="game-item ${gamefree}">
                         <div class="game-item-inner">
                             <div class="game-item-link" onclick="openGame('${data.GameBrand}','${data.GameName}','${gamelangName}',${data.NeedLogin})" onmouseover="">
                                 <div class="game-item-img">
                                     <div class="img-wrap">
                                         <img class="gameimg lozad"
-                                            src="${EWinWebInfo.ImageUrl}/${data.GameBrand}/ENG/${data.GameName}.png">
+                                            src="${imgsrc}" onerror="showDefauktGameIcon('${data.GameBrand}', '${data.GameName}')">
                                     </div>
                                 </div>
                                 <div class="game-item-info">
@@ -1630,6 +1631,19 @@
                         <div class="btn btn-more" onclick="appendGameItem2()">${mlp.getLanguageKey("查看更多")}</div>
                     </div>`);
 
+    }
+
+    function showDefauktGameIcon(GameBrand, GameName) {
+        var el = event.target;
+        el.onerror = showDefauktGameIcon2;
+        el.src = EWinWebInfo.ImageUrl + "/" + GameBrand + "/ENG/" + GameName + ".png";
+    }
+
+    function showDefauktGameIcon2() {
+
+        var el = event.target;
+        el.onerror = null;
+        el.src = EWinWebInfo.ImageUrl + "/default.png";
     }
 
     function appendGameItem2() {
