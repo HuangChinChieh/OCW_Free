@@ -20,7 +20,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "OCW_JP", ".", "{FA30052F-4F
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "53637"
+		VWDPort = "53638"
 		SlnRelativePath = "..\OCW_JP\"
 	EndProjectSection
 EndProject
