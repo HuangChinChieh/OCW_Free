@@ -370,26 +370,6 @@
             GameLangNameCHT: '五花爭豔',
             GameLangNameJPN: '5ディーラーズ',
             NeedLogin: true
-        },{
-            GameName: 'Baccarat2',
-            GameBrand: 'CG',
-            GameLangNameCHT: '經典百家樂',
-            GameLangNameJPN: 'バカラ2',
-            NeedLogin: true
-        },
-        {
-            GameName: 'InternationalSicbo',
-            GameBrand: 'CG',
-            GameLangNameCHT: '國際骰寶',
-            GameLangNameJPN: 'インターナショナルシック・ボー',
-            NeedLogin: true
-        },
-        {
-            GameName: 'Wheel',
-            GameBrand: 'CG',
-            GameLangNameCHT: '經典輪盤',
-            GameLangNameJPN: 'ホーイル',
-            NeedLogin: true
         },
         {
             GameName: '115',
@@ -670,13 +650,6 @@
             GameBrand: 'PP',
             GameLangNameCHT: '招財福豬',
             GameLangNameJPN: 'ゴールデン ピッグ',
-            NeedLogin: true
-        },
-        {
-            GameName: 'vs50northgard',
-            GameBrand: 'PP',
-            GameLangNameCHT: '北境守護者',
-            GameLangNameJPN: 'ノース ガーディアンズ',
             NeedLogin: true
         },
         {
